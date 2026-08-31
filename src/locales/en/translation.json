@@ -1,0 +1,175 @@
+{
+  "svadhisthana": {
+    "header": {
+      "sanskritName": "स्वाधिष्ठान",
+      "transliteration": "SVĀDHIṢṬHĀNA",
+      "subtitle": "THE SACRAL CENTRE",
+      "hook": "“Feel what moves through you.”"
+    },
+    "whatIsIt": {
+      "tradition": "In classical Tantric and yogic subtle-body maps (such as the Ṣaṭ-Cakra-Nirūpaṇa), Svādhiṣṭhāna is the second cakra, symbolized by a six-petaled lotus located at the root of the genitals (mūla). It is associated with the element of water (āpaḥ) and lunar energy.",
+      "modern": "In contemporary psychological interpretations, it is the center of emotion, desire, pleasure, creativity, and adaptability. It represents the ability to \"flow\" with life's changes rather than rigidly controlling them.",
+      "evidence": "Chakras are conceptual models of human experience and subtle energy, not anatomical organs. The feeling of \"energy\" in the lower abdomen during practice is a well-documented subjective somatic experience, but it does not map to a physically observable structure."
+    },
+    "name": {
+      "components": [
+        { "sanskrit": "स्व", "transliteration": "Sva", "meaning": "One's own" },
+        { "sanskrit": "अधिष्ठान", "transliteration": "Adhiṣṭhāna", "meaning": "Dwelling place, base, or residence" }
+      ],
+      "interpretation": "Often translated as \"One's own abode\" or \"The dwelling place of the self.\" It suggests an inner sanctuary where fundamental vitality resides."
+    },
+    "location": {
+      "traditional": "The subtle-body center is classically placed near the base of the linga/yoni (genital root) or lower abdomen.",
+      "modern": "Most modern visualizations place it in the lower abdomen, pelvic bowl, or just below the navel.",
+      "note": "This is a subtle-body map, not a physical structure that can be dissected."
+    },
+    "historicalOrigin": [
+      {
+        "period": "Vedic & Upanishadic Roots",
+        "description": "Early texts mention wheels (cakras) in a general sense and channels (nāḍīs), but do not yet describe the structured 7-chakra system."
+      },
+      {
+        "period": "Early Tantric Texts (8th-11th C.)",
+        "description": "Complex subtle-body maps emerge. Systems vary wildly, featuring anywhere from 3 to 114 chakras depending on the specific lineage and visualization practice."
+      },
+      {
+        "period": "Ṣaṭ-Cakra-Nirūpaṇa (1526 CE)",
+        "description": "Pūrṇānanda Svāmī authors the text that becomes the blueprint for the 6+1 chakra system most recognized today, defining the 6-petaled lotus of Svādhiṣṭhāna."
+      },
+      {
+        "period": "Western Transmission (Early 20th C.)",
+        "description": "Arthur Avalon (Sir John Woodroffe) translates the Ṣaṭ-Cakra-Nirūpaṇa into English as \"The Serpent Power,\" introducing the system to the West."
+      },
+      {
+        "period": "Modern Psychological Era (Late 20th C.)",
+        "description": "Theosophists, New Age thinkers, and psychologists like Carl Jung blend traditional maps with modern concepts of emotion, sexuality, and creativity."
+      }
+    ],
+    "mandala": {
+      "petals": 6,
+      "element": "Water (Āpaḥ)",
+      "symbol": "Crescent Moon",
+      "animal": "Makara (A legendary water creature)"
+    },
+    "themes": {
+      "desire": {
+        "headline": "DESIRE IS INFORMATION. IT IS NOT ALWAYS INSTRUCTION.",
+        "options": [
+          "Security", "Pleasure", "Connection", "Validation", "Novelty", "Rest", "Expression"
+        ]
+      },
+      "emotion": {
+        "headline": "WHEN FEELING GETS STUCK",
+        "blockedExamples": [
+          "NUMBNESS", "AVOIDANCE", "OVERWHELM", "SUPPRESSION", "RUMINATION"
+        ],
+        "tideOptions": {
+          "anger": "ANGER",
+          "sadness": "SADNESS",
+          "joy": "JOY",
+          "jealousy": "JEALOUSY",
+          "excitement": "EXCITEMENT",
+          "loneliness": "LONELINESS",
+          "longing": "LONGING"
+        }
+      },
+      "pleasure": {
+        "headline": "PLEASURE = THE ABILITY TO EXPERIENCE WHAT IS GOOD",
+        "examples": [
+          "Food", "Music", "Movement", "Art", "Sunlight", "Friendship", "Rest", "Nature", "Beauty"
+        ]
+      },
+      "relationships": {
+        "headline": "CONNECTION NEEDS SPACE TO BREATHE.",
+        "prompts": [
+          "Do you cling?",
+          "Do you withdraw?",
+          "Do you adapt?",
+          "Can you communicate desire?",
+          "Can you tolerate uncertainty?",
+          "Do you confuse attachment with connection?"
+        ]
+      }
+    },
+    "balance": {
+      "tooLittle": [
+        "Numbness", "Rigidity", "Suppression", "Avoidance"
+      ],
+      "balanced": [
+        "Feeling", "Adaptability", "Creativity", "Choice", "Connection"
+      ],
+      "tooMuch": [
+        "Impulsivity", "Compulsion", "Constant stimulation seeking", "Difficulty with boundaries"
+      ]
+    },
+    "flowCheck": [
+      "Can I feel emotions without immediately reacting?",
+      "Can I enjoy things without needing more?",
+      "Can I adapt when plans change?",
+      "Can I create without judging everything?",
+      "Can I express desire clearly?",
+      "Can I let something go?",
+      "Can I experience pleasure without using it to escape?"
+    ],
+    "realLifeExperiment": [
+      "Notice one emotion without suppressing it.",
+      "Do one creative activity without aiming for perfection.",
+      "Move your body freely.",
+      "Spend time near water if practical.",
+      "Reduce unnecessary stimulation for an hour.",
+      "Enjoy one simple pleasure mindfully.",
+      "Notice one desire before acting on it."
+    ],
+    "journalPrompts": [
+      "What emotion have I been avoiding?",
+      "What am I craving right now?",
+      "What do I actually need?",
+      "Where do I confuse pleasure with escape?",
+      "Where am I trying to control what needs to flow?",
+      "What makes me feel creatively alive?",
+      "Where do I need healthier boundaries?",
+      "What relationship in my life feels nourishing?",
+      "What relationship feels draining?",
+      "What would healthy pleasure look like for me?"
+    ],
+    "myths": [
+      {
+        "claim": "Svādhiṣṭhāna is only about sex.",
+        "nuance": "TOO NARROW. While associated with reproduction historically and sexuality modernly, it fundamentally governs the broader themes of flow, emotion, creation, and sensation."
+      },
+      {
+        "claim": "Orange foods activate the chakra.",
+        "nuance": "NOT ESTABLISHED. Aesthetically linking food color to chakra color is a modern New Age invention, not a classical requirement or a biological mechanism."
+      },
+      {
+        "claim": "Emotional problems mean the chakra is blocked.",
+        "nuance": "OVERSIMPLIFIED. Emotions are complex psychological and physiological events. Treating severe emotional distress requires psychological support, not just energetic work."
+      },
+      {
+        "claim": "Feeling sexual energy means the chakra is opening.",
+        "nuance": "NOT NECESSARILY. Sensations vary wildly. True balance is characterized by adaptability and emotional clarity, not just raw sensation."
+      },
+      {
+        "claim": "You must have a dramatic experience to activate it.",
+        "nuance": "NOT ESTABLISHED. Gradual shifts in emotional intelligence, boundaries, and creative freedom are more sustainable indicators of balance."
+      },
+      {
+        "claim": "Everyone has exactly the same chakra map.",
+        "nuance": "OVERSIMPLIFIED. Tantric traditions contain many maps (some with 5, 9, or 12 chakras). The 7-chakra model is a dominant blueprint, not a universal biological truth."
+      }
+    ]
+  },
+  "nav": {
+    "return": "Return",
+    "meditateAgain": "Meditate Again",
+    "beginJourney": "Begin the Journey"
+  },
+  "manipura": {
+    "header": {
+      "sanskritName": "Maṇipūra",
+      "transliteration": "MAṆIPŪRA",
+      "subtitle": "THE JEWEL CITY",
+      "hook": "“Turn energy into direction.”"
+    }
+  }
+}
