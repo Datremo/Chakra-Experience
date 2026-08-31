@@ -12,7 +12,7 @@ export const GatewayOverlay: React.FC<GatewayOverlayProps> = ({ activeChakra, on
   const { t } = useTranslation();
 
   return (
-    <div className="fixed inset-0 pointer-events-none z-10 flex flex-col justify-between p-8 md:p-12 lg:p-24 overflow-hidden">
+    <div className="fixed inset-0 pointer-events-none z-10 flex flex-col justify-between p-6 md:p-12 lg:p-24 overflow-hidden">
       
       {/* Massive Beej Watermark */}
       <div 
@@ -22,7 +22,7 @@ export const GatewayOverlay: React.FC<GatewayOverlayProps> = ({ activeChakra, on
       >
         {activeChakra && (
           <h1 
-            className="font-serif text-[30rem] md:text-[40rem] leading-none select-none mix-blend-screen blur-[2px]"
+            className="font-serif text-[15rem] md:text-[30rem] lg:text-[40rem] leading-none select-none mix-blend-screen blur-[2px]"
             style={{ color: activeChakra.hexColor }}
           >
             {activeChakra.sanskritCharacter}
@@ -39,10 +39,10 @@ export const GatewayOverlay: React.FC<GatewayOverlayProps> = ({ activeChakra, on
           }`}
         >
           {activeChakra && (
-            <div className="flex flex-col space-y-4 relative">
+            <div className="flex flex-col space-y-4 relative pl-6 md:pl-8">
               {/* Decorative line */}
               <div 
-                className="absolute -left-6 top-0 bottom-0 w-1 rounded-full opacity-60"
+                className="absolute left-0 top-0 bottom-0 w-1 rounded-full opacity-60"
                 style={{ backgroundColor: activeChakra.hexColor, boxShadow: `0 0 20px ${activeChakra.hexColor}` }}
               />
               

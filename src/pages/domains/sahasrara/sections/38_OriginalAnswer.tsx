@@ -39,7 +39,6 @@ export const OriginalAnswerSection: React.FC = () => {
                 onKeyDown={(e) => e.key === 'Enter' && handleNext()}
                 className="w-full bg-transparent border-b-2 border-white/30 text-white text-center text-xl md:text-3xl p-4 outline-none focus:border-white transition-colors"
                 placeholder="Type your answer..."
-                autoFocus
               />
             </motion.div>
           )}
@@ -62,7 +61,6 @@ export const OriginalAnswerSection: React.FC = () => {
                 onKeyDown={(e) => e.key === 'Enter' && handleNext()}
                 className="w-full bg-transparent border-b-2 border-white/30 text-white text-center text-xl md:text-3xl p-4 outline-none focus:border-white transition-colors"
                 placeholder="Type your answer..."
-                autoFocus
               />
             </motion.div>
           )}
