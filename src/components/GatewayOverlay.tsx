@@ -34,15 +34,15 @@ export const GatewayOverlay: React.FC<GatewayOverlayProps> = ({ activeChakra, on
       <div className="flex-1 flex justify-between items-center w-full relative z-10">
         {/* Left Side: Name & Identification */}
         <div 
-          className={`transition-all duration-1000 transform max-w-sm ${
+          className={`transition-all duration-1000 transform w-full md:max-w-sm flex flex-col items-center md:items-start text-center md:text-left ${
             activeChakra ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-16'
           }`}
         >
           {activeChakra && (
-            <div className="flex flex-col space-y-4 relative pl-6 md:pl-8">
+            <div className="flex flex-col space-y-4 md:space-y-4 relative md:pl-8 w-full items-center md:items-start">
               {/* Decorative line */}
               <div 
-                className="absolute left-0 top-0 bottom-0 w-1 rounded-full opacity-60"
+                className="hidden md:block absolute left-0 top-0 bottom-0 w-1 rounded-full opacity-60"
                 style={{ backgroundColor: activeChakra.hexColor, boxShadow: `0 0 20px ${activeChakra.hexColor}` }}
               />
               
@@ -54,16 +54,16 @@ export const GatewayOverlay: React.FC<GatewayOverlayProps> = ({ activeChakra, on
               </div>
 
               <h1 
-                className="font-serif text-5xl md:text-7xl lg:text-8xl tracking-tighter text-glow drop-shadow-2xl"
+                className="font-serif text-5xl md:text-7xl lg:text-8xl tracking-normal md:tracking-tighter text-glow drop-shadow-2xl"
                 style={{ color: activeChakra.hexColor }}
               >
                 {t(`gateway.${activeChakra.id}.name`, { defaultValue: activeChakra.sanskritName })}
               </h1>
               
               {/* Creative element: Glowing pulsing orb/line */}
-              <div className="flex items-center space-x-3 pt-4 opacity-70">
+              <div className="flex items-center justify-center md:justify-start space-x-3 pt-4 opacity-70 w-full">
                  <div className="w-2 h-2 rounded-full animate-ping" style={{ backgroundColor: activeChakra.hexColor }} />
-                 <div className="h-px w-32 bg-gradient-to-r from-white/40 to-transparent" />
+                 <div className="h-px w-32 bg-gradient-to-r from-transparent via-white/40 to-transparent md:bg-gradient-to-r md:from-white/40 md:to-transparent" />
               </div>
             </div>
           )}
