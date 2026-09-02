@@ -7,23 +7,24 @@ export default defineConfig({
     react(),
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'masked-icon.svg'],
+      includeAssets: ['favicon.svg', 'apple-touch-icon.png', 'pwa-192x192.png', 'pwa-512x512.png'],
       manifest: {
-        name: 'The Seven Chakras',
+        name: 'Chakras: The Sacred Journey',
         short_name: 'Chakras',
-        description: 'An interactive journey through the seven chakras.',
-        theme_color: '#000000',
-        background_color: '#000000',
-        display: 'fullscreen',
+        description: 'An immersive interactive journey through the seven chakras and sacred inner domains.',
+        theme_color: '#080212',
+        background_color: '#080212',
+        display: 'standalone',
         orientation: 'portrait',
         icons: [
           {
-            src: 'pwa-192x192.png',
+            src: '/pwa-192x192.png',
             sizes: '192x192',
-            type: 'image/png'
+            type: 'image/png',
+            purpose: 'any'
           },
           {
-            src: 'pwa-512x512.png',
+            src: '/pwa-512x512.png',
             sizes: '512x512',
             type: 'image/png',
             purpose: 'any maskable'

@@ -4,42 +4,64 @@ import { GatewayOverlay } from './components/GatewayOverlay';
 import { DomainController } from './pages/DomainController';
 import { IntroOverlay } from './components/IntroOverlay';
 import { type ChakraData } from './data/chakras';
-import { LanguageSwitcher } from './components/LanguageSwitcher';
 
 function App() {
   const [activeChakra, setActiveChakra] = useState<ChakraData | null>(null);
+  const [domainChakra, setDomainChakra] = useState<ChakraData | null>(null);
   const [domainOpen, setDomainOpen] = useState(false);
+  const [savedScrollY, setSavedScrollY] = useState(0);
   const [isIntro, setIsIntro] = useState(true);
   const [loadingProgress, setLoadingProgress] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);
 
-  // Lock background window scroll when deep dive domain is active
+  // Lock background body scroll when deep dive domain is active
   useEffect(() => {
     if (domainOpen) {
-      const originalBodyOverflow = document.body.style.overflow;
-      const originalDocOverflow = document.documentElement.style.overflow;
       document.body.style.overflow = 'hidden';
-      document.documentElement.style.overflow = 'hidden';
-
       return () => {
-        document.body.style.overflow = originalBodyOverflow;
-        document.documentElement.style.overflow = originalDocOverflow;
+        document.body.style.overflow = '';
+        document.documentElement.style.overflow = '';
       };
+    } else {
+      document.body.style.overflow = '';
+      document.documentElement.style.overflow = '';
     }
   }, [domainOpen]);
 
   const handleChakraChange = (chakra: ChakraData | null) => {
-    // Only update if it's different to prevent unnecessary renders
-    if (activeChakra?.id !== chakra?.id) {
+    // Only update if it's different and domain is NOT currently open
+    if (!domainOpen && activeChakra?.id !== chakra?.id) {
       setActiveChakra(chakra);
     }
+  };
+
+  const handleEnterDomain = () => {
+    if (activeChakra) {
+      setSavedScrollY(window.scrollY);
+      setDomainChakra(activeChakra);
+      setDomainOpen(true);
+    }
+  };
+
+  const handleCloseDomain = () => {
+    setDomainOpen(false);
+    document.body.style.overflow = '';
+    document.documentElement.style.overflow = '';
+    
+    // Restore exact scroll position seamlessly
+    requestAnimationFrame(() => {
+      window.scrollTo({ top: savedScrollY, behavior: 'instant' });
+      setTimeout(() => {
+        window.scrollTo({ top: savedScrollY, behavior: 'instant' });
+        document.body.style.overflow = '';
+        document.documentElement.style.overflow = '';
+      }, 60);
+    });
   };
 
   return (
     <div className="relative bg-black min-h-screen text-white font-sans selection:bg-white/30">
       
-      {!domainOpen && isLoaded && <LanguageSwitcher />}
-
       {/* 
         The canvas handles its own scroll logic.
         We just pass a callback to receive the currently active chakra based on scroll.
@@ -65,18 +87,18 @@ function App() {
       {!domainOpen && (
         <GatewayOverlay 
           activeChakra={activeChakra}
-          onEnterDomain={() => setDomainOpen(true)}
+          onEnterDomain={handleEnterDomain}
         />
       )}
 
       {/*
         The Domain is a full-screen deep dive that overlays everything.
-        It locks scroll when open.
+        Decoupled from activeChakra so scroll changes during deep dive never unmount it.
       */}
-      {domainOpen && activeChakra && (
+      {domainOpen && domainChakra && (
         <DomainController 
-          chakra={activeChakra}
-          onClose={() => setDomainOpen(false)}
+          chakra={domainChakra} 
+          onClose={handleCloseDomain}
         />
       )}
 

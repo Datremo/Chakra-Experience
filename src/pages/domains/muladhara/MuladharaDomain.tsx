@@ -1,24 +1,72 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import { ArrowLeft, Mountain, Shield, Activity, Compass, Disc, Award } from 'lucide-react';
 import { type ChakraData } from '../../../data/chakras';
-import { JourneyMap } from './components/JourneyMap';
-import { ArrowLeft } from 'lucide-react';
 
-import { IntroSection } from './sections/Intro';
-import { WhatIsItSection } from './sections/WhatIsIt';
-import { NameSection } from './sections/Name';
-import { LocationSection } from './sections/Location';
-import { OriginTimelineSection } from './sections/OriginTimeline';
-import { MandalaExplorerSection } from './sections/MandalaExplorer';
-import { EarthElementSection } from './sections/EarthElement';
-import { RootThemesSection } from './sections/RootThemes';
-import { RealLifeSection } from './sections/RealLife';
-import { PracticeSection } from './sections/Practice';
-import { MantraSection } from './sections/Mantra';
-import { MeditationSection } from './sections/Meditation';
-import { ActivationSection } from './sections/Activation';
-import { EvidenceAndMythsSection } from './sections/EvidenceAndMyths';
-import { IntegrationSection } from './sections/Integration';
-import { EndingSection } from './sections/Ending';
+// Act I: Primordial Foundations (Worlds 01 - 07)
+import {
+  World01_EarthDescent,
+  World02_WhatIsMuladhara,
+  World03_EvolutionOfSurvival,
+  World04_ThePhysicalAnchor,
+  World05_PrithviMandala,
+  World06_TheFourPetals,
+  World07_AiravataElephant,
+} from './sections/MuladharaAct1';
+
+// Act II: Esoteric Roots & Kundalinī (Worlds 08 - 14)
+import {
+  World08_TraipuraTriangle,
+  World09_SvayambhuLinga,
+  World10_KundaliniAsleep,
+  World11_BijaMantraLam,
+  World12_BrahmaAndDakini,
+  World13_FiveTattvasLab,
+  World14_HistoricalTextVault,
+} from './sections/MuladharaAct2';
+
+// Act III: The Psychology of Survival (Worlds 15 - 21)
+import {
+  World15_SurvivalCompass,
+  World16_ScarcityTrap,
+  World17_FightFlightFreezeFawn,
+  World18_AncestralLedger,
+  World19_SafetyIllusion,
+  World20_BelongingTest,
+  World21_BoundaryWall,
+} from './sections/MuladharaAct3';
+
+// Act IV: Somatic Labs & Mini-Games (Worlds 22 - 28)
+import {
+  World22_GravityBalanceLab,
+  World23_TensionDissipationLab,
+  World24_BarefootCircuit,
+  World25_MulaBandhaLab,
+  World26_SenseOfSmell,
+  World27_FearDissolver,
+  World28_PulseOfTheSoil,
+} from './sections/MuladharaAct4';
+
+// Act V: Modern Grounding & Real Life (Worlds 29 - 35)
+import {
+  World29_TheMoneyVortex,
+  World30_ShelterAndHearth,
+  World31_ChronicRushSyndrome,
+  World32_NutritionOfTheSoil,
+  World33_NeurogenicTremor,
+  World34_DigitalGrounding,
+  World35_MountainPoseTadasana,
+} from './sections/MuladharaAct5';
+
+// Act VI: The Awakened Bedrock & Ascent (Worlds 36 - 42)
+import {
+  World36_ImbalanceDiagnostics,
+  World37_GroundingOath,
+  World38_TheBedrockMeditation,
+  World39_MythsVsEvidence,
+  World40_KundaliniCatalyst,
+  World41_DailyRootRituals,
+  World42_AscentToWaters,
+} from './sections/MuladharaAct6';
 
 interface MuladharaDomainProps {
   chakra: ChakraData;
@@ -26,39 +74,38 @@ interface MuladharaDomainProps {
 }
 
 export const MuladharaDomain: React.FC<MuladharaDomainProps> = ({ onClose }) => {
-  const [activeSection, setActiveSection] = useState('intro');
   const scrollRef = useRef<HTMLDivElement>(null);
+  const [currentAct, setCurrentAct] = useState(1);
 
   useEffect(() => {
-    document.body.style.overflow = 'hidden';
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
-          }
-        });
-      },
-      { root: scrollRef.current, threshold: 0.5 }
-    );
-
-    const sections = scrollRef.current?.querySelectorAll('section');
-    sections?.forEach((section) => observer.observe(section));
-
-    return () => {
-      document.body.style.overflow = '';
-      observer.disconnect();
-    };
+    // Immediate scroll reset so the ascent starts right at World 01
+    if (scrollRef.current) {
+      scrollRef.current.scrollTop = 0;
+    }
+    const raf = requestAnimationFrame(() => {
+      if (scrollRef.current) {
+        scrollRef.current.scrollTop = 0;
+      }
+    });
+    return () => cancelAnimationFrame(raf);
   }, []);
 
-  return (
-    <div className="fixed inset-0 z-50 text-white selection:bg-red-500/30 font-serif overflow-hidden bg-[#0a0505]">
-      
-      {/* Dynamic Ambient Background based on section */}
-      <div className="absolute inset-0 z-0 bg-gradient-to-b from-[#0a0202] via-[#1a0505] to-[#050101] opacity-90 transition-colors duration-1000" />
+  const acts = [
+    { num: 1, name: 'Foundations', icon: Mountain },
+    { num: 2, name: 'Esoteric Roots', icon: Disc },
+    { num: 3, name: 'Survival Mind', icon: Compass },
+    { num: 4, name: 'Somatic Labs', icon: Activity },
+    { num: 5, name: 'Modern Life', icon: Shield },
+    { num: 6, name: 'The Bedrock', icon: Award },
+  ];
 
-      {/* Persistent Navigation Elements */}
+  return (
+    <div className="fixed inset-0 z-50 text-white selection:bg-red-500/30 font-serif overflow-hidden bg-[#0a0205]">
+      {/* Deep Red Cosmic Atmosphere */}
+      <div className="absolute inset-0 z-0 bg-gradient-to-b from-[#0e0207] via-[#1a040b] to-[#080104] pointer-events-none opacity-90" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_30%,rgba(220,38,38,0.18),transparent_65%)] pointer-events-none" />
+
+      {/* Top Left Return Button */}
       <button 
         onClick={onClose}
         aria-label="return-to-journey"
@@ -68,28 +115,70 @@ export const MuladharaDomain: React.FC<MuladharaDomainProps> = ({ onClose }) => 
         <span>Return</span>
       </button>
 
-      <JourneyMap activeSection={activeSection} />
+      {/* Bottom Right Floating Act Badge */}
+      <div className="fixed bottom-5 right-5 z-[100] hidden sm:flex items-center space-x-2 bg-black/60 border border-red-900/40 px-4 py-2 rounded-full backdrop-blur-md text-[11px] font-sans uppercase tracking-widest text-red-300">
+        <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
+        <span>Mūlādhāra • 42 Sacred Worlds</span>
+      </div>
 
-      {/* Main Scrollable Canvas */}
-      <div ref={scrollRef} className="relative z-10 w-full h-full overflow-y-auto overflow-x-hidden scroll-smooth">
-        
-        <IntroSection />
-        <WhatIsItSection />
-        <NameSection />
-        <LocationSection />
-        <OriginTimelineSection />
-        <MandalaExplorerSection />
-        <EarthElementSection />
-        <RootThemesSection />
-        <RealLifeSection />
-        <PracticeSection />
-        <MantraSection />
-        <MeditationSection />
-        <ActivationSection />
-        <EvidenceAndMythsSection />
-        <IntegrationSection />
-        <EndingSection onExit={onClose} />
+      {/* Main Scrollable Canvas (All 42 Worlds) */}
+      <div 
+        ref={scrollRef} 
+        className="relative z-10 w-full h-full overflow-y-auto overflow-x-hidden"
+      >
+        {/* ACT I: WORLDS 01 - 07 */}
+        <World01_EarthDescent />
+        <World02_WhatIsMuladhara />
+        <World03_EvolutionOfSurvival />
+        <World04_ThePhysicalAnchor />
+        <World05_PrithviMandala />
+        <World06_TheFourPetals />
+        <World07_AiravataElephant />
 
+        {/* ACT II: WORLDS 08 - 14 */}
+        <World08_TraipuraTriangle />
+        <World09_SvayambhuLinga />
+        <World10_KundaliniAsleep />
+        <World11_BijaMantraLam />
+        <World12_BrahmaAndDakini />
+        <World13_FiveTattvasLab />
+        <World14_HistoricalTextVault />
+
+        {/* ACT III: WORLDS 15 - 21 */}
+        <World15_SurvivalCompass />
+        <World16_ScarcityTrap />
+        <World17_FightFlightFreezeFawn />
+        <World18_AncestralLedger />
+        <World19_SafetyIllusion />
+        <World20_BelongingTest />
+        <World21_BoundaryWall />
+
+        {/* ACT IV: WORLDS 22 - 28 */}
+        <World22_GravityBalanceLab />
+        <World23_TensionDissipationLab />
+        <World24_BarefootCircuit />
+        <World25_MulaBandhaLab />
+        <World26_SenseOfSmell />
+        <World27_FearDissolver />
+        <World28_PulseOfTheSoil />
+
+        {/* ACT V: WORLDS 29 - 35 */}
+        <World29_TheMoneyVortex />
+        <World30_ShelterAndHearth />
+        <World31_ChronicRushSyndrome />
+        <World32_NutritionOfTheSoil />
+        <World33_NeurogenicTremor />
+        <World34_DigitalGrounding />
+        <World35_MountainPoseTadasana />
+
+        {/* ACT VI: WORLDS 36 - 42 */}
+        <World36_ImbalanceDiagnostics />
+        <World37_GroundingOath />
+        <World38_TheBedrockMeditation />
+        <World39_MythsVsEvidence />
+        <World40_KundaliniCatalyst />
+        <World41_DailyRootRituals />
+        <World42_AscentToWaters onExit={onClose} />
       </div>
     </div>
   );
