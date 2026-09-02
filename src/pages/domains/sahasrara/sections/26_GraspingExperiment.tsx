@@ -18,6 +18,8 @@ export const GraspingExperimentSection: React.FC = () => {
       // Calculate distance between mouse and orb
       const dx = x - orbPos.x;
       const dy = y - orbPos.y;
+      const distance = Math.sqrt(dx * dx + dy * dy);
+
       const triggerEscape = () => {
         setOrbPos({
           x: Math.random() * 70 + 15,

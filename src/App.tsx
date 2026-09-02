@@ -10,6 +10,8 @@ function App() {
   const [activeChakra, setActiveChakra] = useState<ChakraData | null>(null);
   const [domainOpen, setDomainOpen] = useState(false);
   const [isIntro, setIsIntro] = useState(true);
+  const [loadingProgress, setLoadingProgress] = useState(0);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   // Lock background window scroll when deep dive domain is active
   useEffect(() => {
@@ -36,7 +38,7 @@ function App() {
   return (
     <div className="relative bg-black min-h-screen text-white font-sans selection:bg-white/30">
       
-      {!domainOpen && <LanguageSwitcher />}
+      {!domainOpen && isLoaded && <LanguageSwitcher />}
 
       {/* 
         The canvas handles its own scroll logic.
@@ -45,9 +47,15 @@ function App() {
       <ChakraCanvas 
         onChakraChange={handleChakraChange} 
         onIntroChange={setIsIntro}
+        onLoadingProgress={setLoadingProgress}
+        onLoadingComplete={() => setIsLoaded(true)}
       />
       
-      <IntroOverlay isIntro={isIntro && !domainOpen} />
+      <IntroOverlay 
+        isIntro={isIntro && !domainOpen} 
+        loadingProgress={loadingProgress}
+        isLoaded={isLoaded}
+      />
 
       {/* 
         The Gateway overlay is fixed on top of the canvas.

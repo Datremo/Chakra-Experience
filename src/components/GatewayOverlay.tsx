@@ -1,6 +1,6 @@
 import React from 'react';
 import { type ChakraData } from '../data/chakras';
-import { Sparkles, Fingerprint, Heart } from 'lucide-react';
+import { Sparkles, Fingerprint, Heart, ArrowRight } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 interface GatewayOverlayProps {
@@ -128,30 +128,83 @@ export const GatewayOverlay: React.FC<GatewayOverlayProps> = ({ activeChakra, on
 
       {/* Bottom Center: Gateway Hook and Enter Button */}
       <div 
-        className={`transition-all duration-1000 transform flex flex-col items-center space-y-6 md:space-y-8 mt-6 md:mt-8 relative z-10 ${
-          activeChakra ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
+        className={`transition-all duration-1000 transform flex flex-col items-center space-y-4 sm:space-y-6 md:space-y-7 mt-4 sm:mt-6 md:mt-8 relative z-10 ${
+          activeChakra ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12 pointer-events-none'
         }`}
       >
         {activeChakra && (
           <>
-            <h2 className="font-serif text-xl sm:text-2xl md:text-3xl italic text-white text-glow text-center max-w-2xl px-4 md:px-0">
+            <h2 className="font-serif text-lg sm:text-2xl md:text-3xl italic text-white text-glow text-center max-w-2xl px-4 md:px-0 drop-shadow-[0_0_20px_rgba(255,255,255,0.4)]">
               "{t(`gateway.${activeChakra.id}.hook`, { defaultValue: activeChakra.gatewayHook })}"
             </h2>
-            <button
-              onClick={onEnterDomain}
-              className="pointer-events-auto glass-panel px-10 sm:px-12 py-5 sm:py-6 rounded-full uppercase tracking-[0.25em] md:tracking-[0.3em] text-xs sm:text-sm text-white transition-all duration-500 hover:scale-105 group relative overflow-hidden backdrop-blur-md"
-              style={{
-                boxShadow: `0 0 50px ${activeChakra.hexColor}40`,
-                borderColor: `${activeChakra.hexColor}40`,
-                backgroundColor: 'rgba(0,0,0,0.5)'
-              }}
-            >
+
+            {/* Radiant Ambient Aura Behind & Around The Button */}
+            <div className="relative flex items-center justify-center">
+              
+              {/* Vibrant Upward Radial Light Well */}
               <div 
-                className="absolute inset-0 opacity-0 group-hover:opacity-30 transition-opacity duration-500"
-                style={{ backgroundColor: activeChakra.hexColor }}
+                className="absolute w-[300px] sm:w-[480px] md:w-[600px] h-[150px] sm:h-[220px] rounded-full blur-[65px] sm:blur-[95px] pointer-events-none transition-all duration-700 -bottom-6"
+                style={{ 
+                  backgroundColor: `${activeChakra.hexColor}`,
+                  opacity: 0.38
+                }}
               />
-              <span className="relative z-10 font-medium">{t('gateway.enterButton', { defaultValue: 'Enter Deep Dive' })}</span>
-            </button>
+
+              {/* Concentric Breathing Energy Rings */}
+              <div 
+                className="absolute w-64 sm:w-80 md:w-96 h-20 sm:h-24 md:h-28 rounded-full border border-dashed pointer-events-none animate-pulse transition-colors duration-700"
+                style={{ 
+                  borderColor: `${activeChakra.hexColor}60`,
+                  boxShadow: `0 0 35px ${activeChakra.hexColor}25`
+                }}
+              />
+              <div 
+                className="absolute w-72 sm:w-96 md:w-[420px] h-24 sm:h-28 md:h-32 rounded-full border border-dotted pointer-events-none opacity-40 transition-colors duration-700"
+                style={{ 
+                  borderColor: `${activeChakra.hexColor}40`
+                }}
+              />
+
+              {/* Enhanced Deep Dive Master Button */}
+              <button
+                onClick={onEnterDomain}
+                className="pointer-events-auto relative px-8 sm:px-12 md:px-14 py-4 sm:py-5 md:py-6 rounded-full uppercase tracking-[0.25em] md:tracking-[0.3em] text-xs sm:text-sm text-white transition-all duration-500 hover:scale-105 active:scale-95 group overflow-hidden backdrop-blur-xl border flex items-center space-x-3 sm:space-x-4 shadow-[0_10px_40px_rgba(0,0,0,0.8)]"
+                style={{
+                  boxShadow: `0 0 50px ${activeChakra.hexColor}60, 0 15px 35px rgba(0,0,0,0.9)`,
+                  borderColor: `${activeChakra.hexColor}80`,
+                  backgroundColor: 'rgba(8, 2, 16, 0.75)'
+                }}
+              >
+                {/* Glowing Specular Light Sweep Effect */}
+                <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/20 to-transparent pointer-events-none" />
+
+                {/* Inner Ambient Color Tint */}
+                <div 
+                  className="absolute inset-0 opacity-20 group-hover:opacity-40 transition-opacity duration-500"
+                  style={{ backgroundColor: activeChakra.hexColor }}
+                />
+
+                {/* Sparkling Icon Accent */}
+                <div 
+                  className="relative z-10 w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center transition-transform group-hover:rotate-12 duration-300"
+                  style={{ backgroundColor: `${activeChakra.hexColor}35` }}
+                >
+                  <Sparkles size={15} className="text-white drop-shadow-md" />
+                </div>
+
+                <span className="relative z-10 font-semibold tracking-[0.25em] drop-shadow-md">
+                  {t('gateway.enterButton', { defaultValue: 'Enter Deep Dive' })}
+                </span>
+
+                <ArrowRight size={16} className="relative z-10 transform group-hover:translate-x-1.5 transition-transform text-white/90" />
+              </button>
+            </div>
+
+            {/* Sacred Subtext Badge */}
+            <div className="flex items-center space-x-2 text-[10px] sm:text-xs font-sans tracking-[0.25em] uppercase text-white/60 pointer-events-none">
+              <span className="w-1.5 h-1.5 rounded-full animate-ping" style={{ backgroundColor: activeChakra.hexColor }} />
+              <span>45 Interactive Worlds & Deep Wisdom</span>
+            </div>
           </>
         )}
       </div>

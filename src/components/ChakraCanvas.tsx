@@ -8,11 +8,18 @@ gsap.registerPlugin(ScrollTrigger);
 interface ChakraCanvasProps {
   onChakraChange: (chakra: ChakraData | null) => void;
   onIntroChange?: (isIntro: boolean) => void;
+  onLoadingProgress?: (progress: number) => void;
+  onLoadingComplete?: () => void;
 }
 
 const TOTAL_FRAMES = 568;
 
-export const ChakraCanvas: React.FC<ChakraCanvasProps> = ({ onChakraChange, onIntroChange }) => {
+export const ChakraCanvas: React.FC<ChakraCanvasProps> = ({ 
+  onChakraChange, 
+  onIntroChange,
+  onLoadingProgress,
+  onLoadingComplete 
+}) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [images, setImages] = useState<HTMLImageElement[]>([]);
   const [loadedCount, setLoadedCount] = useState(0);
@@ -29,6 +36,11 @@ export const ChakraCanvas: React.FC<ChakraCanvasProps> = ({ onChakraChange, onIn
       img.onload = () => {
         loaded++;
         setLoadedCount(loaded);
+        const percent = Math.round((loaded / TOTAL_FRAMES) * 100);
+        onLoadingProgress?.(percent);
+        if (loaded === TOTAL_FRAMES) {
+          onLoadingComplete?.();
+        }
       };
       loadedImages.push(img);
     }
@@ -150,20 +162,6 @@ export const ChakraCanvas: React.FC<ChakraCanvasProps> = ({ onChakraChange, onIn
         style={{ height: '25000px' }}
       />
       <div className="fixed inset-0 w-full h-full z-0 bg-black">
-        {loadedCount < TOTAL_FRAMES && (
-          <div className="absolute inset-0 flex items-center justify-center flex-col z-50 bg-black text-white">
-            <h1 className="font-serif text-3xl tracking-widest mb-4 uppercase text-glow">Awakening</h1>
-            <div className="w-64 h-1 bg-white/20 rounded overflow-hidden">
-              <div
-                className="h-full bg-white transition-all duration-300"
-                style={{ width: `${(loadedCount / TOTAL_FRAMES) * 100}%` }}
-              />
-            </div>
-            <p className="mt-4 font-sans text-white/50 text-sm">
-              {Math.round((loadedCount / TOTAL_FRAMES) * 100)}%
-            </p>
-          </div>
-        )}
         <canvas
           ref={canvasRef}
           className="w-full h-full object-cover"
