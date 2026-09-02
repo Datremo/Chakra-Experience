@@ -17,16 +17,25 @@ export const TheLensSection: React.FC = () => {
       mouseY.set(e.clientY - rect.top);
     };
 
-    const handleWheel = (e: WheelEvent) => {
-      // Allow scrolling normally if not interacting heavily, but let's just use a slider instead for better UX
+    const handleTouchMove = (e: TouchEvent) => {
+      if (!containerRef.current || !e.touches[0]) return;
+      const rect = containerRef.current.getBoundingClientRect();
+      mouseX.set(e.touches[0].clientX - rect.left);
+      mouseY.set(e.touches[0].clientY - rect.top);
     };
 
     const container = containerRef.current;
     if (container) {
       container.addEventListener('mousemove', handleMouseMove);
+      container.addEventListener('touchmove', handleTouchMove, { passive: true });
+      container.addEventListener('touchstart', handleTouchMove, { passive: true });
     }
     return () => {
-      if (container) container.removeEventListener('mousemove', handleMouseMove);
+      if (container) {
+        container.removeEventListener('mousemove', handleMouseMove);
+        container.removeEventListener('touchmove', handleTouchMove);
+        container.removeEventListener('touchstart', handleTouchMove);
+      }
     };
   }, [mouseX, mouseY]);
 

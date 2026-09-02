@@ -29,7 +29,7 @@ export const OriginalAnswerSection: React.FC = () => {
               exit={{ opacity: 0, y: -20 }}
               className="flex flex-col items-center w-full"
             >
-              <h3 className="text-3xl md:text-5xl font-serif text-white tracking-widest text-center mb-8">
+              <h3 className="text-2xl sm:text-3xl md:text-5xl font-serif text-white tracking-widest text-center mb-8 drop-shadow-[0_0_15px_rgba(255,255,255,0.4)]">
                 Who were you when you started?
               </h3>
               <input
@@ -37,9 +37,16 @@ export const OriginalAnswerSection: React.FC = () => {
                 value={answer1}
                 onChange={(e) => setAnswer1(e.target.value)}
                 onKeyDown={(e) => e.key === 'Enter' && handleNext()}
-                className="w-full bg-transparent border-b-2 border-white/30 text-white text-center text-xl md:text-3xl p-4 outline-none focus:border-white transition-colors"
+                className="w-full bg-transparent border-b-2 border-purple-400/40 text-white text-center text-xl md:text-3xl p-4 outline-none focus:border-purple-300 transition-colors placeholder:text-white/30"
                 placeholder="Type your answer..."
               />
+              <button
+                onClick={handleNext}
+                disabled={!answer1.trim()}
+                className="mt-8 px-8 py-3 rounded-full bg-purple-600/80 hover:bg-purple-500 disabled:opacity-30 disabled:pointer-events-none text-white font-sans text-xs tracking-widest uppercase shadow-[0_0_20px_rgba(168,85,247,0.4)] hover:scale-105 transition-all"
+              >
+                Continue
+              </button>
             </motion.div>
           )}
 
@@ -51,7 +58,7 @@ export const OriginalAnswerSection: React.FC = () => {
               exit={{ opacity: 0, y: -20 }}
               className="flex flex-col items-center w-full"
             >
-              <h3 className="text-3xl md:text-5xl font-serif text-white tracking-widest text-center mb-8">
+              <h3 className="text-2xl sm:text-3xl md:text-5xl font-serif text-white tracking-widest text-center mb-8 drop-shadow-[0_0_15px_rgba(255,255,255,0.4)]">
                 Who are you now?
               </h3>
               <input
@@ -59,9 +66,16 @@ export const OriginalAnswerSection: React.FC = () => {
                 value={answer2}
                 onChange={(e) => setAnswer2(e.target.value)}
                 onKeyDown={(e) => e.key === 'Enter' && handleNext()}
-                className="w-full bg-transparent border-b-2 border-white/30 text-white text-center text-xl md:text-3xl p-4 outline-none focus:border-white transition-colors"
+                className="w-full bg-transparent border-b-2 border-purple-400/40 text-white text-center text-xl md:text-3xl p-4 outline-none focus:border-purple-300 transition-colors placeholder:text-white/30"
                 placeholder="Type your answer..."
               />
+              <button
+                onClick={handleNext}
+                disabled={!answer2.trim()}
+                className="mt-8 px-8 py-3 rounded-full bg-purple-600/80 hover:bg-purple-500 disabled:opacity-30 disabled:pointer-events-none text-white font-sans text-xs tracking-widest uppercase shadow-[0_0_20px_rgba(168,85,247,0.4)] hover:scale-105 transition-all"
+              >
+                Reveal Truth
+              </button>
             </motion.div>
           )}
 

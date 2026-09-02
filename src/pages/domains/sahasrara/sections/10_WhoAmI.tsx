@@ -33,22 +33,22 @@ export const WhoAmISection: React.FC = () => {
     <section className="min-h-screen py-32 px-6 relative flex flex-col items-center justify-center bg-[#0f0026] overflow-hidden">
       
       <div className="text-center mb-16 z-20 pointer-events-none px-6">
-        <h2 className="text-sm font-sans tracking-[0.4em] uppercase text-white/30 mb-4">World 10</h2>
+        <h2 className="text-sm font-sans tracking-[0.4em] uppercase text-purple-300/70 mb-4">World 10</h2>
         {!isComplete ? (
           <>
-            <p className="text-white/70 font-light max-w-xl mx-auto mb-4">
+            <p className="text-white/90 font-light max-w-xl mx-auto mb-4 text-base">
               In the Sahasrāra, the individual identity dissolves. If you are not your body, and not your memories, what remains?
             </p>
-            <p className="text-purple-300/80 font-sans tracking-widest text-xs uppercase animate-pulse">
-              Drag away everything that is temporary.
+            <p className="text-purple-300 font-sans tracking-widest text-xs uppercase animate-pulse">
+              Drag or tap away everything that is temporary.
             </p>
           </>
         ) : (
-          <p className="text-white/40 font-light italic">When all labels are removed, the core is revealed.</p>
+          <p className="text-purple-200/80 font-light italic text-base">When all labels are removed, the core is revealed.</p>
         )}
       </div>
 
-      <div className="relative w-full max-w-2xl h-[500px] flex items-center justify-center">
+      <div className="relative w-full max-w-2xl h-[450px] sm:h-[500px] flex items-center justify-center">
         
         {/* Silhouette / The "I" */}
         <AnimatePresence mode="wait">
@@ -59,7 +59,7 @@ export const WhoAmISection: React.FC = () => {
               className="absolute inset-0 flex items-center justify-center pointer-events-none"
             >
               {/* Abstract human shape / subtle light */}
-              <div className="w-32 h-64 bg-purple-500/10 rounded-[100%] blur-xl" />
+              <div className="w-32 h-64 bg-purple-500/20 rounded-[100%] blur-2xl shadow-[0_0_50px_rgba(168,85,247,0.3)]" />
             </motion.div>
           ) : (
             <motion.div 
@@ -108,9 +108,10 @@ export const WhoAmISection: React.FC = () => {
         {/* Floating Layers */}
         <AnimatePresence>
           {!isComplete && layers.map((layer, idx) => {
-            // Distribute them in a circle
+            // Distribute them in a circle with responsive radius
+            const isMobile = typeof window !== 'undefined' && window.innerWidth < 640;
             const angle = (idx / IDENTITY_LAYERS.length) * Math.PI * 2;
-            const radius = 150;
+            const radius = isMobile ? 115 : 155;
             const x = Math.cos(angle) * radius;
             const y = Math.sin(angle) * radius;
 
@@ -121,19 +122,19 @@ export const WhoAmISection: React.FC = () => {
                 dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
                 dragElastic={1}
                 onDragEnd={(e, info) => handleDragEnd(e, info, layer)}
+                onClick={() => setLayers(prev => prev.filter(l => l !== layer))}
                 initial={{ opacity: 0, scale: 0 }}
                 animate={{ opacity: 1, scale: 1, x, y }}
                 exit={{ opacity: 0, scale: 0, filter: 'blur(10px)' }}
-                whileHover={{ scale: 1.1, color: 'white' }}
+                whileHover={{ scale: 1.1, borderColor: 'rgba(216,180,254,0.8)' }}
                 whileDrag={{ scale: 1.2, zIndex: 50 }}
-                className="absolute text-xs md:text-sm font-sans tracking-[0.2em] uppercase text-white/40 cursor-grab active:cursor-grabbing select-none px-4 py-2 bg-[#0b001a]/50 backdrop-blur-sm border border-purple-500/20 rounded-full"
+                className="absolute text-[11px] sm:text-xs md:text-sm font-sans tracking-[0.15em] sm:tracking-[0.2em] uppercase text-purple-100 cursor-pointer select-none px-3.5 sm:px-4 py-1.5 sm:py-2 bg-[#1b003a]/80 backdrop-blur-md border border-purple-400/40 rounded-full shadow-[0_0_15px_rgba(168,85,247,0.25)] hover:text-white transition-all"
               >
                 {layer}
               </motion.div>
             );
           })}
         </AnimatePresence>
-
       </div>
 
     </section>

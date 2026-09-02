@@ -47,10 +47,41 @@ export const ChakraCanvas: React.FC<ChakraCanvasProps> = ({ onChakraChange, onIn
     const drawImage = (index: number) => {
       const img = images[index];
       if (img && img.complete) {
-        // We use object-cover via tailwind on the canvas element itself,
-        // so we just draw the image filling the canvas coordinate space
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+
+        const isMobile = window.innerWidth < 768;
+
+        if (!isMobile) {
+          // Desktop: preserve existing behavior exactly
+          ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+        } else {
+          // Mobile: Fix the framing of the existing hero image with true aspect-ratio preservation
+          // Fill canvas background with black to blend seamlessly with the frame background
+          ctx.fillStyle = '#000000';
+          ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+          // Native frame aspect ratio (1920 / 1080 = 16:9)
+          const imgAspect = 16 / 9;
+
+          // In the 16:9 source frames:
+          // - Meditating figure spans horizontally from ~27% to ~73% (approx 46% of frame width)
+          // - Meditating figure spans vertically from ~14% (topknot) to ~83% (seated legs)
+          // - The heart chakra center is at ~46% of frame height
+          // Scale frame width to ~1.92x viewport width so both mudra hands and knees fit comfortably (~6% margin)
+          const maxDwByHeight = (canvas.height * 0.55) / (0.69 * (9 / 16));
+          const dw = Math.min(canvas.width * 1.92, maxDwByHeight);
+          const dh = dw / imgAspect;
+
+          // Center horizontally
+          const dx = (canvas.width - dw) / 2;
+
+          // Position the chakra at ~43% of mobile viewport height
+          // Keeps topknot safely below the top-centered title and seated legs safely above the bottom quote/CTA
+          const targetChakraY = canvas.height * 0.43;
+          const dy = targetChakraY - (dh * 0.46);
+
+          ctx.drawImage(img, dx, dy, dw, dh);
+        }
       }
     };
 
@@ -63,8 +94,8 @@ export const ChakraCanvas: React.FC<ChakraCanvasProps> = ({ onChakraChange, onIn
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
       // Find current frame based on scroll
-      const progress = ScrollTrigger.maxScroll(window) > 0 
-        ? window.scrollY / ScrollTrigger.maxScroll(window) 
+      const progress = ScrollTrigger.maxScroll(window) > 0
+        ? window.scrollY / ScrollTrigger.maxScroll(window)
         : 0;
       const frameIndex = Math.min(
         TOTAL_FRAMES - 1,
@@ -86,10 +117,10 @@ export const ChakraCanvas: React.FC<ChakraCanvasProps> = ({ onChakraChange, onIn
             TOTAL_FRAMES - 1,
             Math.max(0, Math.floor(self.progress * TOTAL_FRAMES))
           );
-          
+
           requestAnimationFrame(() => {
             drawImage(frameIndex);
-            
+
             // Check active chakra
             const currentFrame = frameIndex + 1; // 1-indexed
             const activeChakra = chakras.find(
@@ -113,8 +144,8 @@ export const ChakraCanvas: React.FC<ChakraCanvasProps> = ({ onChakraChange, onIn
 
   return (
     <>
-      <div 
-        id="scroll-container" 
+      <div
+        id="scroll-container"
         className="absolute top-0 left-0 w-full"
         style={{ height: '25000px' }}
       />
@@ -123,7 +154,7 @@ export const ChakraCanvas: React.FC<ChakraCanvasProps> = ({ onChakraChange, onIn
           <div className="absolute inset-0 flex items-center justify-center flex-col z-50 bg-black text-white">
             <h1 className="font-serif text-3xl tracking-widest mb-4 uppercase text-glow">Awakening</h1>
             <div className="w-64 h-1 bg-white/20 rounded overflow-hidden">
-              <div 
+              <div
                 className="h-full bg-white transition-all duration-300"
                 style={{ width: `${(loadedCount / TOTAL_FRAMES) * 100}%` }}
               />
@@ -138,8 +169,8 @@ export const ChakraCanvas: React.FC<ChakraCanvasProps> = ({ onChakraChange, onIn
           className="w-full h-full object-cover"
         />
         {/* Cinematic Noise Overlay */}
-        <div className="absolute inset-0 pointer-events-none opacity-[0.03] mix-blend-overlay" 
-             style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E")' }}>
+        <div className="absolute inset-0 pointer-events-none opacity-[0.03] mix-blend-overlay"
+          style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E")' }}>
         </div>
       </div>
     </>

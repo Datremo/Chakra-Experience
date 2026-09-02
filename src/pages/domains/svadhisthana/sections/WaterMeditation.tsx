@@ -127,18 +127,18 @@ export const WaterMeditationSection: React.FC = () => {
               </div>
             </div>
             
-            {/* Dev helper to skip stages quickly */}
+            {/* Next stage skip control */}
             <button 
               onClick={() => setSeconds(s => Math.min(s + 60, TOTAL_DURATION))} 
-              className="mt-12 text-[10px] uppercase tracking-widest text-white/20 hover:text-white/50 transition-colors"
+              className="mt-12 text-[10px] uppercase tracking-widest text-white/30 hover:text-white/60 transition-colors"
             >
-              Skip Stage (Dev)
+              Skip Stage →
             </button>
           </div>
         ) : (
-          <div className="bg-black/80 backdrop-blur-2xl p-16 rounded-[3rem] border border-teal-900/40 text-center shadow-[0_0_80px_rgba(20,184,166,0.1)]">
-            <h2 className="text-5xl font-serif text-white mb-8 drop-shadow-lg">Practice Complete</h2>
-            <p className="text-2xl text-teal-200/80 italic mb-16 leading-relaxed max-w-xl mx-auto drop-shadow-md">
+          <div className="bg-black/80 backdrop-blur-2xl p-6 sm:p-12 md:p-16 rounded-3xl sm:rounded-[3rem] border border-teal-900/40 text-center shadow-[0_0_80px_rgba(20,184,166,0.15)] max-w-2xl mx-auto">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-white mb-6 md:mb-8 drop-shadow-lg">Practice Complete</h2>
+            <p className="text-lg sm:text-2xl text-teal-200/90 italic mb-10 sm:mb-16 leading-relaxed max-w-xl mx-auto drop-shadow-md font-light">
               «What changed when you stopped resisting the feeling?»
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-6">

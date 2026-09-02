@@ -21,15 +21,15 @@ export const RelationshipMirrorSection: React.FC = () => {
       <div className="w-full max-w-3xl flex flex-col items-center z-10 mb-16">
         
         {/* Archetype Selector */}
-        <div className="flex bg-black/40 rounded-full border border-emerald-900/30 p-2 mb-16 backdrop-blur-sm">
+        <div className="flex flex-wrap justify-center gap-1.5 sm:gap-2 bg-black/60 rounded-2xl sm:rounded-full border border-emerald-900/40 p-2 mb-16 backdrop-blur-md max-w-full">
           {archetypes.map(a => (
             <button
               key={a.id}
               onClick={() => setArchetype(a.id)}
-              className={`px-6 py-2 rounded-full font-sans text-xs tracking-widest uppercase transition-all ${
+              className={`px-3.5 sm:px-6 py-2 rounded-xl sm:rounded-full font-sans text-[11px] sm:text-xs tracking-wider sm:tracking-widest uppercase transition-all ${
                 archetype === a.id
-                  ? 'bg-emerald-900/50 text-emerald-100 shadow-[0_0_15px_rgba(16,185,129,0.2)]'
-                  : 'text-white/30 hover:text-white/60'
+                  ? 'bg-emerald-900/60 text-emerald-100 shadow-[0_0_18px_rgba(16,185,129,0.3)] border border-emerald-500/40 font-semibold'
+                  : 'text-white/40 hover:text-white/70'
               }`}
             >
               {a.label}

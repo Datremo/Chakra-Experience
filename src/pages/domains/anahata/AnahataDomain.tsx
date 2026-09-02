@@ -66,11 +66,11 @@ export const AnahataDomain: React.FC<DomainProps> = ({ chakra, onClose }) => {
 
       <button 
         onClick={onClose}
-        aria-label="close-domain"
-        className="fixed top-10 left-10 z-[100] flex items-center space-x-3 text-white/60 hover:text-white transition-colors uppercase tracking-[0.3em] font-sans text-sm group mix-blend-difference"
+        aria-label="return-to-journey"
+        className="fixed top-5 left-5 md:top-10 md:left-10 z-[100] flex items-center space-x-2.5 md:space-x-3 text-white/70 hover:text-white transition-colors uppercase tracking-[0.25em] md:tracking-[0.3em] font-sans text-xs md:text-sm group mix-blend-difference"
       >
-        <ArrowLeft size={20} className="transform group-hover:-translate-x-2 transition-transform" />
-        <span>Ascend to Journey</span>
+        <ArrowLeft size={18} className="transform group-hover:-translate-x-1.5 transition-transform" />
+        <span>Return</span>
       </button>
 
       <div id="anahata-scroll-container" ref={scrollRef} className="relative z-10 w-full h-full overflow-y-auto overflow-x-hidden scroll-smooth">

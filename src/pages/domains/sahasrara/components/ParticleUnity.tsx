@@ -1,10 +1,13 @@
-import React, { useRef } from 'react';
+import React, { useRef, useContext } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import { ScrollContext } from '../SahasraraDomain';
 
 export const ParticleUnity: React.FC = () => {
+  const scrollContainer = useContext(ScrollContext);
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
+    container: scrollContainer || undefined,
     offset: ["start end", "end start"]
   });
 

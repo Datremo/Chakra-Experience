@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { ChakraCanvas } from './components/ChakraCanvas';
 import { GatewayOverlay } from './components/GatewayOverlay';
 import { DomainController } from './pages/DomainController';
@@ -11,6 +11,21 @@ function App() {
   const [domainOpen, setDomainOpen] = useState(false);
   const [isIntro, setIsIntro] = useState(true);
 
+  // Lock background window scroll when deep dive domain is active
+  useEffect(() => {
+    if (domainOpen) {
+      const originalBodyOverflow = document.body.style.overflow;
+      const originalDocOverflow = document.documentElement.style.overflow;
+      document.body.style.overflow = 'hidden';
+      document.documentElement.style.overflow = 'hidden';
+
+      return () => {
+        document.body.style.overflow = originalBodyOverflow;
+        document.documentElement.style.overflow = originalDocOverflow;
+      };
+    }
+  }, [domainOpen]);
+
   const handleChakraChange = (chakra: ChakraData | null) => {
     // Only update if it's different to prevent unnecessary renders
     if (activeChakra?.id !== chakra?.id) {
@@ -21,7 +36,7 @@ function App() {
   return (
     <div className="relative bg-black min-h-screen text-white font-sans selection:bg-white/30">
       
-      <LanguageSwitcher />
+      {!domainOpen && <LanguageSwitcher />}
 
       {/* 
         The canvas handles its own scroll logic.

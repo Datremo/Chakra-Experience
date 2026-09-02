@@ -11,6 +11,14 @@ export const DiscernmentCompassSection: React.FC = () => {
     setPosition({ x, y });
   };
 
+  const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
+    if (!e.touches[0]) return;
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = Math.max(0, Math.min(100, ((e.touches[0].clientX - rect.left) / rect.width) * 100));
+    const y = Math.max(0, Math.min(100, ((e.touches[0].clientY - rect.top) / rect.height) * 100));
+    setPosition({ x, y });
+  };
+
   const getMessage = () => {
     if (position.x < 30 && position.y < 30) return "Paranoia (Fear + Intuition without Evidence)";
     if (position.x > 70 && position.y < 30) return "Wishful Thinking (Desire + Intuition)";
@@ -33,9 +41,11 @@ export const DiscernmentCompassSection: React.FC = () => {
       <div className="w-full max-w-lg relative z-10 flex flex-col items-center">
         
         <div 
-          className="w-full aspect-square border-2 border-white/10 rounded-full relative bg-[#050505] overflow-hidden cursor-crosshair"
+          className="w-full aspect-square border-2 border-white/10 rounded-full relative bg-[#050505] overflow-hidden cursor-crosshair touch-none shadow-[0_0_50px_rgba(99,102,241,0.15)]"
           onMouseMove={handleMouseMove}
           onMouseLeave={() => setPosition({ x: 50, y: 50 })}
+          onTouchMove={handleTouchMove}
+          onTouchStart={handleTouchMove}
         >
           {/* Axis Labels */}
           <div className="absolute top-4 w-full text-center text-xs font-sans tracking-widest uppercase text-indigo-300">Intuition</div>

@@ -53,12 +53,12 @@ export const EvidenceAndMythsSection: React.FC = () => {
           <p className="text-xl text-white/50 italic">Click a card to reveal the truth.</p>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-6">
+        <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
           {MYTHS.map((m, idx) => (
             <div 
               key={idx}
               onClick={() => setActiveMythIdx(activeMythIdx === idx ? null : idx)}
-              className="relative w-80 h-48 cursor-pointer [perspective:1000px]"
+              className="relative w-full max-w-[300px] sm:w-80 h-48 cursor-pointer [perspective:1000px]"
             >
               <motion.div
                 animate={{ rotateY: activeMythIdx === idx ? 180 : 0 }}

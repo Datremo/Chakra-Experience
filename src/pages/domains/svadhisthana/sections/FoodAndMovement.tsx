@@ -52,9 +52,9 @@ export const FoodAndMovementSection: React.FC = () => {
           <h2 className="font-sans text-teal-400 tracking-[0.3em] uppercase text-sm mb-6">Somatic Release</h2>
           <h1 className="text-4xl md:text-5xl mb-8 font-serif text-white">Fluid Movement</h1>
           
-          <div className="relative h-[300px] flex items-center justify-center">
+          <div className="relative min-h-[300px] flex items-center justify-center">
             {/* The interactive wheel/list */}
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(45,212,191,0.1),transparent_60%)]" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(45,212,191,0.1),transparent_60%)] pointer-events-none" />
             
             <div className="flex flex-col space-y-4 w-full z-10">
               {practices.map(p => (

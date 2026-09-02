@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, createContext } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { type ChakraData } from '../../../data/chakras';
+import { ArrowLeft } from 'lucide-react';
 
 export const ScrollContext = createContext<any>(null);
 
@@ -69,23 +70,29 @@ interface DomainProps {
 export const SahasraraDomain: React.FC<DomainProps> = ({ onClose }) => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   
-  // We use a single global scroll progress for the background color shift
+  // Single global scroll progress for radiant background color shift
   const { scrollYProgress } = useScroll({ container: scrollContainerRef });
   const background = useTransform(
     scrollYProgress,
     [0, 0.5, 1],
     [
-      "linear-gradient(180deg, rgba(11,0,26,1) 0%, rgba(19,0,38,1) 100%)", // Cosmic Purple
-      "linear-gradient(180deg, rgba(19,0,38,1) 0%, rgba(10,0,20,1) 100%)", // Deep Violet
-      "linear-gradient(180deg, rgba(10,0,20,1) 0%, rgba(0,0,0,1) 100%)"    // Fading to void
+      "linear-gradient(180deg, rgba(26,8,56,1) 0%, rgba(42,12,82,1) 50%, rgba(18,4,42,1) 100%)", // Luminous Cosmic Purple
+      "linear-gradient(180deg, rgba(42,12,82,1) 0%, rgba(28,6,58,1) 50%, rgba(14,2,32,1) 100%)", // Deep Royal Amethyst
+      "linear-gradient(180deg, rgba(28,6,58,1) 0%, rgba(16,2,36,1) 60%, rgba(6,0,16,1) 100%)"     // Cosmic Void with Violet Resonance
     ]
   );
 
   useEffect(() => {
-    // Force scroll to top on mount
+    // Immediate scroll reset on mount
     if (scrollContainerRef.current) {
       scrollContainerRef.current.scrollTop = 0;
     }
+    const raf = requestAnimationFrame(() => {
+      if (scrollContainerRef.current) {
+        scrollContainerRef.current.scrollTop = 0;
+      }
+    });
+    return () => cancelAnimationFrame(raf);
   }, []);
 
   return (
@@ -93,92 +100,97 @@ export const SahasraraDomain: React.FC<DomainProps> = ({ onClose }) => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: 1 }}
+      transition={{ duration: 0.8 }}
       className="fixed inset-0 z-50 text-white font-sans overflow-hidden"
       style={{ background }}
     >
-      {/* Cosmic Nebula Glow */}
+      {/* Radiant Cosmic Nebula Glow */}
       <div 
-        className="absolute top-0 left-1/2 -translate-x-1/2 w-[150vw] h-[150vw] md:w-[100vw] md:h-[100vw] z-0 pointer-events-none mix-blend-screen opacity-50"
+        className="absolute top-0 left-1/2 -translate-x-1/2 w-[160vw] h-[160vw] md:w-[110vw] md:h-[110vw] z-0 pointer-events-none mix-blend-screen opacity-65"
         style={{
-          background: 'radial-gradient(circle at center, rgba(192,132,252,0.15) 0%, rgba(126,34,206,0.1) 30%, transparent 70%)',
+          background: 'radial-gradient(circle at center, rgba(216,180,254,0.3) 0%, rgba(168,85,247,0.2) 30%, rgba(107,33,168,0.12) 60%, transparent 80%)',
         }}
       />
       
       {/* Background Starfield / Dust Effect */}
-      <div className="absolute inset-0 z-0 pointer-events-none opacity-40 mix-blend-screen" 
-           style={{ backgroundImage: 'radial-gradient(circle at center, rgba(255,255,255,0.8) 1px, transparent 1px)', backgroundSize: '60px 60px' }} 
+      <div 
+        className="absolute inset-0 z-0 pointer-events-none opacity-50 mix-blend-screen" 
+        style={{ backgroundImage: 'radial-gradient(circle at center, rgba(255,255,255,0.9) 1px, transparent 1px)', backgroundSize: '48px 48px' }} 
       />
 
-      {/* Exit Button - Moved to top-left */}
+      {/* Standardized Responsive Return Button */}
       <button 
         onClick={onClose}
-        className="absolute top-6 left-6 z-50 text-white/50 hover:text-white p-2 transition-colors mix-blend-difference font-sans text-xs tracking-[0.4em] uppercase"
+        aria-label="return-to-journey"
+        className="fixed top-5 left-5 md:top-10 md:left-10 z-[100] flex items-center space-x-2.5 md:space-x-3 text-white/70 hover:text-white transition-colors uppercase tracking-[0.25em] md:tracking-[0.3em] font-sans text-xs md:text-sm group mix-blend-difference"
       >
-        RETURN
+        <ArrowLeft size={18} className="transform group-hover:-translate-x-1.5 transition-transform" />
+        <span>Return</span>
       </button>
 
       <ScrollContext.Provider value={scrollContainerRef}>
         <div 
           ref={scrollContainerRef}
           id="sahasrara-scroll-container"
-          className="h-full w-full overflow-y-auto overflow-x-hidden scroll-smooth relative z-10"
+          className="h-full w-full overflow-y-auto overflow-x-hidden relative z-10"
         >
-          <div className="content-visibility-auto"><TheAscentSection /></div>
-          <div className="content-visibility-auto"><ThousandPetalsSection /></div>
+          <TheAscentSection />
+          <ThousandPetalsSection />
         
-        {/* Worlds 03 - 10 */}
-          <div className="content-visibility-auto"><EnterThePetalsSection /></div>
-          <div className="content-visibility-auto"><SacredLibrarySection /></div>
-          <div className="content-visibility-auto"><VedicSortingSection /></div>
-          <div className="content-visibility-auto"><CrownMandalaSection /></div>
-          <div className="content-visibility-auto"><MoonChamberSection /></div>
-          <div className="content-visibility-auto"><BinduSection /></div>
-          <div className="content-visibility-auto"><TheVoidSection /></div>
-          <div className="content-visibility-auto"><WhoAmISection /></div>
+          {/* Worlds 03 - 10 */}
+          <EnterThePetalsSection />
+          <SacredLibrarySection />
+          <VedicSortingSection />
+          <CrownMandalaSection />
+          <MoonChamberSection />
+          <BinduSection />
+          <TheVoidSection />
+          <WhoAmISection />
         
-        {/* Worlds 11 - 15 */}
-          <div className="content-visibility-auto"><AtmanSection /></div>
-          <div className="content-visibility-auto"><IAmSection /></div>
-          <div className="content-visibility-auto"><BrahmanSection /></div>
-          <div className="content-visibility-auto"><UnityVsIndividualitySection /></div>
-          <div className="content-visibility-auto"><WhatIsLeftSection /></div>
+          {/* Worlds 11 - 15 */}
+          <AtmanSection />
+          <IAmSection />
+          <BrahmanSection />
+          <UnityVsIndividualitySection />
+          <WhatIsLeftSection />
 
-        {/* Phase 4 (Worlds 16 - 20) */}
-          <div className="content-visibility-auto"><ShivaShaktiSection /></div>
-          <div className="content-visibility-auto"><KundaliniAscentSection /></div>
-          <div className="content-visibility-auto"><ThreeGranthisSection /></div>
-          <div className="content-visibility-auto"><WhyTheCrownSection /></div>
-          <div className="content-visibility-auto"><MokshaGallerySection /></div>
+          {/* Phase 4 (Worlds 16 - 20) */}
+          <ShivaShaktiSection />
+          <KundaliniAscentSection />
+          <ThreeGranthisSection />
+          <WhyTheCrownSection />
+          <MokshaGallerySection />
 
-        {/* Phase 5 (Worlds 21 - 25) */}
-          <div className="content-visibility-auto"><SamadhiSection /></div>
-          <div className="content-visibility-auto"><KaivalyaSection /></div>
-          <div className="content-visibility-auto"><AnandaSection /></div>
-          <div className="content-visibility-auto"><BhaktiSection /></div>
-          <div className="content-visibility-auto"><InformationVsWisdomSection /></div>
-        {/* Phase 6 (Worlds 26 - 30) */}
-          <div className="content-visibility-auto"><GraspingExperimentSection /></div>
-          <div className="content-visibility-auto"><BrainwaveTuningSection /></div>
-          <div className="content-visibility-auto"><ModernSymptomsSection /></div>
-          <div className="content-visibility-auto"><FoodsAndDietSection /></div>
-          <div className="content-visibility-auto"><YogaPracticesSection /></div>
-          <div className="content-visibility-auto"><AchievementExperimentSection /></div>
-          <div className="content-visibility-auto"><SeekingLoopSection /></div>
-          <div className="content-visibility-auto"><OpenAwarenessSection /></div>
-          <div className="content-visibility-auto"><VoidRoomSection /></div>
-          <div className="content-visibility-auto"><CrownMeditationSection /></div>
-          <div className="content-visibility-auto"><FinalReturnPracticeSection /></div>
+          {/* Phase 5 (Worlds 21 - 25) */}
+          <SamadhiSection />
+          <KaivalyaSection />
+          <AnandaSection />
+          <BhaktiSection />
+          <InformationVsWisdomSection />
 
-          <div className="content-visibility-auto"><ComeBackDownSection /></div>
-          <div className="content-visibility-auto"><OriginalAnswerSection /></div>
-          <div className="content-visibility-auto"><LifeIntegrationSection /></div>
-          <div className="content-visibility-auto"><OrdinarySacredSection /></div>
-          <div className="content-visibility-auto"><MortalitySection /></div>
-          <div className="content-visibility-auto"><MeaningSection /></div>
-          <div className="content-visibility-auto"><SevenChakraIntegrationSection /></div>
-          <div className="content-visibility-auto"><FinalQuestionSection /></div>
-          <div className="content-visibility-auto"><FinalImageSection /></div>
+          {/* Phase 6 (Worlds 26 - 30) */}
+          <GraspingExperimentSection />
+          <BrainwaveTuningSection />
+          <ModernSymptomsSection />
+          <FoodsAndDietSection />
+          <YogaPracticesSection />
+          <AchievementExperimentSection />
+          <SeekingLoopSection />
+          <OpenAwarenessSection />
+          <VoidRoomSection />
+          <CrownMeditationSection />
+          <FinalReturnPracticeSection />
+
+          {/* Phase 7 (Worlds 37 - 45) */}
+          <ComeBackDownSection />
+          <OriginalAnswerSection />
+          <LifeIntegrationSection />
+          <OrdinarySacredSection />
+          <MortalitySection />
+          <MeaningSection />
+          <SevenChakraIntegrationSection />
+          <FinalQuestionSection />
+          <FinalImageSection />
         </div>
       </ScrollContext.Provider>
     </motion.div>

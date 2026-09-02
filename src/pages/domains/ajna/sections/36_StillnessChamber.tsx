@@ -72,14 +72,20 @@ export const StillnessChamberSection: React.FC = () => {
       <AnimatePresence>
         {timeLeft === 0 && (
           <motion.div 
-            initial={{ opacity: 0 }} 
-            animate={{ opacity: 1 }} 
-            className="text-center z-10"
+            initial={{ opacity: 0, y: 15 }} 
+            animate={{ opacity: 1, y: 0 }} 
+            className="text-center z-10 px-6"
           >
-            <h1 className="text-3xl font-serif text-indigo-300 mb-6">Space Created.</h1>
-            <p className="text-white/60 font-light max-w-md mx-auto leading-relaxed">
+            <h1 className="text-3xl sm:text-4xl font-serif text-indigo-300 mb-6 drop-shadow-[0_0_20px_rgba(129,140,248,0.5)]">Space Created.</h1>
+            <p className="text-white/80 font-light max-w-md mx-auto leading-relaxed mb-8">
               In that minute, the world did not end. You do not need to constantly consume information to exist. True sight happens in the gaps between stimuli.
             </p>
+            <button
+              onClick={() => { setTimeLeft(60); setIsActive(true); }}
+              className="px-8 py-3 rounded-full border border-indigo-400/50 bg-indigo-500/20 hover:bg-indigo-500/30 text-indigo-200 font-sans text-xs tracking-widest uppercase shadow-[0_0_20px_rgba(99,102,241,0.3)] hover:scale-105 transition-all"
+            >
+              Re-enter Stillness
+            </button>
           </motion.div>
         )}
       </AnimatePresence>

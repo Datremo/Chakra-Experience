@@ -56,21 +56,28 @@ export const TheBlindSpotSection: React.FC = () => {
         {stars.map((star) => (
           <div
             key={star.id}
-            className={`absolute rounded-full transition-all duration-1000 ${
+            className={`absolute transition-all duration-1000 ${
               star.isTarget 
-                ? 'w-2 h-2 cursor-pointer z-50' 
-                : found ? 'w-8 h-8 flex items-center justify-center border border-white/10' : 'w-1 h-1 bg-white/40'
+                ? 'w-11 h-11 -ml-5 -mt-5 flex items-center justify-center cursor-pointer z-50 rounded-full' 
+                : found ? 'w-8 h-8 flex items-center justify-center border border-white/10 rounded-full' : 'w-1 h-1 bg-white/40 rounded-full'
             }`}
             style={{
               left: `${star.x}%`,
               top: `${star.y}%`,
-              backgroundColor: star.isTarget && !found ? '#fbbf24' : star.isTarget && found ? '#fbbf24' : 'transparent',
-              boxShadow: star.isTarget && !found ? '0 0 10px #fcd34d' : 'none'
+              backgroundColor: !star.isTarget ? 'transparent' : 'transparent',
             }}
             onClick={() => {
               if (star.isTarget) setFound(true);
             }}
+            onTouchStart={() => {
+              if (star.isTarget) setFound(true);
+            }}
           >
+            {star.isTarget && (
+              <div 
+                className="w-2.5 h-2.5 rounded-full bg-[#fbbf24] shadow-[0_0_14px_#fcd34d] animate-pulse" 
+              />
+            )}
             {/* Reveal hidden shapes once found */}
             {found && !star.isTarget && (
               <motion.div

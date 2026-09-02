@@ -13,11 +13,6 @@
     @apply bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl;
   }
 
-  .content-visibility-auto {
-    content-visibility: auto;
-    contain-intrinsic-size: 100dvh;
-  }
-
   /* Override h-screen to use dynamic viewport height on mobile */
   .h-screen {
     height: 100dvh;

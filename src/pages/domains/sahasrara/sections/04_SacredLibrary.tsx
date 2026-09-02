@@ -109,71 +109,75 @@ export const SacredLibrarySection: React.FC = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-[#0b001a]/95 backdrop-blur-lg p-4 overflow-y-auto"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 backdrop-blur-xl p-4 sm:p-6 overflow-y-auto"
             onClick={() => setActiveRoom(null)}
           >
             <motion.div 
-              initial={{ y: 50, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              exit={{ y: 50, opacity: 0 }}
-              className="max-w-3xl w-full bg-[#0a0a0a] border border-purple-500/20 rounded-2xl p-8 md:p-12 text-left my-auto relative"
+              initial={{ y: 30, opacity: 0, scale: 0.95 }}
+              animate={{ y: 0, opacity: 1, scale: 1 }}
+              exit={{ y: 20, opacity: 0, scale: 0.95 }}
+              transition={{ type: 'spring', damping: 25, stiffness: 300 }}
+              className="max-w-3xl w-full bg-[#160030] border border-purple-400/50 rounded-3xl p-6 sm:p-8 md:p-12 text-left my-auto relative shadow-[0_25px_70px_rgba(0,0,0,0.9)] max-h-[88vh] overflow-y-auto"
               onClick={e => e.stopPropagation()}
             >
+              <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-purple-500 via-pink-400 to-amber-400" />
+
               <button 
                 onClick={() => setActiveRoom(null)}
-                className="absolute top-6 right-6 text-white/40 hover:text-white"
+                aria-label="close-modal"
+                className="absolute top-5 right-5 p-2 rounded-full bg-white/10 hover:bg-white/20 text-white/70 hover:text-white transition-colors"
               >
                 ✕
               </button>
 
-              <h2 className="text-4xl md:text-5xl font-serif text-white mb-2 tracking-wide">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-white mb-2 tracking-wide drop-shadow-[0_0_15px_rgba(255,255,255,0.4)]">
                 {ROOMS[activeRoom].title}
               </h2>
-              <p className="text-white/50 font-sans uppercase tracking-widest text-sm mb-12 border-b border-purple-500/20 pb-6">
+              <p className="text-purple-200/80 font-sans uppercase tracking-widest text-xs sm:text-sm mb-8 sm:mb-10 border-b border-purple-400/20 pb-4">
                 {ROOMS[activeRoom].description}
               </p>
 
-              <div className="space-y-10">
+              <div className="space-y-8">
                 <div>
-                  <h4 className="text-xs font-sans tracking-[0.3em] text-emerald-400/80 uppercase mb-3 flex items-center gap-3">
-                    <span className="w-2 h-2 rounded-full bg-emerald-400/50" />
+                  <h4 className="text-xs font-sans tracking-[0.3em] text-emerald-300 uppercase mb-2 flex items-center gap-2.5 font-semibold">
+                    <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 shadow-[0_0_8px_#34d399]" />
                     What this tradition actually says
                   </h4>
-                  <p className="text-white/80 font-light leading-relaxed pl-5 border-l border-purple-500/20">
+                  <p className="text-white/90 font-light leading-relaxed pl-4 sm:pl-5 border-l-2 border-emerald-400/40 text-sm sm:text-base">
                     {ROOMS[activeRoom].says}
                   </p>
                 </div>
 
                 <div>
-                  <h4 className="text-xs font-sans tracking-[0.3em] text-red-400/80 uppercase mb-3 flex items-center gap-3">
-                    <span className="w-2 h-2 rounded-full bg-red-400/50" />
+                  <h4 className="text-xs font-sans tracking-[0.3em] text-rose-300 uppercase mb-2 flex items-center gap-2.5 font-semibold">
+                    <span className="w-2.5 h-2.5 rounded-full bg-rose-400 shadow-[0_0_8px_#f43f5e]" />
                     What it does NOT say
                   </h4>
-                  <p className="text-white/80 font-light leading-relaxed pl-5 border-l border-purple-500/20">
+                  <p className="text-white/90 font-light leading-relaxed pl-4 sm:pl-5 border-l-2 border-rose-400/40 text-sm sm:text-base">
                     {ROOMS[activeRoom].doesNotSay}
                   </p>
                 </div>
 
                 <div>
-                  <h4 className="text-xs font-sans tracking-[0.3em] text-blue-400/80 uppercase mb-3 flex items-center gap-3">
-                    <span className="w-2 h-2 rounded-full bg-blue-400/50" />
+                  <h4 className="text-xs font-sans tracking-[0.3em] text-sky-300 uppercase mb-2 flex items-center gap-2.5 font-semibold">
+                    <span className="w-2.5 h-2.5 rounded-full bg-sky-400 shadow-[0_0_8px_#38bdf8]" />
                     Relation to Sahasrāra
                   </h4>
-                  <p className="text-white/80 font-light leading-relaxed pl-5 border-l border-purple-500/20">
+                  <p className="text-white/90 font-light leading-relaxed pl-4 sm:pl-5 border-l-2 border-sky-400/40 text-sm sm:text-base">
                     {ROOMS[activeRoom].relatesTo}
                   </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-8 border-t border-purple-500/20">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-6 border-t border-purple-400/20">
                   <div>
-                    <h4 className="text-xs font-sans tracking-[0.3em] text-white/40 uppercase mb-2">Primary Sources</h4>
-                    <p className="text-white/60 font-serif italic">
+                    <h4 className="text-xs font-sans tracking-[0.3em] text-purple-300 uppercase mb-1.5 font-semibold">Primary Sources</h4>
+                    <p className="text-white/80 font-serif italic text-sm">
                       {ROOMS[activeRoom].primary}
                     </p>
                   </div>
                   <div>
-                    <h4 className="text-xs font-sans tracking-[0.3em] text-white/40 uppercase mb-2">Scholarly Context</h4>
-                    <p className="text-white/60 font-light text-sm">
+                    <h4 className="text-xs font-sans tracking-[0.3em] text-purple-300 uppercase mb-1.5 font-semibold">Scholarly Context</h4>
+                    <p className="text-white/80 font-light text-xs sm:text-sm leading-relaxed">
                       {ROOMS[activeRoom].scholarship}
                     </p>
                   </div>

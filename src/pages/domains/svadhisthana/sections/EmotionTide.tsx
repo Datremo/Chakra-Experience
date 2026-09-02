@@ -191,11 +191,11 @@ export const EmotionTideSection: React.FC = () => {
               {selectedEmotion.label}
             </h3>
 
-            <div className="flex justify-center gap-4 md:gap-8 mb-12 font-sans tracking-widest text-xs md:text-sm uppercase bg-black/60 px-10 py-5 rounded-full border border-white/10 backdrop-blur-md shadow-[0_0_30px_rgba(0,0,0,0.8)]">
+            <div className="flex flex-wrap justify-center gap-2.5 sm:gap-4 md:gap-8 mb-12 font-sans tracking-wider sm:tracking-widest text-[11px] sm:text-xs md:text-sm uppercase bg-black/60 px-5 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 rounded-2xl md:rounded-full border border-white/10 backdrop-blur-md shadow-[0_0_30px_rgba(0,0,0,0.8)] max-w-full">
               {['ARRIVAL', 'RISING', 'PEAK', 'FALLING', 'PASSING'].map(phase => (
                 <div 
                   key={phase} 
-                  className={`transition-all duration-500 ${tidePhase === phase ? 'text-white font-bold scale-125 drop-shadow-[0_0_15px_rgba(255,255,255,1)]' : 'text-white/30'}`}
+                  className={`transition-all duration-500 ${tidePhase === phase ? 'text-white font-bold scale-110 md:scale-125 drop-shadow-[0_0_15px_rgba(255,255,255,1)]' : 'text-white/30'}`}
                 >
                   {phase}
                 </div>

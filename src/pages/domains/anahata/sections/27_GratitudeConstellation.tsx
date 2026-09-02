@@ -20,8 +20,12 @@ export const GratitudeConstellationSection: React.FC = () => {
     if (!containerRef.current) return;
 
     const rect = containerRef.current.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
+    const rawX = e.clientX - rect.left;
+    const rawY = e.clientY - rect.top;
+
+    // Clamp so the input card stays fully visible within container
+    const x = Math.max(80, Math.min(rect.width - 80, rawX));
+    const y = Math.max(120, Math.min(rect.height - 60, rawY));
 
     setTempPos({ x, y });
     setIsInputting(true);
