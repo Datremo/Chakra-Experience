@@ -7,7 +7,6 @@ import { AnahataDomain } from './domains/anahata/AnahataDomain';
 import { VisuddhaDomain } from './domains/visuddha/VisuddhaDomain';
 import { AjnaDomain } from './domains/ajna/AjnaDomain';
 import { SahasraraDomain } from './domains/sahasrara/SahasraraDomain';
-// We will import the others as we build them
 import { ChakraDomain as FallbackDomain } from '../components/ChakraDomain';
 
 interface DomainControllerProps {
@@ -32,7 +31,6 @@ export const DomainController: React.FC<DomainControllerProps> = ({ chakra, onCl
     case 'crown':
       return <SahasraraDomain chakra={chakra} onClose={onClose} />;
     default:
-      // Fallback to the old component until the specific domains are built
       return <FallbackDomain chakra={chakra} onClose={onClose} />;
   }
 };

@@ -9,99 +9,94 @@ function App() {
   const [activeChakra, setActiveChakra] = useState<ChakraData | null>(null);
   const [domainChakra, setDomainChakra] = useState<ChakraData | null>(null);
   const [domainOpen, setDomainOpen] = useState(false);
-  const [savedScrollY, setSavedScrollY] = useState(0);
   const [isIntro, setIsIntro] = useState(true);
   const [loadingProgress, setLoadingProgress] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);
 
-  // Lock background body scroll when deep dive domain is active
+  // Lock background body scroll while a deep-dive domain is open.
+  // Restore the exact previous scroll position when the domain closes.
   useEffect(() => {
-    if (domainOpen) {
-      document.body.style.overflow = 'hidden';
-      return () => {
-        document.body.style.overflow = '';
-        document.documentElement.style.overflow = '';
-      };
-    } else {
-      document.body.style.overflow = '';
-      document.documentElement.style.overflow = '';
-    }
+    if (!domainOpen) return;
+
+    const scrollY = window.scrollY;
+
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${scrollY}px`;
+    document.body.style.width = '100%';
+
+    return () => {
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.width = '';
+
+      window.scrollTo(0, scrollY);
+    };
   }, [domainOpen]);
 
   const handleChakraChange = (chakra: ChakraData | null) => {
-    // Only update if it's different and domain is NOT currently open
+    // Ignore background chakra changes while a deep-dive domain is open.
     if (!domainOpen && activeChakra?.id !== chakra?.id) {
       setActiveChakra(chakra);
     }
   };
 
   const handleEnterDomain = () => {
-    if (activeChakra) {
-      setSavedScrollY(window.scrollY);
-      setDomainChakra(activeChakra);
-      setDomainOpen(true);
-    }
+    if (!activeChakra) return;
+
+    // Freeze the selected chakra so scrolling inside the deep dive
+    // cannot cause the domain to unmount or switch.
+    setDomainChakra(activeChakra);
+    setDomainOpen(true);
   };
 
   const handleCloseDomain = () => {
     setDomainOpen(false);
-    document.body.style.overflow = '';
-    document.documentElement.style.overflow = '';
-    
-    // Restore exact scroll position seamlessly
-    requestAnimationFrame(() => {
-      window.scrollTo({ top: savedScrollY, behavior: 'instant' });
-      setTimeout(() => {
-        window.scrollTo({ top: savedScrollY, behavior: 'instant' });
-        document.body.style.overflow = '';
-        document.documentElement.style.overflow = '';
-      }, 60);
-    });
   };
 
   return (
-    <div className="relative bg-black min-h-screen text-white font-sans selection:bg-white/30">
-      
-      {/* 
+    <div className="relative min-h-screen bg-black text-white font-sans selection:bg-white/30">
+      {/*
         The canvas handles its own scroll logic.
-        We just pass a callback to receive the currently active chakra based on scroll.
+        It reports which chakra is currently active.
       */}
-      <ChakraCanvas 
-        onChakraChange={handleChakraChange} 
+      <ChakraCanvas
+        onChakraChange={handleChakraChange}
         onIntroChange={setIsIntro}
         onLoadingProgress={setLoadingProgress}
         onLoadingComplete={() => setIsLoaded(true)}
       />
-      
-      <IntroOverlay 
-        isIntro={isIntro && !domainOpen} 
+
+      {/*
+        Intro overlay is hidden while a deep-dive domain is open.
+      */}
+      <IntroOverlay
+        isIntro={isIntro && !domainOpen}
         loadingProgress={loadingProgress}
         isLoaded={isLoaded}
       />
 
-      {/* 
-        The Gateway overlay is fixed on top of the canvas.
-        It fades in the text and button when a chakra is active.
-        It hides itself completely if the domain is open.
+      {/*
+        Gateway overlay is shown only while the main chakra experience
+        is active and no deep-dive domain is open.
       */}
       {!domainOpen && (
-        <GatewayOverlay 
+        <GatewayOverlay
           activeChakra={activeChakra}
           onEnterDomain={handleEnterDomain}
         />
       )}
 
       {/*
-        The Domain is a full-screen deep dive that overlays everything.
-        Decoupled from activeChakra so scroll changes during deep dive never unmount it.
+        Deep-dive domain is decoupled from activeChakra.
+        Once opened, scrolling the background chakra canvas cannot
+        change or unmount the selected domain.
       */}
       {domainOpen && domainChakra && (
-        <DomainController 
-          chakra={domainChakra} 
+        <DomainController
+          chakra={domainChakra}
           onClose={handleCloseDomain}
         />
       )}
-
     </div>
   );
 }

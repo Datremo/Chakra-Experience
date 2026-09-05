@@ -49,7 +49,7 @@ export const JourneyMap: React.FC<JourneyMapProps> = ({ activeSection }) => {
             </div>
             
             {/* Label */}
-            <span className={`text-xs tracking-[0.2em] uppercase transition-all duration-300 ${
+            <span className={`text-lg md:text-xl tracking-[0.2em] uppercase transition-all duration-300 ${
               isActive ? 'text-red-400 font-bold translate-x-2' : 'text-white/30 group-hover:text-white/60 group-hover:translate-x-1'
             }`}>
               {section.label}

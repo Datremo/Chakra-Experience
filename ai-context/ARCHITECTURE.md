@@ -1,0 +1,765 @@
+# CYQ Architecture
+
+> CYQ Artifact: **ARCHITECTURE**
+> CYQ Engine: **1.7.2**
+> Project: **Chakras**
+> Snapshot ID: `fe273bd13f110dea`
+> Generated: `2026-09-05 21:57 UTC`
+>
+## 1. Architecture Health
+
+- Status: **HEALTHY**
+- Warnings: **0**
+- Informational findings: **0**
+- Indexed files: **379**
+- Relationships: **690**
+
+## 2. Important Files
+
+- `src/pages/domains/muladhara/MuladharaDomain.tsx` — TSX, 327 lines; imports=78, APIs=0, DB objects=0, symbols=0
+- `src/pages/domains/sahasrara/SahasraraDomain.tsx` — TSX, 199 lines; imports=49, APIs=0, DB objects=0, symbols=0
+- `src/pages/domains/anahata/AnahataDomain.tsx` — TSX, 121 lines; imports=44, APIs=0, DB objects=0, symbols=0
+- `src/pages/domains/ajna/AjnaDomain.tsx` — TSX, 133 lines; imports=43, APIs=0, DB objects=0, symbols=0
+- `src/pages/domains/visuddha/VisuddhaDomain.tsx` — TSX, 107 lines; imports=37, APIs=0, DB objects=0, symbols=0
+- `src/pages/domains/manipura/ManipuraDomain.tsx` — TSX, 99 lines; imports=33, APIs=0, DB objects=0, symbols=0
+- `src/pages/domains/svadhisthana/SvadhisthanaDomain.tsx` — TSX, 104 lines; imports=27, APIs=0, DB objects=0, symbols=0
+- `src/pages/DomainController.tsx` — TSX, 37 lines; imports=10, APIs=0, DB objects=0, symbols=0
+- `src/i18n.ts` — TypeScript, 30 lines; imports=7, APIs=0, DB objects=0, symbols=0
+- `src/App.tsx` — TSX, 104 lines; imports=6, APIs=0, DB objects=0, symbols=4
+- `src/main.tsx` — TSX, 15 lines; imports=6, APIs=0, DB objects=0, symbols=0
+- `src/pages/domains/manipura/sections/05_HistoricalOrigin.tsx` — TSX, 123 lines; imports=5, APIs=0, DB objects=0, symbols=0
+- `src/pages/domains/manipura/sections/10_Bija.tsx` — TSX, 161 lines; imports=5, APIs=0, DB objects=0, symbols=0
+- `src/pages/domains/manipura/sections/12_ModernSolarPlexus.tsx` — TSX, 119 lines; imports=5, APIs=0, DB objects=0, symbols=1
+- `temp-app/src/App.tsx` — TSX, 123 lines; imports=5, APIs=0, DB objects=0, symbols=1
+- `fix.js` — JavaScript, 41 lines; imports=4, APIs=0, DB objects=0, symbols=1
+- `src/components/ChakraCanvas.tsx` — TSX, 177 lines; imports=4, APIs=0, DB objects=0, symbols=2
+- `src/components/GatewayOverlay.tsx` — TSX, 214 lines; imports=4, APIs=0, DB objects=0, symbols=0
+- `src/pages/domains/anahata/sections/03_WhatIsIt.tsx` — TSX, 75 lines; imports=4, APIs=0, DB objects=0, symbols=1
+- `src/pages/domains/anahata/sections/05_Name.tsx` — TSX, 58 lines; imports=4, APIs=0, DB objects=0, symbols=0
+- `src/pages/domains/anahata/sections/07_Location.tsx` — TSX, 152 lines; imports=4, APIs=0, DB objects=0, symbols=0
+- `src/pages/domains/anahata/sections/09_HistoricalOrigin.tsx` — TSX, 100 lines; imports=4, APIs=0, DB objects=0, symbols=0
+- `src/pages/domains/anahata/sections/14_ModernRepresentation.tsx` — TSX, 83 lines; imports=4, APIs=0, DB objects=0, symbols=0
+- `src/pages/domains/anahata/sections/31_ActivationAndMyths.tsx` — TSX, 70 lines; imports=4, APIs=0, DB objects=0, symbols=0
+- `src/pages/domains/manipura/sections/02_WhatIsIt.tsx` — TSX, 139 lines; imports=4, APIs=0, DB objects=0, symbols=0
+- `src/pages/domains/manipura/sections/03_Name.tsx` — TSX, 102 lines; imports=4, APIs=0, DB objects=0, symbols=0
+- `src/pages/domains/manipura/sections/04_Location.tsx` — TSX, 148 lines; imports=4, APIs=0, DB objects=0, symbols=0
+- `src/pages/domains/manipura/sections/06_LotusBuilder.tsx` — TSX, 219 lines; imports=4, APIs=0, DB objects=0, symbols=1
+- `src/pages/domains/manipura/sections/07_TenPetals.tsx` — TSX, 152 lines; imports=4, APIs=0, DB objects=0, symbols=1
+- `src/pages/domains/manipura/sections/08_Agni.tsx` — TSX, 158 lines; imports=4, APIs=0, DB objects=0, symbols=2
+
+## 3. API Contracts
+
+- None discovered.
+
+## 4. API Contract Verification
+
+Each row is an exact deterministic contract match on HTTP method + canonical path.
+A missing implementation is not proof that runtime routing is impossible; it means no implementation was discovered in the indexed source.
+
+| Contract | Consumers | Implementations | Status |
+|---|---|---|---|
+
+## 5. Dependency Graph
+
+- `fix.js` --[CONTAINS]--> `symbol://fix.js::replaceInFile` — `replaceInFile`
+- `fix_ts.cjs` --[CONTAINS]--> `symbol://fix_ts.cjs::replaceInFile` — `replaceInFile`
+- `scripts/generate_pwa_icons.py` --[CONTAINS]--> `symbol://scripts/generate_pwa_icons.py::create_chakra_icon` — `create_chakra_icon`
+- `src/App.tsx` --[USES_COMPONENT]--> `component://App` — `App`
+- `src/App.tsx` --[IMPORTS]--> `src/components/ChakraCanvas.tsx` — `./components/ChakraCanvas`
+- `src/App.tsx` --[IMPORTS]--> `src/components/GatewayOverlay.tsx` — `./components/GatewayOverlay`
+- `src/App.tsx` --[IMPORTS]--> `src/components/IntroOverlay.tsx` — `./components/IntroOverlay`
+- `src/App.tsx` --[IMPORTS]--> `src/data/chakras.ts` — `./data/chakras`
+- `src/App.tsx` --[IMPORTS]--> `src/pages/DomainController.tsx` — `./pages/DomainController`
+- `src/App.tsx` --[CONTAINS]--> `symbol://src/App.tsx::App` — `App`
+- `src/App.tsx` --[CONTAINS]--> `symbol://src/App.tsx::handleChakraChange` — `handleChakraChange`
+- `src/App.tsx` --[CONTAINS]--> `symbol://src/App.tsx::handleCloseDomain` — `handleCloseDomain`
+- `src/App.tsx` --[CONTAINS]--> `symbol://src/App.tsx::handleEnterDomain` — `handleEnterDomain`
+- `src/components/ChakraCanvas.tsx` --[IMPORTS]--> `src/data/chakras.ts` — `../data/chakras`
+- `src/components/ChakraCanvas.tsx` --[CONTAINS]--> `symbol://src/components/ChakraCanvas.tsx::drawImage` — `drawImage`
+- `src/components/ChakraCanvas.tsx` --[CONTAINS]--> `symbol://src/components/ChakraCanvas.tsx::handleResize` — `handleResize`
+- `src/components/ChakraDomain.tsx` --[IMPORTS]--> `src/data/chakras.ts` — `../data/chakras`
+- `src/components/ChakraDomain.tsx` --[CONTAINS]--> `symbol://src/components/ChakraDomain.tsx::getElementIcon` — `getElementIcon`
+- `src/components/GatewayOverlay.tsx` --[IMPORTS]--> `src/data/chakras.ts` — `../data/chakras`
+- `src/components/IntroOverlay.tsx` --[CONTAINS]--> `symbol://src/components/IntroOverlay.tsx::handleBeginScroll` — `handleBeginScroll`
+- `src/components/LanguageSwitcher.tsx` --[CONTAINS]--> `symbol://src/components/LanguageSwitcher.tsx::changeLanguage` — `changeLanguage`
+- `src/data/ajnaData.ts` --[CONTAINS]--> `symbol://src/data/ajnaData.ts::useAjnaData` — `useAjnaData`
+- `src/data/anahataData.ts` --[CONTAINS]--> `symbol://src/data/anahataData.ts::useAnahataData` — `useAnahataData`
+- `src/data/manipuraData.ts` --[CONTAINS]--> `symbol://src/data/manipuraData.ts::useManipuraData` — `useManipuraData`
+- `src/data/svadhisthanaData.ts` --[CONTAINS]--> `symbol://src/data/svadhisthanaData.ts::useSvadhisthanaData` — `useSvadhisthanaData`
+- `src/data/visuddhaData.ts` --[CONTAINS]--> `symbol://src/data/visuddhaData.ts::useVisuddhaData` — `useVisuddhaData`
+- `src/i18n.ts` --[IMPORTS]--> `src/locales/en/translation.json` — `./locales/en/translation.json`
+- `src/i18n.ts` --[IMPORTS]--> `src/locales/gu/translation.json` — `./locales/gu/translation.json`
+- `src/i18n.ts` --[IMPORTS]--> `src/locales/hi/translation.json` — `./locales/hi/translation.json`
+- `src/i18n.ts` --[IMPORTS]--> `src/locales/mr/translation.json` — `./locales/mr/translation.json`
+- `src/i18n.ts` --[IMPORTS]--> `src/locales/te/translation.json` — `./locales/te/translation.json`
+- `src/main.tsx` --[IMPORTS]--> `src/App.tsx` — `./App.tsx`
+- `src/main.tsx` --[IMPORTS]--> `src/i18n.ts` — `./i18n`
+- `src/main.tsx` --[IMPORTS]--> `src/index.css` — `./index.css`
+- `src/pages/DomainController.tsx` --[IMPORTS]--> `src/components/ChakraDomain.tsx` — `../components/ChakraDomain`
+- `src/pages/DomainController.tsx` --[IMPORTS]--> `src/data/chakras.ts` — `../data/chakras`
+- `src/pages/DomainController.tsx` --[IMPORTS]--> `src/pages/domains/ajna/AjnaDomain.tsx` — `./domains/ajna/AjnaDomain`
+- `src/pages/DomainController.tsx` --[IMPORTS]--> `src/pages/domains/anahata/AnahataDomain.tsx` — `./domains/anahata/AnahataDomain`
+- `src/pages/DomainController.tsx` --[IMPORTS]--> `src/pages/domains/manipura/ManipuraDomain.tsx` — `./domains/manipura/ManipuraDomain`
+- `src/pages/DomainController.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/MuladharaDomain.tsx` — `./domains/muladhara/MuladharaDomain`
+- `src/pages/DomainController.tsx` --[IMPORTS]--> `src/pages/domains/sahasrara/SahasraraDomain.tsx` — `./domains/sahasrara/SahasraraDomain`
+- `src/pages/DomainController.tsx` --[IMPORTS]--> `src/pages/domains/svadhisthana/SvadhisthanaDomain.tsx` — `./domains/svadhisthana/SvadhisthanaDomain`
+- `src/pages/DomainController.tsx` --[IMPORTS]--> `src/pages/domains/visuddha/VisuddhaDomain.tsx` — `./domains/visuddha/VisuddhaDomain`
+- `src/pages/domains/HeartDomain.tsx` --[IMPORTS]--> `src/data/chakras.ts` — `../../data/chakras`
+- `src/pages/domains/RootDomain.tsx` --[IMPORTS]--> `src/data/chakras.ts` — `../../data/chakras`
+- `src/pages/domains/ThirdEyeDomain.tsx` --[IMPORTS]--> `src/data/chakras.ts` — `../../data/chakras`
+- `src/pages/domains/ThroatDomain.tsx` --[IMPORTS]--> `src/data/chakras.ts` — `../../data/chakras`
+- `src/pages/domains/ajna/AjnaDomain.tsx` --[IMPORTS]--> `src/data/chakras.ts` — `../../../data/chakras`
+- `src/pages/domains/ajna/AjnaDomain.tsx` --[IMPORTS]--> `src/pages/domains/ajna/components/ObservatoryField.tsx` — `./components/ObservatoryField`
+- `src/pages/domains/ajna/AjnaDomain.tsx` --[IMPORTS]--> `src/pages/domains/ajna/sections/01_Intro.tsx` — `./sections/01_Intro`
+- `src/pages/domains/ajna/AjnaDomain.tsx` --[IMPORTS]--> `src/pages/domains/ajna/sections/02_TheBlindSpot.tsx` — `./sections/02_TheBlindSpot`
+- `src/pages/domains/ajna/AjnaDomain.tsx` --[IMPORTS]--> `src/pages/domains/ajna/sections/03_TheThirdEyeOpens.tsx` — `./sections/03_TheThirdEyeOpens`
+- `src/pages/domains/ajna/AjnaDomain.tsx` --[IMPORTS]--> `src/pages/domains/ajna/sections/04_WhatIsAjna.tsx` — `./sections/04_WhatIsAjna`
+- `src/pages/domains/ajna/AjnaDomain.tsx` --[IMPORTS]--> `src/pages/domains/ajna/sections/05_TheName.tsx` — `./sections/05_TheName`
+- `src/pages/domains/ajna/AjnaDomain.tsx` --[IMPORTS]--> `src/pages/domains/ajna/sections/06_Location.tsx` — `./sections/06_Location`
+- `src/pages/domains/ajna/AjnaDomain.tsx` --[IMPORTS]--> `src/pages/domains/ajna/sections/07_BodyComparison.tsx` — `./sections/07_BodyComparison`
+- `src/pages/domains/ajna/AjnaDomain.tsx` --[IMPORTS]--> `src/pages/domains/ajna/sections/08_HistoricalObservatory.tsx` — `./sections/08_HistoricalObservatory`
+- `src/pages/domains/ajna/AjnaDomain.tsx` --[IMPORTS]--> `src/pages/domains/ajna/sections/09_MandalaExplorer.tsx` — `./sections/09_MandalaExplorer`
+- `src/pages/domains/ajna/AjnaDomain.tsx` --[IMPORTS]--> `src/pages/domains/ajna/sections/10_TheTwoPetals.tsx` — `./sections/10_TheTwoPetals`
+- `src/pages/domains/ajna/AjnaDomain.tsx` --[IMPORTS]--> `src/pages/domains/ajna/sections/11_HakiniReveal.tsx` — `./sections/11_HakiniReveal`
+- `src/pages/domains/ajna/AjnaDomain.tsx` --[IMPORTS]--> `src/pages/domains/ajna/sections/12_ThirdEyeRoom.tsx` — `./sections/12_ThirdEyeRoom`
+- `src/pages/domains/ajna/AjnaDomain.tsx` --[IMPORTS]--> `src/pages/domains/ajna/sections/13_SeeingExperiment.tsx` — `./sections/13_SeeingExperiment`
+- `src/pages/domains/ajna/AjnaDomain.tsx` --[IMPORTS]--> `src/pages/domains/ajna/sections/14_PerceptionLab.tsx` — `./sections/14_PerceptionLab`
+- `src/pages/domains/ajna/AjnaDomain.tsx` --[IMPORTS]--> `src/pages/domains/ajna/sections/15_TheLens.tsx` — `./sections/15_TheLens`
+- `src/pages/domains/ajna/AjnaDomain.tsx` --[IMPORTS]--> `src/pages/domains/ajna/sections/16_FactVsStory.tsx` — `./sections/16_FactVsStory`
+- `src/pages/domains/ajna/AjnaDomain.tsx` --[IMPORTS]--> `src/pages/domains/ajna/sections/17_HowDoYouKnow.tsx` — `./sections/17_HowDoYouKnow`
+- `src/pages/domains/ajna/AjnaDomain.tsx` --[IMPORTS]--> `src/pages/domains/ajna/sections/18_IntuitionVsAssumption.tsx` — `./sections/18_IntuitionVsAssumption`
+- `src/pages/domains/ajna/AjnaDomain.tsx` --[IMPORTS]--> `src/pages/domains/ajna/sections/19_IntuitionLedger.tsx` — `./sections/19_IntuitionLedger`
+- `src/pages/domains/ajna/AjnaDomain.tsx` --[IMPORTS]--> `src/pages/domains/ajna/sections/20_SignalNoise.tsx` — `./sections/20_SignalNoise`
+- `src/pages/domains/ajna/AjnaDomain.tsx` --[IMPORTS]--> `src/pages/domains/ajna/sections/21_PatternDetector.tsx` — `./sections/21_PatternDetector`
+- `src/pages/domains/ajna/AjnaDomain.tsx` --[IMPORTS]--> `src/pages/domains/ajna/sections/22_Synchronicity.tsx` — `./sections/22_Synchronicity`
+- `src/pages/domains/ajna/AjnaDomain.tsx` --[IMPORTS]--> `src/pages/domains/ajna/sections/23_DreamTemple.tsx` — `./sections/23_DreamTemple`
+- `src/pages/domains/ajna/AjnaDomain.tsx` --[IMPORTS]--> `src/pages/domains/ajna/sections/24_BlockedThirdEye.tsx` — `./sections/24_BlockedThirdEye`
+- `src/pages/domains/ajna/AjnaDomain.tsx` --[IMPORTS]--> `src/pages/domains/ajna/sections/25_TheBijaMantra.tsx` — `./sections/25_TheBijaMantra`
+- `src/pages/domains/ajna/AjnaDomain.tsx` --[IMPORTS]--> `src/pages/domains/ajna/sections/26_Meditation.tsx` — `./sections/26_Meditation`
+- `src/pages/domains/ajna/AjnaDomain.tsx` --[IMPORTS]--> `src/pages/domains/ajna/sections/27_DailyPractices.tsx` — `./sections/27_DailyPractices`
+- `src/pages/domains/ajna/AjnaDomain.tsx` --[IMPORTS]--> `src/pages/domains/ajna/sections/30_InnerObserver.tsx` — `./sections/30_InnerObserver`
+- `src/pages/domains/ajna/AjnaDomain.tsx` --[IMPORTS]--> `src/pages/domains/ajna/sections/31_MeditativeExperiences.tsx` — `./sections/31_MeditativeExperiences`
+- `src/pages/domains/ajna/AjnaDomain.tsx` --[IMPORTS]--> `src/pages/domains/ajna/sections/32_ThoughtBeliefAction.tsx` — `./sections/32_ThoughtBeliefAction`
+- `src/pages/domains/ajna/AjnaDomain.tsx` --[IMPORTS]--> `src/pages/domains/ajna/sections/33_MemoryMirror.tsx` — `./sections/33_MemoryMirror`
+- `src/pages/domains/ajna/AjnaDomain.tsx` --[IMPORTS]--> `src/pages/domains/ajna/sections/34_BeliefFilter.tsx` — `./sections/34_BeliefFilter`
+- `src/pages/domains/ajna/AjnaDomain.tsx` --[IMPORTS]--> `src/pages/domains/ajna/sections/35_VisualizationPractice.tsx` — `./sections/35_VisualizationPractice`
+- `src/pages/domains/ajna/AjnaDomain.tsx` --[IMPORTS]--> `src/pages/domains/ajna/sections/36_StillnessChamber.tsx` — `./sections/36_StillnessChamber`
+- `src/pages/domains/ajna/AjnaDomain.tsx` --[IMPORTS]--> `src/pages/domains/ajna/sections/37_TheUnknown.tsx` — `./sections/37_TheUnknown`
+- `src/pages/domains/ajna/AjnaDomain.tsx` --[IMPORTS]--> `src/pages/domains/ajna/sections/38_DiscernmentCompass.tsx` — `./sections/38_DiscernmentCompass`
+- `src/pages/domains/ajna/AjnaDomain.tsx` --[IMPORTS]--> `src/pages/domains/ajna/sections/39_ActivationAndMyths.tsx` — `./sections/39_ActivationAndMyths`
+- `src/pages/domains/ajna/AjnaDomain.tsx` --[IMPORTS]--> `src/pages/domains/ajna/sections/40_GatewayToCrown.tsx` — `./sections/40_GatewayToCrown`
+- `src/pages/domains/ajna/AjnaDomain.tsx` --[IMPORTS]--> `src/pages/domains/ajna/sections/41_Integration.tsx` — `./sections/41_Integration`
+- `src/pages/domains/ajna/components/ObservatoryField.tsx` --[CONTAINS]--> `symbol://src/pages/domains/ajna/components/ObservatoryField.tsx::handleScroll` — `handleScroll`
+- `src/pages/domains/ajna/sections/03_TheThirdEyeOpens.tsx` --[CONTAINS]--> `symbol://src/pages/domains/ajna/sections/03_TheThirdEyeOpens.tsx::handleMouseMove` — `handleMouseMove`
+- `src/pages/domains/ajna/sections/06_Location.tsx` --[IMPORTS]--> `src/components/BodyMap.tsx` — `../../../../components/BodyMap`
+- `src/pages/domains/ajna/sections/08_HistoricalObservatory.tsx` --[IMPORTS]--> `src/data/ajnaData.ts` — `../../../../data/ajnaData`
+- `src/pages/domains/ajna/sections/08_HistoricalObservatory.tsx` --[CONTAINS]--> `symbol://src/pages/domains/ajna/sections/08_HistoricalObservatory.tsx::next` — `next`
+- `src/pages/domains/ajna/sections/08_HistoricalObservatory.tsx` --[CONTAINS]--> `symbol://src/pages/domains/ajna/sections/08_HistoricalObservatory.tsx::prev` — `prev`
+- `src/pages/domains/ajna/sections/10_TheTwoPetals.tsx` --[CONTAINS]--> `symbol://src/pages/domains/ajna/sections/10_TheTwoPetals.tsx::getBgClass` — `getBgClass`
+- `src/pages/domains/ajna/sections/14_PerceptionLab.tsx` --[CONTAINS]--> `symbol://src/pages/domains/ajna/sections/14_PerceptionLab.tsx::reset` — `reset`
+- `src/pages/domains/ajna/sections/15_TheLens.tsx` --[CONTAINS]--> `symbol://src/pages/domains/ajna/sections/15_TheLens.tsx::handleMouseMove` — `handleMouseMove`
+- `src/pages/domains/ajna/sections/15_TheLens.tsx` --[CONTAINS]--> `symbol://src/pages/domains/ajna/sections/15_TheLens.tsx::handleTouchMove` — `handleTouchMove`
+- `src/pages/domains/ajna/sections/18_IntuitionVsAssumption.tsx` --[CONTAINS]--> `symbol://src/pages/domains/ajna/sections/18_IntuitionVsAssumption.tsx::handleGuess` — `handleGuess`
+- `src/pages/domains/ajna/sections/18_IntuitionVsAssumption.tsx` --[CONTAINS]--> `symbol://src/pages/domains/ajna/sections/18_IntuitionVsAssumption.tsx::nextScenario` — `nextScenario`
+- `src/pages/domains/ajna/sections/21_PatternDetector.tsx` --[CONTAINS]--> `symbol://src/pages/domains/ajna/sections/21_PatternDetector.tsx::generateSequence` — `generateSequence`
+- `src/pages/domains/ajna/sections/23_DreamTemple.tsx` --[CONTAINS]--> `symbol://src/pages/domains/ajna/sections/23_DreamTemple.tsx::handleAnalyze` — `handleAnalyze`
+- `src/pages/domains/ajna/sections/23_DreamTemple.tsx` --[CONTAINS]--> `symbol://src/pages/domains/ajna/sections/23_DreamTemple.tsx::reset` — `reset`
+- `src/pages/domains/ajna/sections/30_InnerObserver.tsx` --[CONTAINS]--> `symbol://src/pages/domains/ajna/sections/30_InnerObserver.tsx::handleLabel` — `handleLabel`
+- `src/pages/domains/ajna/sections/38_DiscernmentCompass.tsx` --[CONTAINS]--> `symbol://src/pages/domains/ajna/sections/38_DiscernmentCompass.tsx::getMessage` — `getMessage`
+- `src/pages/domains/ajna/sections/38_DiscernmentCompass.tsx` --[CONTAINS]--> `symbol://src/pages/domains/ajna/sections/38_DiscernmentCompass.tsx::handleMouseMove` — `handleMouseMove`
+- `src/pages/domains/ajna/sections/38_DiscernmentCompass.tsx` --[CONTAINS]--> `symbol://src/pages/domains/ajna/sections/38_DiscernmentCompass.tsx::handleTouchMove` — `handleTouchMove`
+- `src/pages/domains/anahata/AnahataDomain.tsx` --[IMPORTS]--> `src/data/chakras.ts` — `../../../data/chakras`
+- `src/pages/domains/anahata/AnahataDomain.tsx` --[IMPORTS]--> `src/pages/domains/anahata/components/BreathField.tsx` — `./components/BreathField`
+- `src/pages/domains/anahata/AnahataDomain.tsx` --[IMPORTS]--> `src/pages/domains/anahata/sections/01_Intro.tsx` — `./sections/01_Intro`
+- `src/pages/domains/anahata/AnahataDomain.tsx` --[IMPORTS]--> `src/pages/domains/anahata/sections/02_BreathFieldSection.tsx` — `./sections/02_BreathFieldSection`
+- `src/pages/domains/anahata/AnahataDomain.tsx` --[IMPORTS]--> `src/pages/domains/anahata/sections/03_WhatIsIt.tsx` — `./sections/03_WhatIsIt`
+- `src/pages/domains/anahata/AnahataDomain.tsx` --[IMPORTS]--> `src/pages/domains/anahata/sections/04_WhatIsLove.tsx` — `./sections/04_WhatIsLove`
+- `src/pages/domains/anahata/AnahataDomain.tsx` --[IMPORTS]--> `src/pages/domains/anahata/sections/05_Name.tsx` — `./sections/05_Name`
+- `src/pages/domains/anahata/AnahataDomain.tsx` --[IMPORTS]--> `src/pages/domains/anahata/sections/06_SoundExperience.tsx` — `./sections/06_SoundExperience`
+- `src/pages/domains/anahata/AnahataDomain.tsx` --[IMPORTS]--> `src/pages/domains/anahata/sections/07_Location.tsx` — `./sections/07_Location`
+- `src/pages/domains/anahata/AnahataDomain.tsx` --[IMPORTS]--> `src/pages/domains/anahata/sections/08_HeartDistinction.tsx` — `./sections/08_HeartDistinction`
+- `src/pages/domains/anahata/AnahataDomain.tsx` --[IMPORTS]--> `src/pages/domains/anahata/sections/09_HistoricalOrigin.tsx` — `./sections/09_HistoricalOrigin`
+- `src/pages/domains/anahata/AnahataDomain.tsx` --[IMPORTS]--> `src/pages/domains/anahata/sections/10_ClassicalBlueprint.tsx` — `./sections/10_ClassicalBlueprint`
+- `src/pages/domains/anahata/AnahataDomain.tsx` --[IMPORTS]--> `src/pages/domains/anahata/sections/11_Vayu.tsx` — `./sections/11_Vayu`
+- `src/pages/domains/anahata/AnahataDomain.tsx` --[IMPORTS]--> `src/pages/domains/anahata/sections/12_InnerSwan.tsx` — `./sections/12_InnerSwan`
+- `src/pages/domains/anahata/AnahataDomain.tsx` --[IMPORTS]--> `src/pages/domains/anahata/sections/13_Transition.tsx` — `./sections/13_Transition`
+- `src/pages/domains/anahata/AnahataDomain.tsx` --[IMPORTS]--> `src/pages/domains/anahata/sections/14_ModernRepresentation.tsx` — `./sections/14_ModernRepresentation`
+- `src/pages/domains/anahata/AnahataDomain.tsx` --[IMPORTS]--> `src/pages/domains/anahata/sections/15_LoveVsAttachment.tsx` — `./sections/15_LoveVsAttachment`
+- `src/pages/domains/anahata/AnahataDomain.tsx` --[IMPORTS]--> `src/pages/domains/anahata/sections/16_ConnectionNetwork.tsx` — `./sections/16_ConnectionNetwork`
+- `src/pages/domains/anahata/AnahataDomain.tsx` --[IMPORTS]--> `src/pages/domains/anahata/sections/17_Reciprocity.tsx` — `./sections/17_Reciprocity`
+- `src/pages/domains/anahata/AnahataDomain.tsx` --[IMPORTS]--> `src/pages/domains/anahata/sections/18_Boundaries.tsx` — `./sections/18_Boundaries`
+- `src/pages/domains/anahata/AnahataDomain.tsx` --[IMPORTS]--> `src/pages/domains/anahata/sections/19_Vulnerability.tsx` — `./sections/19_Vulnerability`
+- `src/pages/domains/anahata/AnahataDomain.tsx` --[IMPORTS]--> `src/pages/domains/anahata/sections/20_Grief.tsx` — `./sections/20_Grief`
+- `src/pages/domains/anahata/AnahataDomain.tsx` --[IMPORTS]--> `src/pages/domains/anahata/sections/21_Forgiveness.tsx` — `./sections/21_Forgiveness`
+- `src/pages/domains/anahata/AnahataDomain.tsx` --[IMPORTS]--> `src/pages/domains/anahata/sections/22_Compassion.tsx` — `./sections/22_Compassion`
+- `src/pages/domains/anahata/AnahataDomain.tsx` --[IMPORTS]--> `src/pages/domains/anahata/sections/23_LoveIsNotWarm.tsx` — `./sections/23_LoveIsNotWarm`
+- `src/pages/domains/anahata/AnahataDomain.tsx` --[IMPORTS]--> `src/pages/domains/anahata/sections/24_BalanceEcosystem.tsx` — `./sections/24_BalanceEcosystem`
+- `src/pages/domains/anahata/AnahataDomain.tsx` --[IMPORTS]--> `src/pages/domains/anahata/sections/24b_SymptomsAndHealing.tsx` — `./sections/24b_SymptomsAndHealing`
+- `src/pages/domains/anahata/AnahataDomain.tsx` --[IMPORTS]--> `src/pages/domains/anahata/sections/25_RelationshipMirror.tsx` — `./sections/25_RelationshipMirror`
+- `src/pages/domains/anahata/AnahataDomain.tsx` --[IMPORTS]--> `src/pages/domains/anahata/sections/26_HeartLanguage.tsx` — `./sections/26_HeartLanguage`
+- `src/pages/domains/anahata/AnahataDomain.tsx` --[IMPORTS]--> `src/pages/domains/anahata/sections/27_GratitudeConstellation.tsx` — `./sections/27_GratitudeConstellation`
+- `src/pages/domains/anahata/AnahataDomain.tsx` --[IMPORTS]--> `src/pages/domains/anahata/sections/28_LoveWithoutFixing.tsx` — `./sections/28_LoveWithoutFixing`
+- `src/pages/domains/anahata/AnahataDomain.tsx` --[IMPORTS]--> `src/pages/domains/anahata/sections/29_BreathAndHeart.tsx` — `./sections/29_BreathAndHeart`
+- `src/pages/domains/anahata/AnahataDomain.tsx` --[IMPORTS]--> `src/pages/domains/anahata/sections/30_Practices.tsx` — `./sections/30_Practices`
+- `src/pages/domains/anahata/AnahataDomain.tsx` --[IMPORTS]--> `src/pages/domains/anahata/sections/31_ActivationAndMyths.tsx` — `./sections/31_ActivationAndMyths`
+- `src/pages/domains/anahata/AnahataDomain.tsx` --[IMPORTS]--> `src/pages/domains/anahata/sections/32_Food.tsx` — `./sections/32_Food`
+- `src/pages/domains/anahata/AnahataDomain.tsx` --[IMPORTS]--> `src/pages/domains/anahata/sections/33_DailyLife.tsx` — `./sections/33_DailyLife`
+- `src/pages/domains/anahata/AnahataDomain.tsx` --[IMPORTS]--> `src/pages/domains/anahata/sections/34_ReceivingPractice.tsx` — `./sections/34_ReceivingPractice`
+- `src/pages/domains/anahata/AnahataDomain.tsx` --[IMPORTS]--> `src/pages/domains/anahata/sections/35_CompassionLimit.tsx` — `./sections/35_CompassionLimit`
+- `src/pages/domains/anahata/AnahataDomain.tsx` --[IMPORTS]--> `src/pages/domains/anahata/sections/36_WhoDoYouLove.tsx` — `./sections/36_WhoDoYouLove`
+- `src/pages/domains/anahata/AnahataDomain.tsx` --[IMPORTS]--> `src/pages/domains/anahata/sections/37_JournalAndMirror.tsx` — `./sections/37_JournalAndMirror`
+- `src/pages/domains/anahata/AnahataDomain.tsx` --[IMPORTS]--> `src/pages/domains/anahata/sections/38_JourneyAndExperiment.tsx` — `./sections/38_JourneyAndExperiment`
+- `src/pages/domains/anahata/AnahataDomain.tsx` --[IMPORTS]--> `src/pages/domains/anahata/sections/39_Integration.tsx` — `./sections/39_Integration`
+- `src/pages/domains/anahata/sections/01_Intro.tsx` --[IMPORTS]--> `src/data/anahataData.ts` — `../../../../data/anahataData`
+- `src/pages/domains/anahata/sections/02_BreathFieldSection.tsx` --[CONTAINS]--> `symbol://src/pages/domains/anahata/sections/02_BreathFieldSection.tsx::cycle` — `cycle`
+- `src/pages/domains/anahata/sections/03_WhatIsIt.tsx` --[IMPORTS]--> `src/data/anahataData.ts` — `../../../../data/anahataData`
+- `src/pages/domains/anahata/sections/03_WhatIsIt.tsx` --[IMPORTS]--> `src/pages/domains/manipura/components/SourceBadge.tsx` — `../../manipura/components/SourceBadge`
+- `src/pages/domains/anahata/sections/03_WhatIsIt.tsx` --[CONTAINS]--> `symbol://src/pages/domains/anahata/sections/03_WhatIsIt.tsx::getContent` — `getContent`
+- `src/pages/domains/anahata/sections/05_Name.tsx` --[IMPORTS]--> `src/data/anahataData.ts` — `../../../../data/anahataData`
+- `src/pages/domains/anahata/sections/05_Name.tsx` --[IMPORTS]--> `src/pages/domains/manipura/components/SourceBadge.tsx` — `../../manipura/components/SourceBadge`
+- `src/pages/domains/anahata/sections/06_SoundExperience.tsx` --[CONTAINS]--> `symbol://src/pages/domains/anahata/sections/06_SoundExperience.tsx::getText` — `getText`
+- `src/pages/domains/anahata/sections/06_SoundExperience.tsx` --[CONTAINS]--> `symbol://src/pages/domains/anahata/sections/06_SoundExperience.tsx::getVisualizer` — `getVisualizer`
+- `src/pages/domains/anahata/sections/07_Location.tsx` --[IMPORTS]--> `src/data/anahataData.ts` — `../../../../data/anahataData`
+- `src/pages/domains/anahata/sections/07_Location.tsx` --[IMPORTS]--> `src/pages/domains/manipura/components/SourceBadge.tsx` — `../../manipura/components/SourceBadge`
+- `src/pages/domains/anahata/sections/08_HeartDistinction.tsx` --[CONTAINS]--> `symbol://src/pages/domains/anahata/sections/08_HeartDistinction.tsx::handleNext` — `handleNext`
+- `src/pages/domains/anahata/sections/08_HeartDistinction.tsx` --[CONTAINS]--> `symbol://src/pages/domains/anahata/sections/08_HeartDistinction.tsx::handlePrev` — `handlePrev`
+- `src/pages/domains/anahata/sections/09_HistoricalOrigin.tsx` --[IMPORTS]--> `src/data/anahataData.ts` — `../../../../data/anahataData`
+- `src/pages/domains/anahata/sections/09_HistoricalOrigin.tsx` --[IMPORTS]--> `src/pages/domains/manipura/components/SourceBadge.tsx` — `../../manipura/components/SourceBadge`
+- `src/pages/domains/anahata/sections/10_ClassicalBlueprint.tsx` --[IMPORTS]--> `src/data/anahataData.ts` — `../../../../data/anahataData`
+- `src/pages/domains/anahata/sections/14_ModernRepresentation.tsx` --[IMPORTS]--> `src/data/anahataData.ts` — `../../../../data/anahataData`
+- `src/pages/domains/anahata/sections/14_ModernRepresentation.tsx` --[IMPORTS]--> `src/pages/domains/manipura/components/SourceBadge.tsx` — `../../manipura/components/SourceBadge`
+- `src/pages/domains/anahata/sections/16_ConnectionNetwork.tsx` --[CONTAINS]--> `symbol://src/pages/domains/anahata/sections/16_ConnectionNetwork.tsx::handleNodeClick` — `handleNodeClick`
+- `src/pages/domains/anahata/sections/17_Reciprocity.tsx` --[CONTAINS]--> `symbol://src/pages/domains/anahata/sections/17_Reciprocity.tsx::getStatusText` — `getStatusText`
+- `src/pages/domains/anahata/sections/18_Boundaries.tsx` --[CONTAINS]--> `symbol://src/pages/domains/anahata/sections/18_Boundaries.tsx::getMembraneStyle` — `getMembraneStyle`
+- `src/pages/domains/anahata/sections/18_Boundaries.tsx` --[CONTAINS]--> `symbol://src/pages/domains/anahata/sections/18_Boundaries.tsx::getStatusText` — `getStatusText`
+- `src/pages/domains/anahata/sections/21_Forgiveness.tsx` --[CONTAINS]--> `symbol://src/pages/domains/anahata/sections/21_Forgiveness.tsx::handleDragEnd` — `handleDragEnd`
+- `src/pages/domains/anahata/sections/24_BalanceEcosystem.tsx` --[IMPORTS]--> `src/data/anahataData.ts` — `../../../../data/anahataData`
+- `src/pages/domains/anahata/sections/24b_SymptomsAndHealing.tsx` --[IMPORTS]--> `src/data/anahataData.ts` — `../../../../data/anahataData`
+- `src/pages/domains/anahata/sections/24b_SymptomsAndHealing.tsx` --[CONTAINS]--> `symbol://src/pages/domains/anahata/sections/24b_SymptomsAndHealing.tsx::getThemeClasses` — `getThemeClasses`
+- `src/pages/domains/anahata/sections/26_HeartLanguage.tsx` --[CONTAINS]--> `symbol://src/pages/domains/anahata/sections/26_HeartLanguage.tsx::handleSelect` — `handleSelect`
+- `src/pages/domains/anahata/sections/26_HeartLanguage.tsx` --[CONTAINS]--> `symbol://src/pages/domains/anahata/sections/26_HeartLanguage.tsx::reset` — `reset`
+- `src/pages/domains/anahata/sections/27_GratitudeConstellation.tsx` --[CONTAINS]--> `symbol://src/pages/domains/anahata/sections/27_GratitudeConstellation.tsx::handleAddStar` — `handleAddStar`
+- `src/pages/domains/anahata/sections/27_GratitudeConstellation.tsx` --[CONTAINS]--> `symbol://src/pages/domains/anahata/sections/27_GratitudeConstellation.tsx::handleCanvasClick` — `handleCanvasClick`
+- `src/pages/domains/anahata/sections/29_BreathAndHeart.tsx` --[CONTAINS]--> `symbol://src/pages/domains/anahata/sections/29_BreathAndHeart.tsx::cycle` — `cycle`
+- `src/pages/domains/anahata/sections/31_ActivationAndMyths.tsx` --[IMPORTS]--> `src/data/anahataData.ts` — `../../../../data/anahataData`
+- `src/pages/domains/anahata/sections/31_ActivationAndMyths.tsx` --[IMPORTS]--> `src/pages/domains/manipura/components/SourceBadge.tsx` — `../../manipura/components/SourceBadge`
+- `src/pages/domains/anahata/sections/33_DailyLife.tsx` --[IMPORTS]--> `src/data/anahataData.ts` — `../../../../data/anahataData`
+- `src/pages/domains/anahata/sections/33_DailyLife.tsx` --[CONTAINS]--> `symbol://src/pages/domains/anahata/sections/33_DailyLife.tsx::toggleTask` — `toggleTask`
+- `src/pages/domains/anahata/sections/35_CompassionLimit.tsx` --[CONTAINS]--> `symbol://src/pages/domains/anahata/sections/35_CompassionLimit.tsx::getPhase` — `getPhase`
+- `src/pages/domains/anahata/sections/36_WhoDoYouLove.tsx` --[CONTAINS]--> `symbol://src/pages/domains/anahata/sections/36_WhoDoYouLove.tsx::handleSubmit` — `handleSubmit`
+- `src/pages/domains/anahata/sections/37_JournalAndMirror.tsx` --[IMPORTS]--> `src/data/anahataData.ts` — `../../../../data/anahataData`
+- `src/pages/domains/anahata/sections/37_JournalAndMirror.tsx` --[CONTAINS]--> `symbol://src/pages/domains/anahata/sections/37_JournalAndMirror.tsx::handleNext` — `handleNext`
+- `src/pages/domains/anahata/sections/37_JournalAndMirror.tsx` --[CONTAINS]--> `symbol://src/pages/domains/anahata/sections/37_JournalAndMirror.tsx::handlePrev` — `handlePrev`
+- `src/pages/domains/anahata/sections/39_Integration.tsx` --[CONTAINS]--> `symbol://src/pages/domains/anahata/sections/39_Integration.tsx::handleAscend` — `handleAscend`
+- `src/pages/domains/manipura/ManipuraDomain.tsx` --[IMPORTS]--> `src/data/chakras.ts` — `../../../data/chakras`
+- `src/pages/domains/manipura/ManipuraDomain.tsx` --[IMPORTS]--> `src/pages/domains/manipura/components/FireBackground.tsx` — `./components/FireBackground`
+- `src/pages/domains/manipura/ManipuraDomain.tsx` --[IMPORTS]--> `src/pages/domains/manipura/sections/01_Intro.tsx` — `./sections/01_Intro`
+- `src/pages/domains/manipura/ManipuraDomain.tsx` --[IMPORTS]--> `src/pages/domains/manipura/sections/02_WhatIsIt.tsx` — `./sections/02_WhatIsIt`
+- `src/pages/domains/manipura/ManipuraDomain.tsx` --[IMPORTS]--> `src/pages/domains/manipura/sections/03_Name.tsx` — `./sections/03_Name`
+- `src/pages/domains/manipura/ManipuraDomain.tsx` --[IMPORTS]--> `src/pages/domains/manipura/sections/04_Location.tsx` — `./sections/04_Location`
+- `src/pages/domains/manipura/ManipuraDomain.tsx` --[IMPORTS]--> `src/pages/domains/manipura/sections/05_HistoricalOrigin.tsx` — `./sections/05_HistoricalOrigin`
+- `src/pages/domains/manipura/ManipuraDomain.tsx` --[IMPORTS]--> `src/pages/domains/manipura/sections/06_LotusBuilder.tsx` — `./sections/06_LotusBuilder`
+- `src/pages/domains/manipura/ManipuraDomain.tsx` --[IMPORTS]--> `src/pages/domains/manipura/sections/07_TenPetals.tsx` — `./sections/07_TenPetals`
+- `src/pages/domains/manipura/ManipuraDomain.tsx` --[IMPORTS]--> `src/pages/domains/manipura/sections/08_Agni.tsx` — `./sections/08_Agni`
+- `src/pages/domains/manipura/ManipuraDomain.tsx` --[IMPORTS]--> `src/pages/domains/manipura/sections/09_FireTriangle.tsx` — `./sections/09_FireTriangle`
+- `src/pages/domains/manipura/ManipuraDomain.tsx` --[IMPORTS]--> `src/pages/domains/manipura/sections/10_Bija.tsx` — `./sections/10_Bija`
+- `src/pages/domains/manipura/ManipuraDomain.tsx` --[IMPORTS]--> `src/pages/domains/manipura/sections/11_Deities.tsx` — `./sections/11_Deities`
+- `src/pages/domains/manipura/ManipuraDomain.tsx` --[IMPORTS]--> `src/pages/domains/manipura/sections/12_ModernSolarPlexus.tsx` — `./sections/12_ModernSolarPlexus`
+- `src/pages/domains/manipura/ManipuraDomain.tsx` --[IMPORTS]--> `src/pages/domains/manipura/sections/13_PowerDial.tsx` — `./sections/13_PowerDial`
+- `src/pages/domains/manipura/ManipuraDomain.tsx` --[IMPORTS]--> `src/pages/domains/manipura/sections/14_ResponseGap.tsx` — `./sections/14_ResponseGap`
+- `src/pages/domains/manipura/ManipuraDomain.tsx` --[IMPORTS]--> `src/pages/domains/manipura/sections/15_AngerChain.tsx` — `./sections/15_AngerChain`
+- `src/pages/domains/manipura/ManipuraDomain.tsx` --[IMPORTS]--> `src/pages/domains/manipura/sections/16_Boundaries.tsx` — `./sections/16_Boundaries`
+- `src/pages/domains/manipura/ManipuraDomain.tsx` --[IMPORTS]--> `src/pages/domains/manipura/sections/17_InnerForge.tsx` — `./sections/17_InnerForge`
+- `src/pages/domains/manipura/ManipuraDomain.tsx` --[IMPORTS]--> `src/pages/domains/manipura/sections/18_AttentionFlame.tsx` — `./sections/18_AttentionFlame`
+- `src/pages/domains/manipura/ManipuraDomain.tsx` --[IMPORTS]--> `src/pages/domains/manipura/sections/19_Burnout.tsx` — `./sections/19_Burnout`
+- `src/pages/domains/manipura/ManipuraDomain.tsx` --[IMPORTS]--> `src/pages/domains/manipura/sections/20_ThreeFireModel.tsx` — `./sections/20_ThreeFireModel`
+- `src/pages/domains/manipura/ManipuraDomain.tsx` --[IMPORTS]--> `src/pages/domains/manipura/sections/21_AgniDigestion.tsx` — `./sections/21_AgniDigestion`
+- `src/pages/domains/manipura/ManipuraDomain.tsx` --[IMPORTS]--> `src/pages/domains/manipura/sections/22_FoodAndMovement.tsx` — `./sections/22_FoodAndMovement`
+- `src/pages/domains/manipura/ManipuraDomain.tsx` --[IMPORTS]--> `src/pages/domains/manipura/sections/23_InnerSun.tsx` — `./sections/23_InnerSun`
+- `src/pages/domains/manipura/ManipuraDomain.tsx` --[IMPORTS]--> `src/pages/domains/manipura/sections/24_AgniMeditation.tsx` — `./sections/24_AgniMeditation`
+- `src/pages/domains/manipura/ManipuraDomain.tsx` --[IMPORTS]--> `src/pages/domains/manipura/sections/25_Activation.tsx` — `./sections/25_Activation`
+- `src/pages/domains/manipura/ManipuraDomain.tsx` --[IMPORTS]--> `src/pages/domains/manipura/sections/26_SevenDayJourney.tsx` — `./sections/26_SevenDayJourney`
+- `src/pages/domains/manipura/ManipuraDomain.tsx` --[IMPORTS]--> `src/pages/domains/manipura/sections/27_EvidenceAndMyths.tsx` — `./sections/27_EvidenceAndMyths`
+- `src/pages/domains/manipura/ManipuraDomain.tsx` --[IMPORTS]--> `src/pages/domains/manipura/sections/28_Journal.tsx` — `./sections/28_Journal`
+- `src/pages/domains/manipura/ManipuraDomain.tsx` --[IMPORTS]--> `src/pages/domains/manipura/sections/29_Ending.tsx` — `./sections/29_Ending`
+- `src/pages/domains/manipura/components/FireBackground.tsx` --[CONTAINS]--> `symbol://src/pages/domains/manipura/components/FireBackground.tsx::draw` — `draw`
+- `src/pages/domains/manipura/components/FireBackground.tsx` --[CONTAINS]--> `symbol://src/pages/domains/manipura/components/FireBackground.tsx::handleMouseMove` — `handleMouseMove`
+- `src/pages/domains/manipura/components/FireBackground.tsx` --[CONTAINS]--> `symbol://src/pages/domains/manipura/components/FireBackground.tsx::resize` — `resize`
+- `src/pages/domains/manipura/components/FireCanvas.tsx` --[CONTAINS]--> `symbol://src/pages/domains/manipura/components/FireCanvas.tsx::draw` — `draw`
+- `src/pages/domains/manipura/components/FireCanvas.tsx` --[CONTAINS]--> `symbol://src/pages/domains/manipura/components/FireCanvas.tsx::resize` — `resize`
+- `src/pages/domains/manipura/sections/01_Intro.tsx` --[IMPORTS]--> `src/data/manipuraData.ts` — `../../../../data/manipuraData`
+- `src/pages/domains/manipura/sections/01_Intro.tsx` --[CONTAINS]--> `symbol://src/pages/domains/manipura/sections/01_Intro.tsx::handleMouseLeave` — `handleMouseLeave`
+- `src/pages/domains/manipura/sections/01_Intro.tsx` --[CONTAINS]--> `symbol://src/pages/domains/manipura/sections/01_Intro.tsx::handleMouseMove` — `handleMouseMove`
+- `src/pages/domains/manipura/sections/02_WhatIsIt.tsx` --[IMPORTS]--> `src/data/manipuraData.ts` — `../../../../data/manipuraData`
+- `src/pages/domains/manipura/sections/02_WhatIsIt.tsx` --[IMPORTS]--> `src/pages/domains/manipura/components/SourceBadge.tsx` — `../components/SourceBadge`
+- `src/pages/domains/manipura/sections/03_Name.tsx` --[IMPORTS]--> `src/data/manipuraData.ts` — `../../../../data/manipuraData`
+- `src/pages/domains/manipura/sections/03_Name.tsx` --[IMPORTS]--> `src/pages/domains/manipura/components/SourceBadge.tsx` — `../components/SourceBadge`
+- `src/pages/domains/manipura/sections/04_Location.tsx` --[IMPORTS]--> `src/data/manipuraData.ts` — `../../../../data/manipuraData`
+- `src/pages/domains/manipura/sections/04_Location.tsx` --[IMPORTS]--> `src/pages/domains/manipura/components/SourceBadge.tsx` — `../components/SourceBadge`
+- `src/pages/domains/manipura/sections/05_HistoricalOrigin.tsx` --[IMPORTS]--> `src/data/manipuraData.ts` — `../../../../data/manipuraData`
+- `src/pages/domains/manipura/sections/05_HistoricalOrigin.tsx` --[IMPORTS]--> `src/pages/domains/manipura/components/SourceBadge.tsx` — `../components/SourceBadge`
+- `src/pages/domains/manipura/sections/06_LotusBuilder.tsx` --[IMPORTS]--> `src/data/manipuraData.ts` — `../../../../data/manipuraData`
+- `src/pages/domains/manipura/sections/06_LotusBuilder.tsx` --[IMPORTS]--> `src/pages/domains/manipura/components/SourceBadge.tsx` — `../components/SourceBadge`
+- `src/pages/domains/manipura/sections/06_LotusBuilder.tsx` --[CONTAINS]--> `symbol://src/pages/domains/manipura/sections/06_LotusBuilder.tsx::toggleLayer` — `toggleLayer`
+- `src/pages/domains/manipura/sections/07_TenPetals.tsx` --[IMPORTS]--> `src/data/manipuraData.ts` — `../../../../data/manipuraData`
+- `src/pages/domains/manipura/sections/07_TenPetals.tsx` --[CONTAINS]--> `symbol://src/pages/domains/manipura/sections/07_TenPetals.tsx::handleDragEnd` — `handleDragEnd`
+- `src/pages/domains/manipura/sections/08_Agni.tsx` --[IMPORTS]--> `src/data/manipuraData.ts` — `../../../../data/manipuraData`
+- `src/pages/domains/manipura/sections/08_Agni.tsx` --[IMPORTS]--> `src/pages/domains/manipura/components/FireCanvas.tsx` — `../components/FireCanvas`
+- `src/pages/domains/manipura/sections/08_Agni.tsx` --[CONTAINS]--> `symbol://src/pages/domains/manipura/sections/08_Agni.tsx::handleMouseLeave` — `handleMouseLeave`
+- `src/pages/domains/manipura/sections/08_Agni.tsx` --[CONTAINS]--> `symbol://src/pages/domains/manipura/sections/08_Agni.tsx::handleMouseMove` — `handleMouseMove`
+- `src/pages/domains/manipura/sections/09_FireTriangle.tsx` --[IMPORTS]--> `src/pages/domains/manipura/components/SourceBadge.tsx` — `../components/SourceBadge`
+- `src/pages/domains/manipura/sections/09_FireTriangle.tsx` --[CONTAINS]--> `symbol://src/pages/domains/manipura/sections/09_FireTriangle.tsx::handleDragEnd` — `handleDragEnd`
+- `src/pages/domains/manipura/sections/10_Bija.tsx` --[IMPORTS]--> `src/data/manipuraData.ts` — `../../../../data/manipuraData`
+- `src/pages/domains/manipura/sections/10_Bija.tsx` --[IMPORTS]--> `src/pages/domains/manipura/components/FireCanvas.tsx` — `../components/FireCanvas`
+- `src/pages/domains/manipura/sections/11_Deities.tsx` --[IMPORTS]--> `src/data/manipuraData.ts` — `../../../../data/manipuraData`
+- `src/pages/domains/manipura/sections/11_Deities.tsx` --[IMPORTS]--> `src/pages/domains/manipura/components/SourceBadge.tsx` — `../components/SourceBadge`
+- `src/pages/domains/manipura/sections/12_ModernSolarPlexus.tsx` --[IMPORTS]--> `src/data/manipuraData.ts` — `../../../../data/manipuraData`
+- `src/pages/domains/manipura/sections/12_ModernSolarPlexus.tsx` --[IMPORTS]--> `src/pages/domains/manipura/components/SourceBadge.tsx` — `../components/SourceBadge`
+- `src/pages/domains/manipura/sections/12_ModernSolarPlexus.tsx` --[CONTAINS]--> `symbol://src/pages/domains/manipura/sections/12_ModernSolarPlexus.tsx::handleSelect` — `handleSelect`
+- `src/pages/domains/manipura/sections/13_PowerDial.tsx` --[IMPORTS]--> `src/pages/domains/manipura/components/FireCanvas.tsx` — `../components/FireCanvas`
+- `src/pages/domains/manipura/sections/14_ResponseGap.tsx` --[CONTAINS]--> `symbol://src/pages/domains/manipura/sections/14_ResponseGap.tsx::getFireClass` — `getFireClass`
+- `src/pages/domains/manipura/sections/14_ResponseGap.tsx` --[CONTAINS]--> `symbol://src/pages/domains/manipura/sections/14_ResponseGap.tsx::reset` — `reset`
+- `src/pages/domains/manipura/sections/15_AngerChain.tsx` --[CONTAINS]--> `symbol://src/pages/domains/manipura/sections/15_AngerChain.tsx::reset` — `reset`
+- `src/pages/domains/manipura/sections/15_AngerChain.tsx` --[CONTAINS]--> `symbol://src/pages/domains/manipura/sections/15_AngerChain.tsx::startChain` — `startChain`
+- `src/pages/domains/manipura/sections/15_AngerChain.tsx` --[CONTAINS]--> `symbol://src/pages/domains/manipura/sections/15_AngerChain.tsx::togglePause` — `togglePause`
+- `src/pages/domains/manipura/sections/17_InnerForge.tsx` --[IMPORTS]--> `src/pages/domains/manipura/components/FireCanvas.tsx` — `../components/FireCanvas`
+- `src/pages/domains/manipura/sections/17_InnerForge.tsx` --[CONTAINS]--> `symbol://src/pages/domains/manipura/sections/17_InnerForge.tsx::handleDragEnd` — `handleDragEnd`
+- `src/pages/domains/manipura/sections/17_InnerForge.tsx` --[CONTAINS]--> `symbol://src/pages/domains/manipura/sections/17_InnerForge.tsx::processMaterial` — `processMaterial`
+- `src/pages/domains/manipura/sections/18_AttentionFlame.tsx` --[CONTAINS]--> `symbol://src/pages/domains/manipura/sections/18_AttentionFlame.tsx::handleMouseMove` — `handleMouseMove`
+- `src/pages/domains/manipura/sections/19_Burnout.tsx` --[CONTAINS]--> `symbol://src/pages/domains/manipura/sections/19_Burnout.tsx::updateLevel` — `updateLevel`
+- `src/pages/domains/manipura/sections/20_ThreeFireModel.tsx` --[IMPORTS]--> `src/pages/domains/manipura/components/SourceBadge.tsx` — `../components/SourceBadge`
+- `src/pages/domains/manipura/sections/21_AgniDigestion.tsx` --[CONTAINS]--> `symbol://src/pages/domains/manipura/sections/21_AgniDigestion.tsx::handleDragEnd` — `handleDragEnd`
+- `src/pages/domains/manipura/sections/23_InnerSun.tsx` --[CONTAINS]--> `symbol://src/pages/domains/manipura/sections/23_InnerSun.tsx::cycle` — `cycle`
+- `src/pages/domains/manipura/sections/24_AgniMeditation.tsx` --[CONTAINS]--> `symbol://src/pages/domains/manipura/sections/24_AgniMeditation.tsx::nextStep` — `nextStep`
+- `src/pages/domains/manipura/sections/24_AgniMeditation.tsx` --[CONTAINS]--> `symbol://src/pages/domains/manipura/sections/24_AgniMeditation.tsx::prevStep` — `prevStep`
+- `src/pages/domains/manipura/sections/27_EvidenceAndMyths.tsx` --[IMPORTS]--> `src/pages/domains/manipura/components/SourceBadge.tsx` — `../components/SourceBadge`
+- `src/pages/domains/manipura/sections/28_Journal.tsx` --[CONTAINS]--> `symbol://src/pages/domains/manipura/sections/28_Journal.tsx::handleBurn` — `handleBurn`
+- `src/pages/domains/manipura/sections/29_Ending.tsx` --[IMPORTS]--> `src/data/chakras.ts` — `../../../../data/chakras`
+- `src/pages/domains/muladhara/MuladharaDomain.tsx` --[IMPORTS]--> `src/data/chakras.ts` — `../../../data/chakras`
+- `src/pages/domains/muladhara/MuladharaDomain.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/components/EarthParticleField.tsx` — `./components/EarthParticleField`
+- `src/pages/domains/muladhara/MuladharaDomain.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/components/MandalaOverlay.tsx` — `./components/MandalaOverlay`
+- `src/pages/domains/muladhara/MuladharaDomain.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/components/PersistentRootSystem.tsx` — `./components/PersistentRootSystem`
+- `src/pages/domains/muladhara/MuladharaDomain.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/components/SubtleNadiSystem.tsx` — `./components/SubtleNadiSystem`
+- `src/pages/domains/muladhara/MuladharaDomain.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `./context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/MuladharaDomain.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/sections/S01_TheCinematicEntry.tsx` — `./sections/S01_TheCinematicEntry`
+- `src/pages/domains/muladhara/MuladharaDomain.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/sections/S02_TheGravitationalFall.tsx` — `./sections/S02_TheGravitationalFall`
+- `src/pages/domains/muladhara/MuladharaDomain.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/sections/S03_WhatIsMuladhara.tsx` — `./sections/S03_WhatIsMuladhara`
+- `src/pages/domains/muladhara/MuladharaDomain.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/sections/S04_TheSovereignVessel.tsx` — `./sections/S04_TheSovereignVessel`
+- `src/pages/domains/muladhara/MuladharaDomain.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/sections/S05_TheArchitecture.tsx` — `./sections/S05_TheArchitecture`
+- `src/pages/domains/muladhara/MuladharaDomain.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/sections/S06_TheBodyAxis.tsx` — `./sections/S06_TheBodyAxis`
+- `src/pages/domains/muladhara/MuladharaDomain.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/sections/S07_WhereExactly.tsx` — `./sections/S07_WhereExactly`
+- `src/pages/domains/muladhara/MuladharaDomain.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/sections/S08_TheTwoMaps.tsx` — `./sections/S08_TheTwoMaps`
+- `src/pages/domains/muladhara/MuladharaDomain.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/sections/S09_TheRootLens.tsx` — `./sections/S09_TheRootLens`
+- `src/pages/domains/muladhara/MuladharaDomain.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/sections/S10_QuickRootReference.tsx` — `./sections/S10_QuickRootReference`
+- `src/pages/domains/muladhara/MuladharaDomain.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/sections/S11_TheEmptyAltar.tsx` — `./sections/S11_TheEmptyAltar`
+- `src/pages/domains/muladhara/MuladharaDomain.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/sections/S12_TheFourPetals.tsx` — `./sections/S12_TheFourPetals`
+- `src/pages/domains/muladhara/MuladharaDomain.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/sections/S13_TheFourSyllables.tsx` — `./sections/S13_TheFourSyllables`
+- `src/pages/domains/muladhara/MuladharaDomain.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/sections/S14_TheEarthSquare.tsx` — `./sections/S14_TheEarthSquare`
+- `src/pages/domains/muladhara/MuladharaDomain.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/sections/S15_TheEightDirections.tsx` — `./sections/S15_TheEightDirections`
+- `src/pages/domains/muladhara/MuladharaDomain.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/sections/S16_TheSymbolBecomesLand.tsx` — `./sections/S16_TheSymbolBecomesLand`
+- `src/pages/domains/muladhara/MuladharaDomain.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/sections/S17_TheBija.tsx` — `./sections/S17_TheBija`
+- `src/pages/domains/muladhara/MuladharaDomain.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/sections/S19_Airavata.tsx` — `./sections/S19_Airavata`
+- `src/pages/domains/muladhara/MuladharaDomain.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/sections/S20_TheDownwardTriangle.tsx` — `./sections/S20_TheDownwardTriangle`
+- `src/pages/domains/muladhara/MuladharaDomain.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/sections/S21_SvayambhuLinga.tsx` — `./sections/S21_SvayambhuLinga`
+- `src/pages/domains/muladhara/MuladharaDomain.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/sections/S22_Kundalini.tsx` — `./sections/S22_Kundalini`
+- `src/pages/domains/muladhara/MuladharaDomain.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/sections/S23_ThreeHalfCoils.tsx` — `./sections/S23_ThreeHalfCoils`
+- `src/pages/domains/muladhara/MuladharaDomain.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/sections/S24_BreathingSpace01.tsx` — `./sections/S24_BreathingSpace01`
+- `src/pages/domains/muladhara/MuladharaDomain.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/sections/S25_Ida.tsx` — `./sections/S25_Ida`
+- `src/pages/domains/muladhara/MuladharaDomain.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/sections/S26_Pingala.tsx` — `./sections/S26_Pingala`
+- `src/pages/domains/muladhara/MuladharaDomain.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/sections/S27_Sushumna.tsx` — `./sections/S27_Sushumna`
+- `src/pages/domains/muladhara/MuladharaDomain.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/sections/S28B_ApanaVayu.tsx` — `./sections/S28B_ApanaVayu`
+- `src/pages/domains/muladhara/MuladharaDomain.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/sections/S28_TheAscendingCurrent.tsx` — `./sections/S28_TheAscendingCurrent`
+- `src/pages/domains/muladhara/MuladharaDomain.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/sections/S29_ExperienceEarth.tsx` — `./sections/S29_ExperienceEarth`
+- `src/pages/domains/muladhara/MuladharaDomain.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/sections/S30_LivingEarth.tsx` — `./sections/S30_LivingEarth`
+- `src/pages/domains/muladhara/MuladharaDomain.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/sections/S31_TheFiveSenses.tsx` — `./sections/S31_TheFiveSenses`
+- `src/pages/domains/muladhara/MuladharaDomain.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/sections/S32_TheRootWalk.tsx` — `./sections/S32_TheRootWalk`
+- `src/pages/domains/muladhara/MuladharaDomain.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/sections/S33_TheCairn.tsx` — `./sections/S33_TheCairn`
+- `src/pages/domains/muladhara/MuladharaDomain.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/sections/S34_TheWindTree.tsx` — `./sections/S34_TheWindTree`
+- `src/pages/domains/muladhara/MuladharaDomain.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/sections/S35B_MulaBandha.tsx` — `./sections/S35B_MulaBandha`
+- `src/pages/domains/muladhara/MuladharaDomain.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/sections/S35_BreathingSpace02.tsx` — `./sections/S35_BreathingSpace02`
+- `src/pages/domains/muladhara/MuladharaDomain.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/sections/S36_TheSurvivalLab.tsx` — `./sections/S36_TheSurvivalLab`
+- `src/pages/domains/muladhara/MuladharaDomain.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/sections/S37_TheAmygdala.tsx` — `./sections/S37_TheAmygdala`
+- `src/pages/domains/muladhara/MuladharaDomain.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/sections/S38_Fight.tsx` — `./sections/S38_Fight`
+- `src/pages/domains/muladhara/MuladharaDomain.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/sections/S39_Flight.tsx` — `./sections/S39_Flight`
+- `src/pages/domains/muladhara/MuladharaDomain.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/sections/S40_TheWindowOfTolerance.tsx` — `./sections/S40_TheWindowOfTolerance`
+- `src/pages/domains/muladhara/MuladharaDomain.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/sections/S41_Freeze.tsx` — `./sections/S41_Freeze`
+- `src/pages/domains/muladhara/MuladharaDomain.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/sections/S42_Fawn.tsx` — `./sections/S42_Fawn`
+- `src/pages/domains/muladhara/MuladharaDomain.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/sections/S43_TheGroundedResponse.tsx` — `./sections/S43_TheGroundedResponse`
+- `src/pages/domains/muladhara/MuladharaDomain.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/sections/S44_ScarcityVsStability.tsx` — `./sections/S44_ScarcityVsStability`
+- `src/pages/domains/muladhara/MuladharaDomain.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/sections/S45_TheAnchorScale.tsx` — `./sections/S45_TheAnchorScale`
+- `src/pages/domains/muladhara/MuladharaDomain.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/sections/S46_FinancialGrounding.tsx` — `./sections/S46_FinancialGrounding`
+- `src/pages/domains/muladhara/MuladharaDomain.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/sections/S47B_TheRootKitchen.tsx` — `./sections/S47B_TheRootKitchen`
+- `src/pages/domains/muladhara/MuladharaDomain.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/sections/S47_PhysicalHealthAsAnchor.tsx` — `./sections/S47_PhysicalHealthAsAnchor`
+- `src/pages/domains/muladhara/MuladharaDomain.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/sections/S48_Belonging.tsx` — `./sections/S48_Belonging`
+- `src/pages/domains/muladhara/MuladharaDomain.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/sections/S49_GenerationalRoots.tsx` — `./sections/S49_GenerationalRoots`
+- `src/pages/domains/muladhara/MuladharaDomain.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/sections/S50_TheTiltedRoot.tsx` — `./sections/S50_TheTiltedRoot`
+- `src/pages/domains/muladhara/MuladharaDomain.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/sections/S51_OneMinuteRootReset.tsx` — `./sections/S51_OneMinuteRootReset`
+- `src/pages/domains/muladhara/MuladharaDomain.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/sections/S52_HeavyLifting.tsx` — `./sections/S52_HeavyLifting`
+- `src/pages/domains/muladhara/MuladharaDomain.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/sections/S53_DigitalBoundaries.tsx` — `./sections/S53_DigitalBoundaries`
+- `src/pages/domains/muladhara/MuladharaDomain.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/sections/S54_SleepAsSacred.tsx` — `./sections/S54_SleepAsSacred`
+- `src/pages/domains/muladhara/MuladharaDomain.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/sections/S55_EarningALiving.tsx` — `./sections/S55_EarningALiving`
+- `src/pages/domains/muladhara/MuladharaDomain.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/sections/S56_WhatMightIExperience.tsx` — `./sections/S56_WhatMightIExperience`
+- `src/pages/domains/muladhara/MuladharaDomain.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/sections/S57_TraditionSorter.tsx` — `./sections/S57_TraditionSorter`
+- `src/pages/domains/muladhara/MuladharaDomain.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/sections/S58_SourceVault.tsx` — `./sections/S58_SourceVault`
+- `src/pages/domains/muladhara/MuladharaDomain.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/sections/S59_RootAnswerCentre.tsx` — `./sections/S59_RootAnswerCentre`
+- `src/pages/domains/muladhara/MuladharaDomain.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/sections/S60_MyRootPractice.tsx` — `./sections/S60_MyRootPractice`
+- `src/pages/domains/muladhara/MuladharaDomain.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/sections/S61_RootCovenant.tsx` — `./sections/S61_RootCovenant`
+- `src/pages/domains/muladhara/MuladharaDomain.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/sections/S62_TheEvolvingRootNetwork.tsx` — `./sections/S62_TheEvolvingRootNetwork`
+- `src/pages/domains/muladhara/MuladharaDomain.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/sections/S64_WeightToMovement.tsx` — `./sections/S64_WeightToMovement`
+- `src/pages/domains/muladhara/MuladharaDomain.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/sections/S65_StoneToWater.tsx` — `./sections/S65_StoneToWater`
+- `src/pages/domains/muladhara/MuladharaDomain.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/sections/S66_SquareToFluidGeometry.tsx` — `./sections/S66_SquareToFluidGeometry`
+- `src/pages/domains/muladhara/MuladharaDomain.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/sections/S67_FourPetalsToSixPetals.tsx` — `./sections/S67_FourPetalsToSixPetals`
+- `src/pages/domains/muladhara/MuladharaDomain.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/sections/S68_TheFinalTransformation.tsx` — `./sections/S68_TheFinalTransformation`
+- `src/pages/domains/muladhara/components/EarthParticleField.tsx` --[CONTAINS]--> `symbol://src/pages/domains/muladhara/components/EarthParticleField.tsx::draw` — `draw`
+- `src/pages/domains/muladhara/components/EarthParticleField.tsx` --[CONTAINS]--> `symbol://src/pages/domains/muladhara/components/EarthParticleField.tsx::resize` — `resize`
+- `src/pages/domains/muladhara/components/MandalaOverlay.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/components/ClassicalMandala.tsx` — `./ClassicalMandala`
+- `src/pages/domains/muladhara/components/MandalaOverlay.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/components/PersistentRootSystem.tsx` --[USES_COMPONENT]--> `component://PersistentRootSystem` — `PersistentRootSystem`
+- `src/pages/domains/muladhara/components/PersistentRootSystem.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/MuladharaDomain.tsx` — `../MuladharaDomain`
+- `src/pages/domains/muladhara/components/PersistentRootSystem.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/components/PersistentRootSystem.tsx` --[CONTAINS]--> `symbol://src/pages/domains/muladhara/components/PersistentRootSystem.tsx::PersistentRootSystem` — `PersistentRootSystem`
+- `src/pages/domains/muladhara/components/SourceBadge.tsx` --[CONTAINS]--> `symbol://src/pages/domains/muladhara/components/SourceBadge.tsx::getBadgeStyle` — `getBadgeStyle`
+- `src/pages/domains/muladhara/components/SubtleNadiSystem.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` --[CONTAINS]--> `symbol://src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx::useMuladharaJourney` — `useMuladharaJourney`
+- `src/pages/domains/muladhara/sections/S01_TheCinematicEntry.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/sections/S02_TheGravitationalFall.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/sections/S03_WhatIsMuladhara.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/sections/S04_TheSovereignVessel.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/sections/S05_TheArchitecture.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/sections/S05_TheRootPortals.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/sections/S06_TheBodyAxis.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/sections/S07_WhereExactly.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/sections/S08_TheTwoMaps.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/sections/S09_TheRootLens.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/sections/S10_QuickRootReference.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/sections/S11_TheEmptyAltar.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/sections/S12_TheFourPetals.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/sections/S13_TheFourSyllables.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/sections/S14_TheEarthSquare.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/sections/S15_TheEightDirections.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/sections/S16_TheSymbolBecomesLand.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/sections/S17B_TheBijaResonance.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/sections/S17_TheBija.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/sections/S18_TheSoundField.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/sections/S19_Airavata.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/sections/S20_TheDownwardTriangle.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/sections/S21_SvayambhuLinga.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/sections/S22_Kundalini.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/sections/S23_ThreeHalfCoils.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/sections/S24_BreathingSpace01.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/sections/S25_Ida.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/sections/S26_Pingala.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/sections/S27_Sushumna.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/sections/S28B_ApanaVayu.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/sections/S28_TheAscendingCurrent.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/sections/S29_ExperienceEarth.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/sections/S30_LivingEarth.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/sections/S30_LivingEarth.tsx` --[CONTAINS]--> `symbol://src/pages/domains/muladhara/sections/S30_LivingEarth.tsx::handleInteract` — `handleInteract`
+- `src/pages/domains/muladhara/sections/S30_TheRootWalk.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/sections/S31_TheFiveSenses.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/sections/S32_TheRootWalk.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/sections/S32_TheWindTree.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/sections/S33_GroundingInModernLife.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/sections/S33_TheCairn.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/sections/S33_TheCairn.tsx` --[CONTAINS]--> `symbol://src/pages/domains/muladhara/sections/S33_TheCairn.tsx::handleDragEnd` — `handleDragEnd`
+- `src/pages/domains/muladhara/sections/S34_TheThreeLenses.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/sections/S34_TheWindTree.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/sections/S35B_MulaBandha.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/sections/S35_BreathingSpace02.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/sections/S36_AHumanLife.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/sections/S36_TheSurvivalLab.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/sections/S37_TheAmygdala.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/sections/S37_TheRootedHome.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/sections/S38_DailyRhythm.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/sections/S38_DailyRhythm.tsx` --[CONTAINS]--> `symbol://src/pages/domains/muladhara/sections/S38_DailyRhythm.tsx::toggleBlock` — `toggleBlock`
+- `src/pages/domains/muladhara/sections/S38_Fight.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/sections/S39_Flight.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/sections/S39_SecurityLandscape.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/sections/S40_ResourceReservoir.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/sections/S40_TheWindowOfTolerance.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/sections/S41_Belonging.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/sections/S41_Belonging.tsx` --[CONTAINS]--> `symbol://src/pages/domains/muladhara/sections/S41_Belonging.tsx::getDist` — `getDist`
+- `src/pages/domains/muladhara/sections/S41_Freeze.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/sections/S42_Boundaries.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/sections/S42_Fawn.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/sections/S43_SurvivalResponseLab.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/sections/S43_TheGroundedResponse.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/sections/S44_ScarcityVsStability.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/sections/S45_TheAnchorScale.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/sections/S45_TheRootSpectrum.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/sections/S46_FinancialGrounding.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/sections/S47B_TheRootKitchen.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/sections/S47_PhysicalHealthAsAnchor.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/sections/S47_TheRootKitchen.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/sections/S48_Belonging.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/sections/S48_BuildYourPlate.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/sections/S48_BuildYourPlate.tsx` --[CONTAINS]--> `symbol://src/pages/domains/muladhara/sections/S48_BuildYourPlate.tsx::toggle` — `toggle`
+- `src/pages/domains/muladhara/sections/S49_FoodMythLab.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/sections/S49_GenerationalRoots.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/sections/S50_PracticeTransition.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/sections/S50_TheTiltedRoot.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/sections/S51_OneMinuteRootReset.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/sections/S51_OneMinuteRootReset.tsx` --[CONTAINS]--> `symbol://src/pages/domains/muladhara/sections/S51_OneMinuteRootReset.tsx::start` — `start`
+- `src/pages/domains/muladhara/sections/S52_HeavyLifting.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/sections/S52_TheRootFocusChamber.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/sections/S52_TheRootFocusChamber.tsx` --[CONTAINS]--> `symbol://src/pages/domains/muladhara/sections/S52_TheRootFocusChamber.tsx::fmt` — `fmt`
+- `src/pages/domains/muladhara/sections/S52_TheRootFocusChamber.tsx` --[CONTAINS]--> `symbol://src/pages/domains/muladhara/sections/S52_TheRootFocusChamber.tsx::start` — `start`
+- `src/pages/domains/muladhara/sections/S52_TheRootFocusChamber.tsx` --[CONTAINS]--> `symbol://src/pages/domains/muladhara/sections/S52_TheRootFocusChamber.tsx::stop` — `stop`
+- `src/pages/domains/muladhara/sections/S53_DigitalBoundaries.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/sections/S53_TheLamChamber.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/sections/S53_TheLamChamber.tsx` --[CONTAINS]--> `symbol://src/pages/domains/muladhara/sections/S53_TheLamChamber.tsx::handleTap` — `handleTap`
+- `src/pages/domains/muladhara/sections/S54_MulaBandha.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/sections/S54_SleepAsSacred.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/sections/S55_EarningALiving.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/sections/S55_HowToActivateMuladhara.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/sections/S56_WhatMightIExperience.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/sections/S57_TraditionSorter.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/sections/S58_SourceVault.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/sections/S59_RootAnswerCentre.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/sections/S60_MyRootPractice.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/sections/S61_RootCovenant.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/sections/S62_TheEvolvingRootNetwork.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/sections/S63_Integration.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/sections/S64_WeightToMovement.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/sections/S65_StoneToWater.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/sections/S66_SquareToFluidGeometry.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/sections/S67_FourPetalsToSixPetals.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/muladhara/sections/S68_TheFinalTransformation.tsx` --[IMPORTS]--> `src/pages/domains/muladhara/context/MuladharaJourneyContext.tsx` — `../context/MuladharaJourneyContext`
+- `src/pages/domains/sahasrara/SahasraraDomain.tsx` --[IMPORTS]--> `src/data/chakras.ts` — `../../../data/chakras`
+- `src/pages/domains/sahasrara/SahasraraDomain.tsx` --[IMPORTS]--> `src/pages/domains/sahasrara/sections/01_TheAscent.tsx` — `./sections/01_TheAscent`
+- `src/pages/domains/sahasrara/SahasraraDomain.tsx` --[IMPORTS]--> `src/pages/domains/sahasrara/sections/02_ThousandPetals.tsx` — `./sections/02_ThousandPetals`
+- `src/pages/domains/sahasrara/SahasraraDomain.tsx` --[IMPORTS]--> `src/pages/domains/sahasrara/sections/03_EnterThePetals.tsx` — `./sections/03_EnterThePetals`
+- `src/pages/domains/sahasrara/SahasraraDomain.tsx` --[IMPORTS]--> `src/pages/domains/sahasrara/sections/04_SacredLibrary.tsx` — `./sections/04_SacredLibrary`
+- `src/pages/domains/sahasrara/SahasraraDomain.tsx` --[IMPORTS]--> `src/pages/domains/sahasrara/sections/05_VedicSorting.tsx` — `./sections/05_VedicSorting`
+- `src/pages/domains/sahasrara/SahasraraDomain.tsx` --[IMPORTS]--> `src/pages/domains/sahasrara/sections/06_CrownMandala.tsx` — `./sections/06_CrownMandala`
+- `src/pages/domains/sahasrara/SahasraraDomain.tsx` --[IMPORTS]--> `src/pages/domains/sahasrara/sections/07_MoonChamber.tsx` — `./sections/07_MoonChamber`
+- `src/pages/domains/sahasrara/SahasraraDomain.tsx` --[IMPORTS]--> `src/pages/domains/sahasrara/sections/08_Bindu.tsx` — `./sections/08_Bindu`
+- `src/pages/domains/sahasrara/SahasraraDomain.tsx` --[IMPORTS]--> `src/pages/domains/sahasrara/sections/09_TheVoid.tsx` — `./sections/09_TheVoid`
+- `src/pages/domains/sahasrara/SahasraraDomain.tsx` --[IMPORTS]--> `src/pages/domains/sahasrara/sections/10_WhoAmI.tsx` — `./sections/10_WhoAmI`
+- `src/pages/domains/sahasrara/SahasraraDomain.tsx` --[IMPORTS]--> `src/pages/domains/sahasrara/sections/11_AtmanRoom.tsx` — `./sections/11_AtmanRoom`
+- `src/pages/domains/sahasrara/SahasraraDomain.tsx` --[IMPORTS]--> `src/pages/domains/sahasrara/sections/12_IAm.tsx` — `./sections/12_IAm`
+- `src/pages/domains/sahasrara/SahasraraDomain.tsx` --[IMPORTS]--> `src/pages/domains/sahasrara/sections/13_Brahman.tsx` — `./sections/13_Brahman`
+- `src/pages/domains/sahasrara/SahasraraDomain.tsx` --[IMPORTS]--> `src/pages/domains/sahasrara/sections/14_ParticleField.tsx` — `./sections/14_ParticleField`
+- `src/pages/domains/sahasrara/SahasraraDomain.tsx` --[IMPORTS]--> `src/pages/domains/sahasrara/sections/15_WhatIsLeft.tsx` — `./sections/15_WhatIsLeft`
+- `src/pages/domains/sahasrara/SahasraraDomain.tsx` --[IMPORTS]--> `src/pages/domains/sahasrara/sections/16_ShivaShakti.tsx` — `./sections/16_ShivaShakti`
+- `src/pages/domains/sahasrara/SahasraraDomain.tsx` --[IMPORTS]--> `src/pages/domains/sahasrara/sections/17_KundaliniAscent.tsx` — `./sections/17_KundaliniAscent`
+- `src/pages/domains/sahasrara/SahasraraDomain.tsx` --[IMPORTS]--> `src/pages/domains/sahasrara/sections/18_ThreeGranthis.tsx` — `./sections/18_ThreeGranthis`
+- `src/pages/domains/sahasrara/SahasraraDomain.tsx` --[IMPORTS]--> `src/pages/domains/sahasrara/sections/19_WhyTheCrown.tsx` — `./sections/19_WhyTheCrown`
+- `src/pages/domains/sahasrara/SahasraraDomain.tsx` --[IMPORTS]--> `src/pages/domains/sahasrara/sections/20_MokshaGallery.tsx` — `./sections/20_MokshaGallery`
+- `src/pages/domains/sahasrara/SahasraraDomain.tsx` --[IMPORTS]--> `src/pages/domains/sahasrara/sections/21_Samadhi.tsx` — `./sections/21_Samadhi`
+- `src/pages/domains/sahasrara/SahasraraDomain.tsx` --[IMPORTS]--> `src/pages/domains/sahasrara/sections/22_Kaivalya.tsx` — `./sections/22_Kaivalya`
+- `src/pages/domains/sahasrara/SahasraraDomain.tsx` --[IMPORTS]--> `src/pages/domains/sahasrara/sections/23_Ananda.tsx` — `./sections/23_Ananda`
+- `src/pages/domains/sahasrara/SahasraraDomain.tsx` --[IMPORTS]--> `src/pages/domains/sahasrara/sections/24_Bhakti.tsx` — `./sections/24_Bhakti`
+- `src/pages/domains/sahasrara/SahasraraDomain.tsx` --[IMPORTS]--> `src/pages/domains/sahasrara/sections/25_InformationVsWisdom.tsx` — `./sections/25_InformationVsWisdom`
+- `src/pages/domains/sahasrara/SahasraraDomain.tsx` --[IMPORTS]--> `src/pages/domains/sahasrara/sections/26_GraspingExperiment.tsx` — `./sections/26_GraspingExperiment`
+- `src/pages/domains/sahasrara/SahasraraDomain.tsx` --[IMPORTS]--> `src/pages/domains/sahasrara/sections/27_BrainwaveTuning.tsx` — `./sections/27_BrainwaveTuning`
+- `src/pages/domains/sahasrara/SahasraraDomain.tsx` --[IMPORTS]--> `src/pages/domains/sahasrara/sections/28_ModernSymptoms.tsx` — `./sections/28_ModernSymptoms`
+- `src/pages/domains/sahasrara/SahasraraDomain.tsx` --[IMPORTS]--> `src/pages/domains/sahasrara/sections/29_FoodsAndDiet.tsx` — `./sections/29_FoodsAndDiet`
+- `src/pages/domains/sahasrara/SahasraraDomain.tsx` --[IMPORTS]--> `src/pages/domains/sahasrara/sections/30_YogaPractices.tsx` — `./sections/30_YogaPractices`
+- `src/pages/domains/sahasrara/SahasraraDomain.tsx` --[IMPORTS]--> `src/pages/domains/sahasrara/sections/31_AchievementExperiment.tsx` — `./sections/31_AchievementExperiment`
+- `src/pages/domains/sahasrara/SahasraraDomain.tsx` --[IMPORTS]--> `src/pages/domains/sahasrara/sections/32_SeekingLoop.tsx` — `./sections/32_SeekingLoop`
+- `src/pages/domains/sahasrara/SahasraraDomain.tsx` --[IMPORTS]--> `src/pages/domains/sahasrara/sections/33_OpenAwareness.tsx` — `./sections/33_OpenAwareness`
+- `src/pages/domains/sahasrara/SahasraraDomain.tsx` --[IMPORTS]--> `src/pages/domains/sahasrara/sections/34_VoidRoom.tsx` — `./sections/34_VoidRoom`
+- `src/pages/domains/sahasrara/SahasraraDomain.tsx` --[IMPORTS]--> `src/pages/domains/sahasrara/sections/35_CrownMeditation.tsx` — `./sections/35_CrownMeditation`
+- `src/pages/domains/sahasrara/SahasraraDomain.tsx` --[IMPORTS]--> `src/pages/domains/sahasrara/sections/36_FinalReturnPractice.tsx` — `./sections/36_FinalReturnPractice`
+- `src/pages/domains/sahasrara/SahasraraDomain.tsx` --[IMPORTS]--> `src/pages/domains/sahasrara/sections/37_ComeBackDown.tsx` — `./sections/37_ComeBackDown`
+- `src/pages/domains/sahasrara/SahasraraDomain.tsx` --[IMPORTS]--> `src/pages/domains/sahasrara/sections/38_OriginalAnswer.tsx` — `./sections/38_OriginalAnswer`
+- `src/pages/domains/sahasrara/SahasraraDomain.tsx` --[IMPORTS]--> `src/pages/domains/sahasrara/sections/39_LifeIntegration.tsx` — `./sections/39_LifeIntegration`
+- `src/pages/domains/sahasrara/SahasraraDomain.tsx` --[IMPORTS]--> `src/pages/domains/sahasrara/sections/40_OrdinarySacred.tsx` — `./sections/40_OrdinarySacred`
+- `src/pages/domains/sahasrara/SahasraraDomain.tsx` --[IMPORTS]--> `src/pages/domains/sahasrara/sections/41_Mortality.tsx` — `./sections/41_Mortality`
+- `src/pages/domains/sahasrara/SahasraraDomain.tsx` --[IMPORTS]--> `src/pages/domains/sahasrara/sections/42_Meaning.tsx` — `./sections/42_Meaning`
+- `src/pages/domains/sahasrara/SahasraraDomain.tsx` --[IMPORTS]--> `src/pages/domains/sahasrara/sections/43_SevenChakraIntegration.tsx` — `./sections/43_SevenChakraIntegration`
+- `src/pages/domains/sahasrara/SahasraraDomain.tsx` --[IMPORTS]--> `src/pages/domains/sahasrara/sections/44_FinalQuestion.tsx` — `./sections/44_FinalQuestion`
+- `src/pages/domains/sahasrara/SahasraraDomain.tsx` --[IMPORTS]--> `src/pages/domains/sahasrara/sections/45_FinalImage.tsx` — `./sections/45_FinalImage`
+- `src/pages/domains/sahasrara/components/ParticleUnity.tsx` --[IMPORTS]--> `src/pages/domains/sahasrara/SahasraraDomain.tsx` — `../SahasraraDomain`
+- `src/pages/domains/sahasrara/components/ThousandPetalCanvas.tsx` --[CONTAINS]--> `symbol://src/pages/domains/sahasrara/components/ThousandPetalCanvas.tsx::draw` — `draw`
+- `src/pages/domains/sahasrara/sections/02_ThousandPetals.tsx` --[IMPORTS]--> `src/pages/domains/sahasrara/SahasraraDomain.tsx` — `../SahasraraDomain`
+- `src/pages/domains/sahasrara/sections/02_ThousandPetals.tsx` --[IMPORTS]--> `src/pages/domains/sahasrara/components/ThousandPetalCanvas.tsx` — `../components/ThousandPetalCanvas`
+- `src/pages/domains/sahasrara/sections/03_EnterThePetals.tsx` --[CONTAINS]--> `symbol://src/pages/domains/sahasrara/sections/03_EnterThePetals.tsx::handleInteraction` — `handleInteraction`
+- `src/pages/domains/sahasrara/sections/04_SacredLibrary.tsx` --[IMPORTS]--> `src/pages/domains/sahasrara/components/SourceBadge.tsx` — `../components/SourceBadge`
+- `src/pages/domains/sahasrara/sections/05_VedicSorting.tsx` --[CONTAINS]--> `symbol://src/pages/domains/sahasrara/sections/05_VedicSorting.tsx::handleAssignCategory` — `handleAssignCategory`
+- `src/pages/domains/sahasrara/sections/05_VedicSorting.tsx` --[CONTAINS]--> `symbol://src/pages/domains/sahasrara/sections/05_VedicSorting.tsx::handleCloseModal` — `handleCloseModal`
+- `src/pages/domains/sahasrara/sections/05_VedicSorting.tsx` --[CONTAINS]--> `symbol://src/pages/domains/sahasrara/sections/05_VedicSorting.tsx::handleSelectConcept` — `handleSelectConcept`
+- `src/pages/domains/sahasrara/sections/06_CrownMandala.tsx` --[IMPORTS]--> `src/pages/domains/sahasrara/components/SourceBadge.tsx` — `../components/SourceBadge`
+- `src/pages/domains/sahasrara/sections/06_CrownMandala.tsx` --[CONTAINS]--> `symbol://src/pages/domains/sahasrara/sections/06_CrownMandala.tsx::nextLayer` — `nextLayer`
+- `src/pages/domains/sahasrara/sections/08_Bindu.tsx` --[IMPORTS]--> `src/pages/domains/sahasrara/SahasraraDomain.tsx` — `../SahasraraDomain`
+- `src/pages/domains/sahasrara/sections/09_TheVoid.tsx` --[IMPORTS]--> `src/pages/domains/sahasrara/SahasraraDomain.tsx` — `../SahasraraDomain`
+- `src/pages/domains/sahasrara/sections/10_WhoAmI.tsx` --[CONTAINS]--> `symbol://src/pages/domains/sahasrara/sections/10_WhoAmI.tsx::handleDragEnd` — `handleDragEnd`
+- `src/pages/domains/sahasrara/sections/10_WhoAmI.tsx` --[CONTAINS]--> `symbol://src/pages/domains/sahasrara/sections/10_WhoAmI.tsx::handleSave` — `handleSave`
+- `src/pages/domains/sahasrara/sections/12_IAm.tsx` --[IMPORTS]--> `src/pages/domains/sahasrara/SahasraraDomain.tsx` — `../SahasraraDomain`
+- `src/pages/domains/sahasrara/sections/15_WhatIsLeft.tsx` --[IMPORTS]--> `src/pages/domains/sahasrara/SahasraraDomain.tsx` — `../SahasraraDomain`
+- `src/pages/domains/sahasrara/sections/16_ShivaShakti.tsx` --[IMPORTS]--> `src/pages/domains/sahasrara/SahasraraDomain.tsx` — `../SahasraraDomain`
+- `src/pages/domains/sahasrara/sections/17_KundaliniAscent.tsx` --[IMPORTS]--> `src/pages/domains/sahasrara/SahasraraDomain.tsx` — `../SahasraraDomain`
+- `src/pages/domains/sahasrara/sections/18_ThreeGranthis.tsx` --[CONTAINS]--> `symbol://src/pages/domains/sahasrara/sections/18_ThreeGranthis.tsx::handleNext` — `handleNext`
+- `src/pages/domains/sahasrara/sections/20_MokshaGallery.tsx` --[IMPORTS]--> `src/pages/domains/sahasrara/SahasraraDomain.tsx` — `../SahasraraDomain`
+- `src/pages/domains/sahasrara/sections/21_Samadhi.tsx` --[IMPORTS]--> `src/pages/domains/sahasrara/SahasraraDomain.tsx` — `../SahasraraDomain`
+- `src/pages/domains/sahasrara/sections/22_Kaivalya.tsx` --[IMPORTS]--> `src/pages/domains/sahasrara/SahasraraDomain.tsx` — `../SahasraraDomain`
+- `src/pages/domains/sahasrara/sections/23_Ananda.tsx` --[IMPORTS]--> `src/pages/domains/sahasrara/SahasraraDomain.tsx` — `../SahasraraDomain`
+- `src/pages/domains/sahasrara/sections/24_Bhakti.tsx` --[IMPORTS]--> `src/pages/domains/sahasrara/SahasraraDomain.tsx` — `../SahasraraDomain`
+- `src/pages/domains/sahasrara/sections/25_InformationVsWisdom.tsx` --[IMPORTS]--> `src/pages/domains/sahasrara/SahasraraDomain.tsx` — `../SahasraraDomain`
+- `src/pages/domains/sahasrara/sections/26_GraspingExperiment.tsx` --[CONTAINS]--> `symbol://src/pages/domains/sahasrara/sections/26_GraspingExperiment.tsx::handleMouseMove` — `handleMouseMove`
+- `src/pages/domains/sahasrara/sections/26_GraspingExperiment.tsx` --[CONTAINS]--> `symbol://src/pages/domains/sahasrara/sections/26_GraspingExperiment.tsx::handleOrbTap` — `handleOrbTap`
+- `src/pages/domains/sahasrara/sections/26_GraspingExperiment.tsx` --[CONTAINS]--> `symbol://src/pages/domains/sahasrara/sections/26_GraspingExperiment.tsx::handleTouchMove` — `handleTouchMove`
+- `src/pages/domains/sahasrara/sections/26_GraspingExperiment.tsx` --[CONTAINS]--> `symbol://src/pages/domains/sahasrara/sections/26_GraspingExperiment.tsx::triggerEscape` — `triggerEscape`
+- `src/pages/domains/sahasrara/sections/29_FoodsAndDiet.tsx` --[IMPORTS]--> `src/pages/domains/sahasrara/SahasraraDomain.tsx` — `../SahasraraDomain`
+- `src/pages/domains/sahasrara/sections/30_YogaPractices.tsx` --[IMPORTS]--> `src/pages/domains/sahasrara/SahasraraDomain.tsx` — `../SahasraraDomain`
+- `src/pages/domains/sahasrara/sections/31_AchievementExperiment.tsx` --[CONTAINS]--> `symbol://src/pages/domains/sahasrara/sections/31_AchievementExperiment.tsx::handleClick` — `handleClick`
+- `src/pages/domains/sahasrara/sections/32_SeekingLoop.tsx` --[IMPORTS]--> `src/pages/domains/sahasrara/SahasraraDomain.tsx` — `../SahasraraDomain`
+- `src/pages/domains/sahasrara/sections/33_OpenAwareness.tsx` --[CONTAINS]--> `symbol://src/pages/domains/sahasrara/sections/33_OpenAwareness.tsx::handlePointerMove` — `handlePointerMove`
+- `src/pages/domains/sahasrara/sections/34_VoidRoom.tsx` --[CONTAINS]--> `symbol://src/pages/domains/sahasrara/sections/34_VoidRoom.tsx::handlePointerDown` — `handlePointerDown`
+- `src/pages/domains/sahasrara/sections/34_VoidRoom.tsx` --[CONTAINS]--> `symbol://src/pages/domains/sahasrara/sections/34_VoidRoom.tsx::handlePointerUp` — `handlePointerUp`
+- `src/pages/domains/sahasrara/sections/35_CrownMeditation.tsx` --[IMPORTS]--> `src/pages/domains/sahasrara/SahasraraDomain.tsx` — `../SahasraraDomain`
+- `src/pages/domains/sahasrara/sections/36_FinalReturnPractice.tsx` --[IMPORTS]--> `src/pages/domains/sahasrara/SahasraraDomain.tsx` — `../SahasraraDomain`
+- `src/pages/domains/sahasrara/sections/37_ComeBackDown.tsx` --[IMPORTS]--> `src/pages/domains/sahasrara/SahasraraDomain.tsx` — `../SahasraraDomain`
+- `src/pages/domains/sahasrara/sections/38_OriginalAnswer.tsx` --[CONTAINS]--> `symbol://src/pages/domains/sahasrara/sections/38_OriginalAnswer.tsx::handleNext` — `handleNext`
+- `src/pages/domains/sahasrara/sections/39_LifeIntegration.tsx` --[IMPORTS]--> `src/pages/domains/sahasrara/SahasraraDomain.tsx` — `../SahasraraDomain`
+- `src/pages/domains/sahasrara/sections/40_OrdinarySacred.tsx` --[IMPORTS]--> `src/pages/domains/sahasrara/SahasraraDomain.tsx` — `../SahasraraDomain`
+- `src/pages/domains/sahasrara/sections/41_Mortality.tsx` --[IMPORTS]--> `src/pages/domains/sahasrara/SahasraraDomain.tsx` — `../SahasraraDomain`
+- `src/pages/domains/sahasrara/sections/42_Meaning.tsx` --[CONTAINS]--> `symbol://src/pages/domains/sahasrara/sections/42_Meaning.tsx::handlePointerMove` — `handlePointerMove`
+- `src/pages/domains/sahasrara/sections/43_SevenChakraIntegration.tsx` --[IMPORTS]--> `src/pages/domains/sahasrara/SahasraraDomain.tsx` — `../SahasraraDomain`
+- `src/pages/domains/sahasrara/sections/45_FinalImage.tsx` --[IMPORTS]--> `src/pages/domains/sahasrara/SahasraraDomain.tsx` — `../SahasraraDomain`
+- `src/pages/domains/sahasrara/sections/45_FinalImage.tsx` --[CONTAINS]--> `symbol://src/pages/domains/sahasrara/sections/45_FinalImage.tsx::scrollToTop` — `scrollToTop`
+- `src/pages/domains/svadhisthana/SvadhisthanaDomain.tsx` --[IMPORTS]--> `src/data/chakras.ts` — `../../../data/chakras`
+- `src/pages/domains/svadhisthana/SvadhisthanaDomain.tsx` --[IMPORTS]--> `src/pages/domains/svadhisthana/components/FluidBackground.tsx` — `./components/FluidBackground`
+- `src/pages/domains/svadhisthana/SvadhisthanaDomain.tsx` --[IMPORTS]--> `src/pages/domains/svadhisthana/sections/Activation.tsx` — `./sections/Activation`
+- `src/pages/domains/svadhisthana/SvadhisthanaDomain.tsx` --[IMPORTS]--> `src/pages/domains/svadhisthana/sections/Balance.tsx` — `./sections/Balance`
+- `src/pages/domains/svadhisthana/SvadhisthanaDomain.tsx` --[IMPORTS]--> `src/pages/domains/svadhisthana/sections/Bija.tsx` — `./sections/Bija`
+- `src/pages/domains/svadhisthana/SvadhisthanaDomain.tsx` --[IMPORTS]--> `src/pages/domains/svadhisthana/sections/CreativeCurrent.tsx` — `./sections/CreativeCurrent`
+- `src/pages/domains/svadhisthana/SvadhisthanaDomain.tsx` --[IMPORTS]--> `src/pages/domains/svadhisthana/sections/Desire.tsx` — `./sections/Desire`
+- `src/pages/domains/svadhisthana/SvadhisthanaDomain.tsx` --[IMPORTS]--> `src/pages/domains/svadhisthana/sections/EmotionTide.tsx` — `./sections/EmotionTide`
+- `src/pages/domains/svadhisthana/SvadhisthanaDomain.tsx` --[IMPORTS]--> `src/pages/domains/svadhisthana/sections/Ending.tsx` — `./sections/Ending`
+- `src/pages/domains/svadhisthana/SvadhisthanaDomain.tsx` --[IMPORTS]--> `src/pages/domains/svadhisthana/sections/EvidenceAndMyths.tsx` — `./sections/EvidenceAndMyths`
+- `src/pages/domains/svadhisthana/SvadhisthanaDomain.tsx` --[IMPORTS]--> `src/pages/domains/svadhisthana/sections/FoodAndMovement.tsx` — `./sections/FoodAndMovement`
+- `src/pages/domains/svadhisthana/SvadhisthanaDomain.tsx` --[IMPORTS]--> `src/pages/domains/svadhisthana/sections/HistoricalOrigin.tsx` — `./sections/HistoricalOrigin`
+- `src/pages/domains/svadhisthana/SvadhisthanaDomain.tsx` --[IMPORTS]--> `src/pages/domains/svadhisthana/sections/Intro.tsx` — `./sections/Intro`
+- `src/pages/domains/svadhisthana/SvadhisthanaDomain.tsx` --[IMPORTS]--> `src/pages/domains/svadhisthana/sections/Journal.tsx` — `./sections/Journal`
+- `src/pages/domains/svadhisthana/SvadhisthanaDomain.tsx` --[IMPORTS]--> `src/pages/domains/svadhisthana/sections/Location.tsx` — `./sections/Location`
+- `src/pages/domains/svadhisthana/SvadhisthanaDomain.tsx` --[IMPORTS]--> `src/pages/domains/svadhisthana/sections/MandalaExplorer.tsx` — `./sections/MandalaExplorer`
+- `src/pages/domains/svadhisthana/SvadhisthanaDomain.tsx` --[IMPORTS]--> `src/pages/domains/svadhisthana/sections/MoonSymbolism.tsx` — `./sections/MoonSymbolism`
+- `src/pages/domains/svadhisthana/SvadhisthanaDomain.tsx` --[IMPORTS]--> `src/pages/domains/svadhisthana/sections/Name.tsx` — `./sections/Name`
+- `src/pages/domains/svadhisthana/SvadhisthanaDomain.tsx` --[IMPORTS]--> `src/pages/domains/svadhisthana/sections/Pleasure.tsx` — `./sections/Pleasure`
+- `src/pages/domains/svadhisthana/SvadhisthanaDomain.tsx` --[IMPORTS]--> `src/pages/domains/svadhisthana/sections/RealLifeExperiment.tsx` — `./sections/RealLifeExperiment`
+- `src/pages/domains/svadhisthana/SvadhisthanaDomain.tsx` --[IMPORTS]--> `src/pages/domains/svadhisthana/sections/Relationships.tsx` — `./sections/Relationships`
+- `src/pages/domains/svadhisthana/SvadhisthanaDomain.tsx` --[IMPORTS]--> `src/pages/domains/svadhisthana/sections/Sexuality.tsx` — `./sections/Sexuality`
+- `src/pages/domains/svadhisthana/SvadhisthanaDomain.tsx` --[IMPORTS]--> `src/pages/domains/svadhisthana/sections/WaterElement.tsx` — `./sections/WaterElement`
+- `src/pages/domains/svadhisthana/SvadhisthanaDomain.tsx` --[IMPORTS]--> `src/pages/domains/svadhisthana/sections/WaterMeditation.tsx` — `./sections/WaterMeditation`
+- `src/pages/domains/svadhisthana/SvadhisthanaDomain.tsx` --[IMPORTS]--> `src/pages/domains/svadhisthana/sections/WhatIsIt.tsx` — `./sections/WhatIsIt`
+- `src/pages/domains/svadhisthana/components/AdvancedWaterCanvas.tsx` --[CONTAINS]--> `symbol://src/pages/domains/svadhisthana/components/AdvancedWaterCanvas.tsx::draw` — `draw`
+- `src/pages/domains/svadhisthana/components/AdvancedWaterCanvas.tsx` --[CONTAINS]--> `symbol://src/pages/domains/svadhisthana/components/AdvancedWaterCanvas.tsx::resize` — `resize`
+- `src/pages/domains/svadhisthana/components/FluidBackground.tsx` --[CONTAINS]--> `symbol://src/pages/domains/svadhisthana/components/FluidBackground.tsx::draw` — `draw`
+- `src/pages/domains/svadhisthana/components/FluidBackground.tsx` --[CONTAINS]--> `symbol://src/pages/domains/svadhisthana/components/FluidBackground.tsx::drawMandala` — `drawMandala`
+- `src/pages/domains/svadhisthana/components/FluidBackground.tsx` --[CONTAINS]--> `symbol://src/pages/domains/svadhisthana/components/FluidBackground.tsx::resize` — `resize`
+- `src/pages/domains/svadhisthana/components/InteractiveCanvas.tsx` --[CONTAINS]--> `symbol://src/pages/domains/svadhisthana/components/InteractiveCanvas.tsx::draw` — `draw`
+- `src/pages/domains/svadhisthana/components/InteractiveCanvas.tsx` --[CONTAINS]--> `symbol://src/pages/domains/svadhisthana/components/InteractiveCanvas.tsx::resizeCanvas` — `resizeCanvas`
+- `src/pages/domains/svadhisthana/components/InteractiveCanvas.tsx` --[CONTAINS]--> `symbol://src/pages/domains/svadhisthana/components/InteractiveCanvas.tsx::startDrawing` — `startDrawing`
+- `src/pages/domains/svadhisthana/components/InteractiveCanvas.tsx` --[CONTAINS]--> `symbol://src/pages/domains/svadhisthana/components/InteractiveCanvas.tsx::stopDrawing` — `stopDrawing`
+- `src/pages/domains/svadhisthana/components/SourceBadge.tsx` --[CONTAINS]--> `symbol://src/pages/domains/svadhisthana/components/SourceBadge.tsx::getBadgeStyle` — `getBadgeStyle`
+- `src/pages/domains/svadhisthana/sections/Balance.tsx` --[IMPORTS]--> `src/data/svadhisthanaData.ts` — `../../../../data/svadhisthanaData`
+- `src/pages/domains/svadhisthana/sections/Balance.tsx` --[CONTAINS]--> `symbol://src/pages/domains/svadhisthana/sections/Balance.tsx::getTextContent` — `getTextContent`
+- `src/pages/domains/svadhisthana/sections/Balance.tsx` --[CONTAINS]--> `symbol://src/pages/domains/svadhisthana/sections/Balance.tsx::getWaterConfig` — `getWaterConfig`
+- `src/pages/domains/svadhisthana/sections/Bija.tsx` --[IMPORTS]--> `src/data/svadhisthanaData.ts` — `../../../../data/svadhisthanaData`
+- `src/pages/domains/svadhisthana/sections/Bija.tsx` --[CONTAINS]--> `symbol://src/pages/domains/svadhisthana/sections/Bija.tsx::handleInteract` — `handleInteract`
+- `src/pages/domains/svadhisthana/sections/CreativeCurrent.tsx` --[IMPORTS]--> `src/pages/domains/svadhisthana/components/InteractiveCanvas.tsx` — `../components/InteractiveCanvas`
+- `src/pages/domains/svadhisthana/sections/Desire.tsx` --[IMPORTS]--> `src/data/svadhisthanaData.ts` — `../../../../data/svadhisthanaData`
+- `src/pages/domains/svadhisthana/sections/Desire.tsx` --[CONTAINS]--> `symbol://src/pages/domains/svadhisthana/sections/Desire.tsx::handleMouseMove` — `handleMouseMove`
+- `src/pages/domains/svadhisthana/sections/EmotionTide.tsx` --[IMPORTS]--> `src/data/svadhisthanaData.ts` — `../../../../data/svadhisthanaData`
+- `src/pages/domains/svadhisthana/sections/EmotionTide.tsx` --[CONTAINS]--> `symbol://src/pages/domains/svadhisthana/sections/EmotionTide.tsx::draw` — `draw`
+- `src/pages/domains/svadhisthana/sections/EmotionTide.tsx` --[CONTAINS]--> `symbol://src/pages/domains/svadhisthana/sections/EmotionTide.tsx::resize` — `resize`
+- `src/pages/domains/svadhisthana/sections/Ending.tsx` --[IMPORTS]--> `src/data/chakras.ts` — `../../../../data/chakras`
+- `src/pages/domains/svadhisthana/sections/EvidenceAndMyths.tsx` --[IMPORTS]--> `src/data/svadhisthanaData.ts` — `../../../../data/svadhisthanaData`
+- `src/pages/domains/svadhisthana/sections/HistoricalOrigin.tsx` --[IMPORTS]--> `src/data/svadhisthanaData.ts` — `../../../../data/svadhisthanaData`
+- `src/pages/domains/svadhisthana/sections/HistoricalOrigin.tsx` --[CONTAINS]--> `symbol://src/pages/domains/svadhisthana/sections/HistoricalOrigin.tsx::updateConstraints` — `updateConstraints`
+- `src/pages/domains/svadhisthana/sections/Intro.tsx` --[IMPORTS]--> `src/data/svadhisthanaData.ts` — `../../../../data/svadhisthanaData`
+- `src/pages/domains/svadhisthana/sections/Journal.tsx` --[IMPORTS]--> `src/data/svadhisthanaData.ts` — `../../../../data/svadhisthanaData`
+- `src/pages/domains/svadhisthana/sections/Journal.tsx` --[CONTAINS]--> `symbol://src/pages/domains/svadhisthana/sections/Journal.tsx::nextQ` — `nextQ`
+- `src/pages/domains/svadhisthana/sections/Journal.tsx` --[CONTAINS]--> `symbol://src/pages/domains/svadhisthana/sections/Journal.tsx::prevQ` — `prevQ`
+- `src/pages/domains/svadhisthana/sections/Location.tsx` --[IMPORTS]--> `src/data/svadhisthanaData.ts` — `../../../../data/svadhisthanaData`
+- `src/pages/domains/svadhisthana/sections/Location.tsx` --[IMPORTS]--> `src/pages/domains/svadhisthana/components/SourceBadge.tsx` — `../components/SourceBadge`
+- `src/pages/domains/svadhisthana/sections/Location.tsx` --[CONTAINS]--> `symbol://src/pages/domains/svadhisthana/sections/Location.tsx::getChakraLabel` — `getChakraLabel`
+- `src/pages/domains/svadhisthana/sections/Location.tsx` --[CONTAINS]--> `symbol://src/pages/domains/svadhisthana/sections/Location.tsx::handleDrag` — `handleDrag`
+- `src/pages/domains/svadhisthana/sections/MandalaExplorer.tsx` --[IMPORTS]--> `src/data/svadhisthanaData.ts` — `../../../../data/svadhisthanaData`
+- `src/pages/domains/svadhisthana/sections/MandalaExplorer.tsx` --[CONTAINS]--> `symbol://src/pages/domains/svadhisthana/sections/MandalaExplorer.tsx::hasLayer` — `hasLayer`
+- `src/pages/domains/svadhisthana/sections/MandalaExplorer.tsx` --[CONTAINS]--> `symbol://src/pages/domains/svadhisthana/sections/MandalaExplorer.tsx::toggleLayer` — `toggleLayer`
+- `src/pages/domains/svadhisthana/sections/Name.tsx` --[IMPORTS]--> `src/data/svadhisthanaData.ts` — `../../../../data/svadhisthanaData`
+- `src/pages/domains/svadhisthana/sections/Pleasure.tsx` --[IMPORTS]--> `src/data/svadhisthanaData.ts` — `../../../../data/svadhisthanaData`
+- `src/pages/domains/svadhisthana/sections/Pleasure.tsx` --[CONTAINS]--> `symbol://src/pages/domains/svadhisthana/sections/Pleasure.tsx::handleMouseMove` — `handleMouseMove`
+- `src/pages/domains/svadhisthana/sections/RealLifeExperiment.tsx` --[IMPORTS]--> `src/data/svadhisthanaData.ts` — `../../../../data/svadhisthanaData`
+- `src/pages/domains/svadhisthana/sections/Relationships.tsx` --[IMPORTS]--> `src/data/svadhisthanaData.ts` — `../../../../data/svadhisthanaData`
+- `src/pages/domains/svadhisthana/sections/Relationships.tsx` --[CONTAINS]--> `symbol://src/pages/domains/svadhisthana/sections/Relationships.tsx::getTurbulence` — `getTurbulence`
+- `src/pages/domains/svadhisthana/sections/Relationships.tsx` --[CONTAINS]--> `symbol://src/pages/domains/svadhisthana/sections/Relationships.tsx::handleDrag` — `handleDrag`
+- `src/pages/domains/svadhisthana/sections/Sexuality.tsx` --[CONTAINS]--> `symbol://src/pages/domains/svadhisthana/sections/Sexuality.tsx::handleMouseMove` — `handleMouseMove`
+- `src/pages/domains/svadhisthana/sections/WaterMeditation.tsx` --[IMPORTS]--> `src/pages/domains/svadhisthana/components/AdvancedWaterCanvas.tsx` — `../components/AdvancedWaterCanvas`
+- `src/pages/domains/svadhisthana/sections/WaterMeditation.tsx` --[CONTAINS]--> `symbol://src/pages/domains/svadhisthana/sections/WaterMeditation.tsx::formatTime` — `formatTime`
+- `src/pages/domains/svadhisthana/sections/WaterMeditation.tsx` --[CONTAINS]--> `symbol://src/pages/domains/svadhisthana/sections/WaterMeditation.tsx::handlePauseToggle` — `handlePauseToggle`
+- `src/pages/domains/svadhisthana/sections/WaterMeditation.tsx` --[CONTAINS]--> `symbol://src/pages/domains/svadhisthana/sections/WaterMeditation.tsx::handleStop` — `handleStop`
+- `src/pages/domains/svadhisthana/sections/WhatIsIt.tsx` --[IMPORTS]--> `src/data/svadhisthanaData.ts` — `../../../../data/svadhisthanaData`
+- `src/pages/domains/svadhisthana/sections/WhatIsIt.tsx` --[IMPORTS]--> `src/pages/domains/svadhisthana/components/SourceBadge.tsx` — `../components/SourceBadge`
+- `src/pages/domains/visuddha/VisuddhaDomain.tsx` --[IMPORTS]--> `src/data/chakras.ts` — `../../../data/chakras`
+- `src/pages/domains/visuddha/VisuddhaDomain.tsx` --[IMPORTS]--> `src/pages/domains/visuddha/components/SoundField.tsx` — `./components/SoundField`
+- `src/pages/domains/visuddha/VisuddhaDomain.tsx` --[IMPORTS]--> `src/pages/domains/visuddha/sections/01_Intro.tsx` — `./sections/01_Intro`
+- `src/pages/domains/visuddha/VisuddhaDomain.tsx` --[IMPORTS]--> `src/pages/domains/visuddha/sections/02_SpeakFirst.tsx` — `./sections/02_SpeakFirst`
+- `src/pages/domains/visuddha/VisuddhaDomain.tsx` --[IMPORTS]--> `src/pages/domains/visuddha/sections/03_WhatIsIt.tsx` — `./sections/03_WhatIsIt`
+- `src/pages/domains/visuddha/VisuddhaDomain.tsx` --[IMPORTS]--> `src/pages/domains/visuddha/sections/04_TheName.tsx` — `./sections/04_TheName`
+- `src/pages/domains/visuddha/VisuddhaDomain.tsx` --[IMPORTS]--> `src/pages/domains/visuddha/sections/05_Location.tsx` — `./sections/05_Location`
+- `src/pages/domains/visuddha/VisuddhaDomain.tsx` --[IMPORTS]--> `src/pages/domains/visuddha/sections/06_BodyLayers.tsx` — `./sections/06_BodyLayers`
+- `src/pages/domains/visuddha/VisuddhaDomain.tsx` --[IMPORTS]--> `src/pages/domains/visuddha/sections/07_HistoryWave.tsx` — `./sections/07_HistoryWave`
+- `src/pages/domains/visuddha/VisuddhaDomain.tsx` --[IMPORTS]--> `src/pages/domains/visuddha/sections/08_ClassicalBlueprint.tsx` — `./sections/08_ClassicalBlueprint`
+- `src/pages/domains/visuddha/VisuddhaDomain.tsx` --[IMPORTS]--> `src/pages/domains/visuddha/sections/09_TheSoundWheel.tsx` — `./sections/09_TheSoundWheel`
+- `src/pages/domains/visuddha/VisuddhaDomain.tsx` --[IMPORTS]--> `src/pages/domains/visuddha/sections/10_VowelEngine.tsx` — `./sections/10_VowelEngine`
+- `src/pages/domains/visuddha/VisuddhaDomain.tsx` --[IMPORTS]--> `src/pages/domains/visuddha/sections/11_Cymatics.tsx` — `./sections/11_Cymatics`
+- `src/pages/domains/visuddha/VisuddhaDomain.tsx` --[IMPORTS]--> `src/pages/domains/visuddha/sections/12_AkasaSpace.tsx` — `./sections/12_AkasaSpace`
+- `src/pages/domains/visuddha/VisuddhaDomain.tsx` --[IMPORTS]--> `src/pages/domains/visuddha/sections/13_SilenceInteraction.tsx` — `./sections/13_SilenceInteraction`
+- `src/pages/domains/visuddha/VisuddhaDomain.tsx` --[IMPORTS]--> `src/pages/domains/visuddha/sections/14_TheBija.tsx` — `./sections/14_TheBija`
+- `src/pages/domains/visuddha/VisuddhaDomain.tsx` --[IMPORTS]--> `src/pages/domains/visuddha/sections/15_VoiceToWorldLab.tsx` — `./sections/15_VoiceToWorldLab`
+- `src/pages/domains/visuddha/VisuddhaDomain.tsx` --[IMPORTS]--> `src/pages/domains/visuddha/sections/16_WordLab.tsx` — `./sections/16_WordLab`
+- `src/pages/domains/visuddha/VisuddhaDomain.tsx` --[IMPORTS]--> `src/pages/domains/visuddha/sections/17_TruthSpectrum.tsx` — `./sections/17_TruthSpectrum`
+- `src/pages/domains/visuddha/VisuddhaDomain.tsx` --[IMPORTS]--> `src/pages/domains/visuddha/sections/18_HonestyVsHarm.tsx` — `./sections/18_HonestyVsHarm`
+- `src/pages/domains/visuddha/VisuddhaDomain.tsx` --[IMPORTS]--> `src/pages/domains/visuddha/sections/19_SpeakingVsOverSpeaking.tsx` — `./sections/19_SpeakingVsOverSpeaking`
+- `src/pages/domains/visuddha/VisuddhaDomain.tsx` --[IMPORTS]--> `src/pages/domains/visuddha/sections/20_Listening.tsx` — `./sections/20_Listening`
+- `src/pages/domains/visuddha/VisuddhaDomain.tsx` --[IMPORTS]--> `src/pages/domains/visuddha/sections/21_Misunderstanding.tsx` — `./sections/21_Misunderstanding`
+- `src/pages/domains/visuddha/VisuddhaDomain.tsx` --[IMPORTS]--> `src/pages/domains/visuddha/sections/22_TheUnspoken.tsx` — `./sections/22_TheUnspoken`
+- `src/pages/domains/visuddha/VisuddhaDomain.tsx` --[IMPORTS]--> `src/pages/domains/visuddha/sections/23_BoundariesGate.tsx` — `./sections/23_BoundariesGate`
+- `src/pages/domains/visuddha/VisuddhaDomain.tsx` --[IMPORTS]--> `src/pages/domains/visuddha/sections/24_Authenticity.tsx` — `./sections/24_Authenticity`
+- `src/pages/domains/visuddha/VisuddhaDomain.tsx` --[IMPORTS]--> `src/pages/domains/visuddha/sections/25_SocialMask.tsx` — `./sections/25_SocialMask`
+- `src/pages/domains/visuddha/VisuddhaDomain.tsx` --[IMPORTS]--> `src/pages/domains/visuddha/sections/26_BlockedThroat.tsx` — `./sections/26_BlockedThroat`
+- `src/pages/domains/visuddha/VisuddhaDomain.tsx` --[IMPORTS]--> `src/pages/domains/visuddha/sections/27_VoiceMixer.tsx` — `./sections/27_VoiceMixer`
+- `src/pages/domains/visuddha/VisuddhaDomain.tsx` --[IMPORTS]--> `src/pages/domains/visuddha/sections/28_WhoAreYou.tsx` — `./sections/28_WhoAreYou`
+- `src/pages/domains/visuddha/VisuddhaDomain.tsx` --[IMPORTS]--> `src/pages/domains/visuddha/sections/29_FoodAndVoiceCare.tsx` — `./sections/29_FoodAndVoiceCare`
+- `src/pages/domains/visuddha/VisuddhaDomain.tsx` --[IMPORTS]--> `src/pages/domains/visuddha/sections/30_Practices.tsx` — `./sections/30_Practices`
+- `src/pages/domains/visuddha/VisuddhaDomain.tsx` --[IMPORTS]--> `src/pages/domains/visuddha/sections/35_Reflection.tsx` — `./sections/35_Reflection`
+- `src/pages/domains/visuddha/VisuddhaDomain.tsx` --[IMPORTS]--> `src/pages/domains/visuddha/sections/39_VoiceToCosmos.tsx` — `./sections/39_VoiceToCosmos`
+- `src/pages/domains/visuddha/VisuddhaDomain.tsx` --[IMPORTS]--> `src/pages/domains/visuddha/sections/40_Integration.tsx` — `./sections/40_Integration`
+- `src/pages/domains/visuddha/sections/01_Intro.tsx` --[IMPORTS]--> `src/data/visuddhaData.ts` — `../../../../data/visuddhaData`
+- `src/pages/domains/visuddha/sections/02_SpeakFirst.tsx` --[CONTAINS]--> `symbol://src/pages/domains/visuddha/sections/02_SpeakFirst.tsx::handleSpeakClick` — `handleSpeakClick`
+- `src/pages/domains/visuddha/sections/03_WhatIsIt.tsx` --[IMPORTS]--> `src/data/visuddhaData.ts` — `../../../../data/visuddhaData`
+- `src/pages/domains/visuddha/sections/04_TheName.tsx` --[IMPORTS]--> `src/data/visuddhaData.ts` — `../../../../data/visuddhaData`
+- `src/pages/domains/visuddha/sections/05_Location.tsx` --[IMPORTS]--> `src/data/visuddhaData.ts` — `../../../../data/visuddhaData`
+- `src/pages/domains/visuddha/sections/07_HistoryWave.tsx` --[IMPORTS]--> `src/data/visuddhaData.ts` — `../../../../data/visuddhaData`
+- `src/pages/domains/visuddha/sections/08_ClassicalBlueprint.tsx` --[IMPORTS]--> `src/data/visuddhaData.ts` — `../../../../data/visuddhaData`
+- `src/pages/domains/visuddha/sections/09_TheSoundWheel.tsx` --[IMPORTS]--> `src/data/visuddhaData.ts` — `../../../../data/visuddhaData`
+- `src/pages/domains/visuddha/sections/10_VowelEngine.tsx` --[IMPORTS]--> `src/data/visuddhaData.ts` — `../../../../data/visuddhaData`
+- `src/pages/domains/visuddha/sections/10_VowelEngine.tsx` --[CONTAINS]--> `symbol://src/pages/domains/visuddha/sections/10_VowelEngine.tsx::getCymaticPattern` — `getCymaticPattern`
+- `src/pages/domains/visuddha/sections/12_AkasaSpace.tsx` --[CONTAINS]--> `symbol://src/pages/domains/visuddha/sections/12_AkasaSpace.tsx::handleMouseMove` — `handleMouseMove`
+- `src/pages/domains/visuddha/sections/14_TheBija.tsx` --[IMPORTS]--> `src/data/visuddhaData.ts` — `../../../../data/visuddhaData`
+- `src/pages/domains/visuddha/sections/15_VoiceToWorldLab.tsx` --[CONTAINS]--> `symbol://src/pages/domains/visuddha/sections/15_VoiceToWorldLab.tsx::handleKeyPress` — `handleKeyPress`
+- `src/pages/domains/visuddha/sections/20_Listening.tsx` --[CONTAINS]--> `symbol://src/pages/domains/visuddha/sections/20_Listening.tsx::handleInterrupt` — `handleInterrupt`
+- `src/pages/domains/visuddha/sections/20_Listening.tsx` --[CONTAINS]--> `symbol://src/pages/domains/visuddha/sections/20_Listening.tsx::handleStart` — `handleStart`
+- `src/pages/domains/visuddha/sections/20_Listening.tsx` --[CONTAINS]--> `symbol://src/pages/domains/visuddha/sections/20_Listening.tsx::reset` — `reset`
+- `src/pages/domains/visuddha/sections/22_TheUnspoken.tsx` --[CONTAINS]--> `symbol://src/pages/domains/visuddha/sections/22_TheUnspoken.tsx::speakWord` — `speakWord`
+- `src/pages/domains/visuddha/sections/28_WhoAreYou.tsx` --[CONTAINS]--> `symbol://src/pages/domains/visuddha/sections/28_WhoAreYou.tsx::handleKeyPress` — `handleKeyPress`
+- `src/pages/domains/visuddha/sections/29_FoodAndVoiceCare.tsx` --[IMPORTS]--> `src/data/visuddhaData.ts` — `../../../../data/visuddhaData`
+- `src/pages/domains/visuddha/sections/39_VoiceToCosmos.tsx` --[CONTAINS]--> `symbol://src/pages/domains/visuddha/sections/39_VoiceToCosmos.tsx::handleKeyPress` — `handleKeyPress`
+- `temp-app/src/App.tsx` --[USES_COMPONENT]--> `component://App` — `App`
+- `temp-app/src/App.tsx` --[CONTAINS]--> `symbol://temp-app/src/App.tsx::App` — `App`
+
+## 6. Warnings
+
+- None detected.
+
+## 7. Informational Findings
+
+- None detected.
+
+## 8. Analysis Boundary
+
+Architecture findings are deterministic static evidence. A finding means CYQ observed the stated condition in the indexed source/graph; absence of a finding does not prove runtime correctness.
