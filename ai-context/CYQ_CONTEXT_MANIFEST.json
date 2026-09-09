@@ -3,7 +3,7 @@
   "cyq_engine_version": "1.7.2",
   "project": "Chakras",
   "snapshot_id": "fe273bd13f110dea",
-  "generated_at": "2026-09-05T21:57:28.494936+00:00",
+  "generated_at": "2026-09-05T22:12:23.492822+00:00",
   "portable_context_directory": "D:\\Downloads\\Chakras\\ai-context",
   "artifacts": {
     "ARCHITECTURE.md": {
@@ -11,14 +11,14 @@
       "path": "ARCHITECTURE.md",
       "snapshot_id": "fe273bd13f110dea",
       "status": "CURRENT",
-      "sha256": "80d1d60fa647c68677a1fc9f8f616680655b19c464ee7ab705d0434bb8369c32"
+      "sha256": "9492e2477a9831be8e8757a598ebd994090a34597902c551446965913af2004d"
     },
     "CYQ_AI_MEMORY.md": {
       "type": "AI_MEMORY",
       "path": "CYQ_AI_MEMORY.md",
       "snapshot_id": "fe273bd13f110dea",
       "status": "CURRENT",
-      "sha256": "ff46e155f1595aad2d7dcece149b62611c925facb7a0e032b923247806aff2d1"
+      "sha256": "6852a692218f106a67a5cf089f6442251159871382c165939bfd584005571f89"
     }
   }
 }

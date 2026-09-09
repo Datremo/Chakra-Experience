@@ -1,102 +1,122 @@
-import React, { useEffect, useRef } from 'react';
-import { type ChakraData } from '../../../data/chakras';
-import { ArrowLeft } from 'lucide-react';
-import { FluidBackground } from './components/FluidBackground';
+﻿import React from "react";
+import { motion } from "framer-motion";
+import { X } from "lucide-react";
+import { FluidBackground } from "./components/FluidBackground";
 
-import { IntroSection } from './sections/Intro';
-import { WhatIsItSection } from './sections/WhatIsIt';
-import { NameSection } from './sections/Name';
-import { LocationSection } from './sections/Location';
-import { HistoricalOriginSection } from './sections/HistoricalOrigin';
-import { MandalaExplorerSection } from './sections/MandalaExplorer';
-import { WaterElementSection } from './sections/WaterElement';
-import { MoonSymbolismSection } from './sections/MoonSymbolism';
-import { BijaSection } from './sections/Bija';
-import { DesireSection } from './sections/Desire';
-import { EmotionTideSection } from './sections/EmotionTide';
-import { PleasureSection } from './sections/Pleasure';
-import { SexualitySection } from './sections/Sexuality';
-import { CreativeCurrentSection } from './sections/CreativeCurrent';
-import { RelationshipsSection } from './sections/Relationships';
-import { BalanceSection } from './sections/Balance';
-import { FoodAndMovementSection } from './sections/FoodAndMovement';
-import { WaterMeditationSection } from './sections/WaterMeditation';
-import { ActivationSection } from './sections/Activation';
-import { RealLifeExperimentSection } from './sections/RealLifeExperiment';
-import { EvidenceAndMythsSection } from './sections/EvidenceAndMyths';
-import { JournalSection } from './sections/Journal';
-import { EndingSection } from './sections/Ending';
+import { IntroSection } from "./sections/01_Intro";
+import { WhatIsItSection } from "./sections/02_WhatIsIt";
+import { NameSection } from "./sections/03_Name";
+import { LocationSection } from "./sections/04_Location";
+import { TheNatureOfWaterSection } from "./sections/05_TheNatureOfWater";
+import { HistoricalOriginSection } from "./sections/06_HistoricalOrigin";
+import { TheMakaraMythSection } from "./sections/07_TheMakaraMyth";
+import { MandalaExplorerSection } from "./sections/08_MandalaExplorer";
+import { WaterElementSection } from "./sections/09_WaterElement";
+import { MoonSymbolismSection } from "./sections/10_MoonSymbolism";
+import { BijaSection } from "./sections/11_Bija";
+import { SacralSoundscapeSection } from "./sections/12_SacralSoundscape";
+import { EmotionTideSection } from "./sections/13_EmotionTide";
+import { NavigatingJealousySection } from "./sections/14_NavigatingJealousy";
+import { GuiltAndShameSection } from "./sections/15_GuiltAndShame";
+import { EmotionalSuppressionSection } from "./sections/16_EmotionalSuppression";
+import { TheInnerChildSection } from "./sections/17_TheInnerChild";
+import { TheArtOfLettingGoSection } from "./sections/18_TheArtOfLettingGo";
+import { DesireSection } from "./sections/19_Desire";
+import { AddictionVsNourishmentSection } from "./sections/20_AddictionVsNourishment";
+import { PleasureSection } from "./sections/21_Pleasure";
+import { SensationAndTasteSection } from "./sections/22_SensationAndTaste";
+import { SexualitySection } from "./sections/23_Sexuality";
+import { IntimacyBeyondSexSection } from "./sections/24_IntimacyBeyondSex";
+import { BoundariesInWaterSection } from "./sections/25_BoundariesInWater";
+import { RelationshipsSection } from "./sections/26_Relationships";
+import { DualitiesSection } from "./sections/27_Dualities";
+import { CreativeCurrentSection } from "./sections/28_CreativeCurrent";
+import { CreativeBlocksSection } from "./sections/29_CreativeBlocks";
+import { TheSacralBodySection } from "./sections/30_TheSacralBody";
+import { SymptomsOfImbalanceSection } from "./sections/31_SymptomsOfImbalance";
+import { SymptomsOfBalanceSection } from "./sections/32_SymptomsOfBalance";
+import { FoodAndMovementSection } from "./sections/33_FoodAndMovement";
+import { SacralAestheticsSection } from "./sections/34_SacralAesthetics";
+import { FluidMovementSection } from "./sections/35_FluidMovement";
+import { ChangeAndImpermanenceSection } from "./sections/36_ChangeAndImpermanence";
+import { WaterMeditationSection } from "./sections/37_WaterMeditation";
+import { BalanceSection } from "./sections/38_Balance";
+import { ActivationSection } from "./sections/39_Activation";
+import { RealLifeExperimentSection } from "./sections/40_RealLifeExperiment";
+import { EvidenceAndMythsSection } from "./sections/41_EvidenceAndMyths";
+import { JournalSection } from "./sections/42_Journal";
+import { EndingSection } from "./sections/43_Ending";
 
 interface DomainProps {
-  chakra: ChakraData;
-  onClose: () => void;
+  onClose?: () => void;
 }
 
-export const SvadhisthanaDomain: React.FC<DomainProps> = ({ chakra, onClose }) => {
-  const scrollRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    document.body.style.overflow = 'hidden';
-    return () => {
-      document.body.style.overflow = '';
-    };
-  }, []);
-
+export const SvadhisthanaDomain: React.FC<DomainProps> = ({ onClose }) => {
   return (
-    <div className="fixed inset-0 z-50 text-white selection:bg-orange-500/30 bg-[#060B19]">
-      
+    <div className="fixed inset-0 z-50 overflow-hidden bg-black text-white font-sans">
       <FluidBackground />
 
-      {/* Global Background Mandala/Bīja */}
-      <div className="fixed inset-0 z-0 flex items-center justify-center pointer-events-none opacity-[0.03] mix-blend-screen overflow-hidden">
-        <div className="w-[150vw] h-[150vw] md:w-[100vw] md:h-[100vw] animate-spin-slow flex items-center justify-center">
-          <svg viewBox="0 0 500 500" className="w-full h-full text-orange-400">
-            {/* Outer Lotus Petals */}
-            {[0, 60, 120, 180, 240, 300].map(angle => (
-              <path key={angle} d="M250,50 C300,150 350,250 250,450 C150,250 200,150 250,50 Z" fill="none" stroke="currentColor" strokeWidth="2" transform={`rotate(${angle} 250 250)`} />
-            ))}
-            {/* Inner Concentric Circles */}
-            <circle cx="250" cy="250" r="150" fill="none" stroke="currentColor" strokeWidth="1" strokeDasharray="4 4" />
-            <circle cx="250" cy="250" r="100" fill="none" stroke="currentColor" strokeWidth="4" />
-            {/* VAM Bīja Mantra symbol in the center */}
-            <text x="250" y="290" fontFamily="serif" fontSize="120" textAnchor="middle" fill="currentColor">वँ</text>
-          </svg>
-        </div>
-      </div>
-
-      <button 
+      {/* Exit Deep Dive button — always visible top-left */}
+      <motion.button
+        initial={{ opacity: 0, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ delay: 1, duration: 0.6 }}
         onClick={onClose}
-        aria-label="return-to-journey"
-        className="fixed top-5 left-5 md:top-10 md:left-10 z-[100] flex items-center space-x-2.5 md:space-x-3 text-white/70 hover:text-white transition-colors uppercase tracking-[0.25em] md:tracking-[0.3em] font-sans text-xs md:text-sm group mix-blend-difference"
+        className="fixed top-5 left-5 z-[100] flex items-center gap-2 px-4 py-2 rounded-full bg-black/60 border border-orange-500/30 text-orange-200/70 hover:text-white hover:border-orange-400 hover:bg-black/80 transition-all duration-300 backdrop-blur-md font-sans text-xs tracking-widest uppercase group"
       >
-        <ArrowLeft size={18} className="transform group-hover:-translate-x-1.5 transition-transform" />
-        <span>Return</span>
-      </button>
+        <X size={14} className="group-hover:rotate-90 transition-transform duration-300" />
+        Exit Deep Dive
+      </motion.button>
 
-      <div id="svadhisthana-scroll-container" ref={scrollRef} className="relative z-10 w-full h-full overflow-y-auto overflow-x-hidden scroll-smooth">
-        <IntroSection />
-        <WhatIsItSection />
-        <NameSection />
-        <LocationSection />
-        <HistoricalOriginSection />
-        <MandalaExplorerSection />
-        <WaterElementSection />
-        <MoonSymbolismSection />
-        <BijaSection />
-        <DesireSection />
-        <EmotionTideSection />
-        <PleasureSection />
-        <SexualitySection />
-        <CreativeCurrentSection />
-        <RelationshipsSection />
-        <BalanceSection />
-        <FoodAndMovementSection />
-        <WaterMeditationSection />
-        <ActivationSection />
-        <RealLifeExperimentSection />
-        <EvidenceAndMythsSection />
-        <JournalSection />
-        <EndingSection onClose={onClose} chakra={chakra} />
+      {/* Scroll container — snap-proximity so user can still see partial sections */}
+      <div
+        id="svadhisthana-scroll-container"
+        className="relative z-10 h-full w-full overflow-y-scroll overflow-x-hidden"
+        style={{ scrollSnapType: "y proximity" }}
+      >
+        <div style={{ scrollSnapAlign: "start" }}><IntroSection /></div>
+        <div style={{ scrollSnapAlign: "start" }}><WhatIsItSection /></div>
+        <div style={{ scrollSnapAlign: "start" }}><NameSection /></div>
+        <div style={{ scrollSnapAlign: "start" }}><LocationSection /></div>
+        <div style={{ scrollSnapAlign: "start" }}><TheNatureOfWaterSection /></div>
+        <div style={{ scrollSnapAlign: "start" }}><HistoricalOriginSection /></div>
+        <div style={{ scrollSnapAlign: "start" }}><TheMakaraMythSection /></div>
+        <div style={{ scrollSnapAlign: "start" }}><MandalaExplorerSection /></div>
+        <div style={{ scrollSnapAlign: "start" }}><WaterElementSection /></div>
+        <div style={{ scrollSnapAlign: "start" }}><MoonSymbolismSection /></div>
+        <div style={{ scrollSnapAlign: "start" }}><BijaSection /></div>
+        <div style={{ scrollSnapAlign: "start" }}><SacralSoundscapeSection /></div>
+        <div style={{ scrollSnapAlign: "start" }}><EmotionTideSection /></div>
+        <div style={{ scrollSnapAlign: "start" }}><NavigatingJealousySection /></div>
+        <div style={{ scrollSnapAlign: "start" }}><GuiltAndShameSection /></div>
+        <div style={{ scrollSnapAlign: "start" }}><EmotionalSuppressionSection /></div>
+        <div style={{ scrollSnapAlign: "start" }}><TheInnerChildSection /></div>
+        <div style={{ scrollSnapAlign: "start" }}><TheArtOfLettingGoSection /></div>
+        <div style={{ scrollSnapAlign: "start" }}><DesireSection /></div>
+        <div style={{ scrollSnapAlign: "start" }}><AddictionVsNourishmentSection /></div>
+        <div style={{ scrollSnapAlign: "start" }}><PleasureSection /></div>
+        <div style={{ scrollSnapAlign: "start" }}><SensationAndTasteSection /></div>
+        <div style={{ scrollSnapAlign: "start" }}><SexualitySection /></div>
+        <div style={{ scrollSnapAlign: "start" }}><IntimacyBeyondSexSection /></div>
+        <div style={{ scrollSnapAlign: "start" }}><BoundariesInWaterSection /></div>
+        <div style={{ scrollSnapAlign: "start" }}><RelationshipsSection /></div>
+        <div style={{ scrollSnapAlign: "start" }}><DualitiesSection /></div>
+        <div style={{ scrollSnapAlign: "start" }}><CreativeCurrentSection /></div>
+        <div style={{ scrollSnapAlign: "start" }}><CreativeBlocksSection /></div>
+        <div style={{ scrollSnapAlign: "start" }}><TheSacralBodySection /></div>
+        <div style={{ scrollSnapAlign: "start" }}><SymptomsOfImbalanceSection /></div>
+        <div style={{ scrollSnapAlign: "start" }}><SymptomsOfBalanceSection /></div>
+        <div style={{ scrollSnapAlign: "start" }}><FoodAndMovementSection /></div>
+        <div style={{ scrollSnapAlign: "start" }}><SacralAestheticsSection /></div>
+        <div style={{ scrollSnapAlign: "start" }}><FluidMovementSection /></div>
+        <div style={{ scrollSnapAlign: "start" }}><ChangeAndImpermanenceSection /></div>
+        <div style={{ scrollSnapAlign: "start" }}><WaterMeditationSection /></div>
+        <div style={{ scrollSnapAlign: "start" }}><BalanceSection /></div>
+        <div style={{ scrollSnapAlign: "start" }}><ActivationSection /></div>
+        <div style={{ scrollSnapAlign: "start" }}><RealLifeExperimentSection /></div>
+        <div style={{ scrollSnapAlign: "start" }}><EvidenceAndMythsSection /></div>
+        <div style={{ scrollSnapAlign: "start" }}><JournalSection /></div>
+        <div style={{ scrollSnapAlign: "start" }}><EndingSection onClose={onClose ?? (() => {})} /></div>
       </div>
     </div>
   );
