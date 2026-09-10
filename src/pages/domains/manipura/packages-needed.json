@@ -1,0 +1,9 @@
+{
+  "existingDependenciesRequired": {
+    "react": "*",
+    "framer-motion": "*",
+    "lucide-react": "*"
+  },
+  "newDependenciesRequired": {},
+  "note": "Uses the host application versions. Do not install duplicates."
+}
