@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 export const TheSacralBodySection: React.FC = () => {
   return (
-    <section className="h-screen w-full flex flex-col items-center justify-center relative overflow-hidden bg-[#0a0502]">
+    <section className="min-h-[100svh] w-full flex flex-col items-center justify-center relative  bg-[#0a0502]">
       
       <div className="relative z-10 text-center max-w-5xl px-6 w-full flex flex-col md:flex-row items-center justify-between gap-12">
         
@@ -30,7 +30,7 @@ export const TheSacralBodySection: React.FC = () => {
             transition={{ delay: 0.2 }}
             className="text-lg text-white/70 font-light leading-relaxed mb-6"
           >
-            Physically, Svādhiṣṭhāna governs the <strong className="text-orange-300">pelvic bowl, hips, sacrum, lower back, kidneys, and reproductive organs</strong>.
+            In modern somatic interpretations, Svādhiṣṭhāna is associated with the <strong className="text-orange-300">pelvic bowl, hips, sacrum, lower back, kidneys, and reproductive organs</strong>.
           </motion.p>
 
           <motion.p 
@@ -39,7 +39,7 @@ export const TheSacralBodySection: React.FC = () => {
             transition={{ delay: 0.4 }}
             className="text-lg text-white/70 font-light leading-relaxed"
           >
-            When we suppress emotion, we literally tighten our hips and clench our pelvic floor. Trauma is stored in the fascia of the hips. Releasing the physical tension here often releases years of trapped emotional waters.
+            Emotional stress can be accompanied by muscular tension or changes in how we hold the body. Gentle movement may help some people notice and work with these sensations; it is not evidence that trauma is physically stored in the hips or fascia.
           </motion.p>
         </div>
 

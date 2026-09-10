@@ -11,7 +11,7 @@ export const SensationAndTasteSection: React.FC = () => {
   };
 
   return (
-    <section className="h-screen w-full flex flex-col items-center justify-center relative overflow-hidden bg-black">
+    <section className="min-h-[100svh] w-full flex flex-col items-center justify-center relative  bg-black">
       
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
@@ -42,7 +42,7 @@ export const SensationAndTasteSection: React.FC = () => {
         </motion.h2>
 
         <p className="text-xl text-white/80 font-light mb-12 max-w-2xl mx-auto drop-shadow-md">
-          Muladhara connects to smell. SvÄdhiá¹£á¹­hÄna connects to taste. It asks you not just to survive life, but to truly savor it.
+          Muladhara connects to smell. Svādhiṣṭhāna connects to taste. It asks you not just to survive life, but to truly savor it.
         </p>
 
         <div className="flex flex-wrap justify-center gap-6 mb-12">

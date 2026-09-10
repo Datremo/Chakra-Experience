@@ -17,7 +17,7 @@ export const SacralSoundscapeSection: React.FC = () => {
   }, [isPlaying]);
 
   return (
-    <section className="h-screen w-full flex flex-col items-center justify-center relative overflow-hidden bg-[#050200]">
+    <section className="min-h-[100svh] w-full flex flex-col items-center justify-center relative  bg-[#050200]">
       
       {/* Visualizer Background */}
       <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none">
@@ -39,7 +39,7 @@ export const SacralSoundscapeSection: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           className="text-orange-400 font-sans uppercase tracking-[0.4em] text-xs md:text-sm mb-6"
         >
-          288 Hz Frequency
+          A contemplative sound experience
         </motion.p>
         
         <motion.h2 

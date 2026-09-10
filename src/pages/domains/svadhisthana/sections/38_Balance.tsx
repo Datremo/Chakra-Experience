@@ -43,9 +43,9 @@ export const BalanceSection: React.FC = () => {
   const config = getWaterConfig();
 
   return (
-    <section className="h-screen w-full flex items-center justify-center px-6 flex flex-col items-center justify-center relative bg-[#040810]">
+    <section className="min-h-[100svh] w-full flex items-center justify-center px-6 flex flex-col items-center justify-center relative bg-[#040810]">
       
-      <div className="text-center mb-16 relative z-10">
+      <div className="text-center mb-8 md:mb-10 relative z-10">
         <h2 className="font-sans text-teal-400 tracking-[0.3em] uppercase text-sm mb-6">Equilibrium</h2>
         <h1 className="text-4xl md:text-6xl mb-8 font-serif text-white drop-shadow-md">The State of the River</h1>
         <p className="text-xl text-white/60 italic font-light max-w-2xl mx-auto">
@@ -53,14 +53,14 @@ export const BalanceSection: React.FC = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-4xl relative z-10 mb-16">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-4xl relative z-10 mb-8 md:mb-10">
         <button 
           onClick={() => setLevel('LOW')}
           className={`p-5 rounded-2xl border font-sans tracking-widest text-sm uppercase transition-all duration-300 ${
             level === 'LOW' ? 'bg-blue-900/40 border-blue-500 text-blue-100 shadow-[0_0_20px_rgba(59,130,246,0.3)] scale-105' : 'bg-black/40 border-white/10 text-white/40 hover:border-white/30'
           }`}
         >
-          <span className="block mb-2 text-xl">ðŸ’§</span>
+          <span className="block mb-2 text-xl">💧</span>
           Too Little Flow<br/><span className="text-[10px] text-white/50">(Stuck)</span>
         </button>
         <button 
@@ -69,7 +69,7 @@ export const BalanceSection: React.FC = () => {
             level === 'BALANCED' ? 'bg-teal-900/40 border-teal-500 text-teal-100 shadow-[0_0_20px_rgba(20,184,166,0.3)] scale-105' : 'bg-black/40 border-white/10 text-white/40 hover:border-white/30'
           }`}
         >
-          <span className="block mb-2 text-xl">ðŸŒŠ</span>
+          <span className="block mb-2 text-xl">🌊</span>
           Balanced Flow<br/><span className="text-[10px] text-white/50">(Adaptable)</span>
         </button>
         <button 
@@ -78,7 +78,7 @@ export const BalanceSection: React.FC = () => {
             level === 'HIGH' ? 'bg-orange-900/40 border-orange-500 text-orange-100 shadow-[0_0_20px_rgba(249,115,22,0.3)] scale-105' : 'bg-black/40 border-white/10 text-white/40 hover:border-white/30'
           }`}
         >
-          <span className="block mb-2 text-xl">ðŸŒªï¸</span>
+          <span className="block mb-2 text-xl">🌪️</span>
           Too Much Flow<br/><span className="text-[10px] text-white/50">(Flooded)</span>
         </button>
       </div>

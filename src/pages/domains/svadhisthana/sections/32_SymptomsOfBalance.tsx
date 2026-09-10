@@ -14,7 +14,7 @@ export const SymptomsOfBalanceSection: React.FC = () => {
   ];
 
   return (
-    <section className="h-screen w-full flex flex-col items-center justify-center relative overflow-hidden bg-black">
+    <section className="min-h-[100svh] w-full flex flex-col items-center justify-center relative  bg-black">
       
       {/* Balanced Background effect */}
       <div className="absolute inset-0 z-0">
@@ -79,7 +79,7 @@ export const SymptomsOfBalanceSection: React.FC = () => {
                   onClick={(e) => { e.stopPropagation(); setActiveNode(null); }}
                   className="absolute top-4 right-4 text-white/50 hover:text-white"
                 >
-                  âœ•
+                  ✕
                 </button>
               </motion.div>
             )}

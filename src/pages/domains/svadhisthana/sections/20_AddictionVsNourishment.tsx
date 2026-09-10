@@ -5,7 +5,7 @@ export const AddictionVsNourishmentSection: React.FC = () => {
   const [mode, setMode] = useState<'ADDICTION' | 'NOURISHMENT' | null>(null);
 
   return (
-    <section className="h-screen w-full flex flex-col items-center justify-center relative overflow-hidden bg-[#050202]">
+    <section className="min-h-[100svh] w-full flex flex-col items-center justify-center relative  bg-[#050202]">
       
       <div className="relative z-10 text-center max-w-5xl px-6 w-full">
         

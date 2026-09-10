@@ -20,11 +20,11 @@ export const S01_TheFluidEntry: React.FC = () => {
   }, []);
 
   return (
-    <section className="relative w-full h-[120vh] md:h-[150vh] bg-black overflow-hidden">
+    <section className="relative w-full h-[120vh] md:h-[150vh] bg-black ">
       
       {/* Immersive Cinematic Background */}
       <motion.div 
-        className="sticky top-0 w-full h-screen overflow-hidden flex flex-col items-center justify-center"
+        className="sticky top-0 w-full min-h-[100svh] overflow-hidden flex flex-col items-center justify-center"
         initial={{ filter: "brightness(0.3) contrast(1.2)" }}
         animate={{ filter: "brightness(0.7) contrast(1.1)" }}
         transition={{ duration: 8, ease: "easeInOut" }}

@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 export const BoundariesInWaterSection: React.FC = () => {
   return (
-    <section className="h-screen w-full flex flex-col items-center justify-center relative overflow-hidden bg-black">
+    <section className="min-h-[100svh] w-full flex flex-col items-center justify-center relative  bg-black">
       
       <div className="absolute inset-0 flex justify-center items-center pointer-events-none opacity-40">
          <div className="w-[200px] md:w-[400px] h-full bg-gradient-to-r from-transparent via-blue-500/30 to-transparent blur-[50px] relative">
@@ -35,7 +35,7 @@ export const BoundariesInWaterSection: React.FC = () => {
             People misunderstand the water element. They think flowing means having no boundaries, saying yes to everything, and letting others walk all over them. 
           </p>
           <p className="text-lg text-white/90 font-light leading-relaxed">
-            But water without banks is just a swampâ€”stagnant and shallow. A river only gains speed, power, and direction because it has <strong className="text-blue-400">firm banks</strong> containing it.
+            But water without banks is just a swamp—stagnant and shallow. A river only gains speed, power, and direction because it has <strong className="text-blue-400">firm banks</strong> containing it.
           </p>
           <p className="text-xl text-blue-300 font-sans font-medium uppercase tracking-widest mt-8">
             Boundaries create the flow.

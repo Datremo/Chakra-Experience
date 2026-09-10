@@ -30,14 +30,14 @@ export const S04_WhereExactly: React.FC = () => {
   const isRoot = sliderPos >= 75 && sliderPos < 95;
 
   return (
-    <section className="min-h-screen py-24 md:py-32 px-4 flex items-center justify-center relative bg-black overflow-hidden">
+    <section className="min-min-h-[100svh] py-24 md:py-12 md:py-16 px-4 flex items-center justify-center relative bg-black ">
       
       {/* Immersive Background */}
       <div className="absolute inset-0 z-0">
         <img 
           src="https://images.unsplash.com/photo-1518241353330-0f7941c2d1b5?q=80&w=2000&auto=format&fit=crop" 
           alt="Night ocean bioluminescence" 
-          className="w-full h-full object-cover opacity-20 mix-blend-screen scale-105"
+          className="w-full h-full object-cover opacity-48 mix-blend-screen scale-105"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black" />
         <div className="absolute inset-0 bg-black/60" />
@@ -103,7 +103,7 @@ export const S04_WhereExactly: React.FC = () => {
                 boxShadow: isSacral ? '0 0 20px rgba(249,115,22,0.8)' : isSolar ? '0 0 20px rgba(234,179,8,0.8)' : isRoot ? '0 0 20px rgba(239,68,68,0.8)' : '0 0 10px rgba(255,255,255,0.2)'
               }}
             >
-              <div className="w-32 h-1 bg-white/80 blur-[2px] rounded-full absolute" />
+              <div className="w-32 h-1 bg-white/100 blur-[2px] rounded-full absolute" />
               
               <div className={`absolute -top-14 px-6 py-2 rounded-full border backdrop-blur-md font-sans tracking-widest uppercase text-xs md:text-sm whitespace-nowrap transition-all duration-300
                 ${isSacral ? 'bg-orange-900/90 border-orange-500 text-white shadow-[0_0_30px_rgba(249,115,22,0.6)]' 

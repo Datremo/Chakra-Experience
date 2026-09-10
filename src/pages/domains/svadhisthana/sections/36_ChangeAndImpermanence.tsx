@@ -5,7 +5,7 @@ export const ChangeAndImpermanenceSection: React.FC = () => {
   const [melted, setMelted] = useState(false);
 
   return (
-    <section className="h-screen w-full flex flex-col items-center justify-center relative overflow-hidden bg-black">
+    <section className="min-h-[100svh] w-full flex flex-col items-center justify-center relative  bg-black">
       
       <div className="relative z-10 text-center max-w-4xl px-4 pt-12 w-full">
         
@@ -20,7 +20,7 @@ export const ChangeAndImpermanenceSection: React.FC = () => {
         <motion.h2 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          className="text-4xl md:text-6xl font-serif text-white mb-16 drop-shadow-xl"
+          className="text-4xl md:text-6xl font-serif text-white mb-8 md:mb-10 drop-shadow-xl"
         >
           Impermanence
         </motion.h2>
@@ -52,7 +52,7 @@ export const ChangeAndImpermanenceSection: React.FC = () => {
                   "You cannot step into the same river twice."
                 </p>
                 <p className="text-lg text-white/70 font-light leading-relaxed">
-                  Suffering comes from expecting the ice to never melt. Everything changes. Relationships end, bodies age, seasons turn. To master SvÄdhiá¹£á¹­hÄna is to find deep peace in the transition itself.
+                  Suffering comes from expecting the ice to never melt. Everything changes. Relationships end, bodies age, seasons turn. To master Svādhiṣṭhāna is to find deep peace in the transition itself.
                 </p>
               </motion.div>
             )}

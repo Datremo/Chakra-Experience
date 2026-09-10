@@ -6,7 +6,7 @@ export const CreativeCurrentSection: React.FC = () => {
   const [hasInteracted, setHasInteracted] = useState(false);
 
   return (
-    <section className="h-screen w-full flex flex-col items-center justify-center px-4 md:px-6 relative overflow-hidden">
+    <section className="min-h-[100svh] w-full flex flex-col items-center justify-center px-4 md:px-6 relative ">
       
       {/* Cinematic Background Image */}
       <div className="absolute inset-0 z-0">
@@ -19,7 +19,7 @@ export const CreativeCurrentSection: React.FC = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-[#0a0502] via-[#0a0502]/60 to-transparent" />
       </div>
 
-      <div className="text-center mb-10 md:mb-16 relative z-10 max-w-4xl mx-auto w-full">
+      <div className="text-center mb-10 md:mb-8 md:mb-10 relative z-10 max-w-4xl mx-auto w-full">
         <motion.h2 
           initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
           className="font-sans text-orange-400 tracking-[0.4em] uppercase text-xs md:text-sm mb-4 md:mb-6"
@@ -68,7 +68,7 @@ export const CreativeCurrentSection: React.FC = () => {
           transition={{ duration: 1, delay: 0.5 }}
           className="text-xl md:text-3xl font-serif text-teal-400/90 italic group-hover:text-teal-300 transition-colors relative z-10 drop-shadow-[0_0_15px_rgba(20,184,166,0.5)]"
         >
-          Ã¢â‚¬Å“What would you create if nobody judged you?Ã¢â‚¬Â
+          “What would you create if nobody judged you?”
         </motion.p>
         
         <div className="mt-6 md:mt-8 max-h-0 opacity-0 group-hover:max-h-[500px] group-hover:opacity-100 transition-all duration-700 overflow-hidden bg-white/5 border border-white/10 rounded-3xl p-6 md:p-8 relative z-10 backdrop-blur-xl shadow-2xl">

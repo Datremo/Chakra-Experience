@@ -15,7 +15,7 @@ export const EndingSection: React.FC<EndingSectionProps> = ({ onClose }) => {
   }, []);
 
   return (
-    <section className="h-screen w-full flex items-center justify-center relative overflow-hidden">
+    <section className="min-h-[100svh] w-full flex items-center justify-center relative ">
 
       {/* Background image */}
       <div className="absolute inset-0 z-0">
@@ -82,7 +82,7 @@ export const EndingSection: React.FC<EndingSectionProps> = ({ onClose }) => {
                   It is the ability to move <em>within</em> them."
                 </p>
                 <p className="mt-6 text-sm text-white/30 font-sans tracking-widest uppercase">
-                  Svadhisthana &mdash; complete. The river carries you forward.
+                  Svādhiṣṭhāna — complete. The river carries you forward.
                 </p>
               </motion.div>
 
@@ -101,7 +101,7 @@ export const EndingSection: React.FC<EndingSectionProps> = ({ onClose }) => {
                   className="flex items-center justify-center gap-3 px-7 py-4 bg-white/5 border border-white/20 text-white/60 rounded-full hover:bg-white/10 hover:text-white transition-all font-sans tracking-widest text-sm uppercase"
                 >
                   <RotateCcw size={16} />
-                  Revisit Svadhisthana
+                  Revisit Svādhiṣṭhāna
                 </button>
 
                 <button

@@ -6,7 +6,7 @@ export const EmotionalSuppressionSection: React.FC = () => {
   const broken = pressure >= 5;
 
   return (
-    <section className="h-screen w-full flex flex-col items-center justify-center relative overflow-hidden bg-[#010408]">
+    <section className="min-h-[100svh] w-full flex flex-col items-center justify-center relative  bg-[#010408]">
       
       {/* Cinematic Background Image - The Dam */}
       <AnimatePresence>
@@ -85,7 +85,7 @@ export const EmotionalSuppressionSection: React.FC = () => {
           >
             <h3 className="text-3xl font-serif text-teal-300 mb-6 drop-shadow-md">The Flood</h3>
             <p className="text-lg md:text-xl text-white/90 font-sans font-light leading-relaxed">
-              When the dam breaks, it manifests as a sudden outburst, an anxiety attack, or deep fatigue. The goal of SvÄdhiá¹£á¹­hÄna is not to build stronger walls, but to stop building walls entirely. Let the water flow.
+              When the dam breaks, it manifests as a sudden outburst, an anxiety attack, or deep fatigue. The goal of Svādhiṣṭhāna is not to build stronger walls, but to stop building walls entirely. Let the water flow.
             </p>
           </motion.div>
         )}

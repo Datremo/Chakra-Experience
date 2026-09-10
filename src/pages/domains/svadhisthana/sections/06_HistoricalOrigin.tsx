@@ -22,7 +22,7 @@ export const HistoricalOriginSection: React.FC = () => {
   }, []);
 
   return (
-    <section className="py-32 px-6 relative overflow-hidden min-h-screen flex flex-col justify-center bg-[#030610]">
+    <section className="py-12 md:py-16 px-6 relative  min-min-h-[100svh] flex flex-col justify-center bg-[#030610]">
       
       <div className="max-w-7xl mx-auto w-full relative z-10 mb-20 text-center pointer-events-none">
         <h2 className="font-sans text-orange-400 tracking-[0.3em] uppercase text-sm mb-6">Development</h2>

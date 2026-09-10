@@ -8,10 +8,10 @@ export const DesireSection: React.FC = () => {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
   const scenarios = [
-    "â€œI want to buy this.”",
-    "â€œI want someone to like me.”",
-    "â€œI want pleasure.”",
-    "â€œI want to escape.”"
+    "“I want to buy this.”",
+    "“I want someone to like me.”",
+    "“I want pleasure.”",
+    "“I want to escape.”"
   ];
 
   useEffect(() => {
@@ -23,14 +23,14 @@ export const DesireSection: React.FC = () => {
   }, []);
 
   return (
-    <section className="h-screen w-full flex items-center justify-center px-4 md:px-6 flex items-center justify-center relative bg-black overflow-hidden">
+    <section className="min-h-[100svh] w-full flex items-center justify-center px-4 md:px-6 flex items-center justify-center relative bg-black ">
       
       {/* Cinematic Background Image */}
       <div className="absolute inset-0 z-0">
         <img 
           src="/assets/svadhisthana/svadhisthana_surface_droplet_1788966630680.jpg" 
           alt="Surface Droplet Background" 
-          className="w-full h-full object-cover opacity-30 mix-blend-screen scale-110"
+          className="w-full h-full object-cover opacity-48 mix-blend-screen scale-110"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[#060B19] via-transparent to-[#060B19]" />
       </div>
@@ -49,11 +49,11 @@ export const DesireSection: React.FC = () => {
           {svadhisthanaData.themes.desire.headline}
         </h1>
         
-        <p className="text-xl md:text-2xl text-teal-100/70 mb-16 italic font-light drop-shadow-md">
+        <p className="text-xl md:text-2xl text-teal-100/70 mb-8 md:mb-10 italic font-light drop-shadow-md">
           There is a space between feeling a desire and acting on it. The practice is not to kill the desire, but to decode it.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16 max-w-2xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 md:mb-10 max-w-2xl mx-auto">
           {scenarios.map((scenario) => (
             <button
               key={scenario}

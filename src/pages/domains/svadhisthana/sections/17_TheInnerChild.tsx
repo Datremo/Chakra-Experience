@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 export const TheInnerChildSection: React.FC = () => {
   return (
-    <section className="h-screen w-full flex flex-col items-center justify-center relative overflow-hidden bg-[#0c0519]">
+    <section className="min-h-[100svh] w-full flex flex-col items-center justify-center relative  bg-[#0c0519]">
       
       {/* Cinematic Background Image */}
       <div className="absolute inset-0 z-0">
@@ -43,7 +43,7 @@ export const TheInnerChildSection: React.FC = () => {
           <div className="absolute inset-0 bg-gradient-to-br from-violet-600/10 to-orange-500/10 group-hover:opacity-100 opacity-0 transition-opacity duration-1000" />
           
           <p className="relative z-10 text-lg md:text-2xl text-white/90 font-light leading-relaxed mb-6">
-            SvÄdhiá¹£á¹­hÄna is the seat of the inner child. It is the part of you that does things simply because they are <strong className="text-orange-300 font-serif italic">fun</strong>.
+            Svādhiṣṭhāna is the seat of the inner child. It is the part of you that does things simply because they are <strong className="text-orange-300 font-serif italic">fun</strong>.
           </p>
           
           <p className="relative z-10 text-base md:text-lg text-white/60 font-sans leading-relaxed">

@@ -8,7 +8,7 @@ export const EvidenceAndMythsSection: React.FC = () => {
   const [activeMyth, setActiveMyth] = useState<number | null>(null);
 
   return (
-    <section className="h-screen w-full flex flex-col items-center justify-center relative overflow-hidden bg-black px-6">
+    <section className="min-h-[100svh] w-full flex flex-col items-center justify-center relative  bg-black px-6">
       <div className="max-w-6xl mx-auto w-full relative z-10">
         
         <div className="text-center mb-24">

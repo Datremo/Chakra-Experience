@@ -28,7 +28,7 @@ export const WaterMeditationSection: React.FC = () => {
     { num: 1, title: 'Surface', instruction: 'Notice the physical sensations of your body resting.', color1: 'bg-teal-900', color2: 'bg-cyan-900' },
     { num: 2, title: 'Ripple', instruction: 'Notice any emotional movement without judgment.', color1: 'bg-cyan-800', color2: 'bg-blue-900' },
     { num: 3, title: 'Wave', instruction: 'Visualize a vast body of water rising and falling.', color1: 'bg-blue-800', color2: 'bg-indigo-900' },
-    { num: 4, title: 'Current', instruction: 'Optional: Silently chant the seed syllable VAá¹‚.', color1: 'bg-indigo-800', color2: 'bg-violet-900' },
+    { num: 4, title: 'Current', instruction: 'Optional: Silently chant the seed syllable VAṂ.', color1: 'bg-indigo-800', color2: 'bg-violet-900' },
     { num: 5, title: 'Still Water', instruction: 'Let all imagery and sound disappear.', color1: 'bg-black', color2: 'bg-black' }
   ];
 
@@ -52,7 +52,7 @@ export const WaterMeditationSection: React.FC = () => {
   };
 
   return (
-    <section className="h-screen w-full relative flex flex-col items-center justify-center py-32 px-6 overflow-hidden bg-[#000508]">
+    <section className="min-h-[100svh] w-full relative flex flex-col items-center justify-center py-12 md:py-16 px-6  bg-[#000508]">
       
       {/* Dynamic Visual Environment based on Stage */}
       <AnimatePresence mode="wait">
@@ -96,7 +96,7 @@ export const WaterMeditationSection: React.FC = () => {
           </div>
         ) : seconds < TOTAL_DURATION ? (
           <div className="flex flex-col items-center w-full">
-            <div className="mb-16">
+            <div className="mb-8 md:mb-10">
               <p className="text-sm font-sans tracking-[0.4em] text-teal-400/80 uppercase mb-4 drop-shadow-md">Stage {minute} of {TOTAL_STAGES}</p>
               <h2 className="text-5xl md:text-7xl font-serif mb-6 text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
                 {currentStage?.title}
@@ -138,7 +138,7 @@ export const WaterMeditationSection: React.FC = () => {
         ) : (
           <div className="bg-black/80 backdrop-blur-2xl p-6 sm:p-12 md:p-16 rounded-3xl sm:rounded-[3rem] border border-teal-900/40 text-center shadow-[0_0_80px_rgba(20,184,166,0.15)] max-w-2xl mx-auto">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-white mb-6 md:mb-8 drop-shadow-lg">Practice Complete</h2>
-            <p className="text-lg sm:text-2xl text-teal-200/90 italic mb-10 sm:mb-16 leading-relaxed max-w-xl mx-auto drop-shadow-md font-light">
+            <p className="text-lg sm:text-2xl text-teal-200/90 italic mb-10 sm:mb-8 md:mb-10 leading-relaxed max-w-xl mx-auto drop-shadow-md font-light">
               «What changed when you stopped resisting the feeling?»
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-6">

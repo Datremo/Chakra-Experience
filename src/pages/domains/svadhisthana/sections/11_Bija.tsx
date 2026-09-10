@@ -25,7 +25,7 @@ export const BijaSection: React.FC = () => {
   };
 
   return (
-    <section className="min-h-screen relative flex items-center justify-center py-32 px-6 bg-[#040812] overflow-hidden">
+    <section className="min-min-h-[100svh] relative flex items-center justify-center py-12 md:py-16 px-6 bg-[#040812] ">
       
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(249,115,22,0.1),transparent_50%)]" />
@@ -92,7 +92,7 @@ export const BijaSection: React.FC = () => {
           
           <div className="space-y-6 text-xl leading-relaxed text-white/70">
             <p>
-              The Bīja (seed) mantra for SvÄdhiá¹£á¹­hÄna is <strong>VAá¹‚</strong> (pronounced VUM).
+              The Bīja (seed) mantra for Svādhiṣṭhāna is <strong>VAṂ</strong> (pronounced VUM).
             </p>
             <p>
               In tantric practice, chanting this seed syllable creates a subtle vibration in the lower abdomen. It acts as a point of focus for attention.

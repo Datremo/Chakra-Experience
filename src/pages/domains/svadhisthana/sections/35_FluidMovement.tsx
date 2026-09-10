@@ -11,7 +11,7 @@ export const FluidMovementSection: React.FC = () => {
   ];
 
   return (
-    <section className="h-screen w-full flex flex-col items-center justify-center relative overflow-hidden bg-[#020914]">
+    <section className="min-h-[100svh] w-full flex flex-col items-center justify-center relative  bg-[#020914]">
       
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCI+PGFwYXRoIGQ9Ik0wIDIwQzEwIDEwIDMwIDEwIDQwIDIwQzMwIDMwIDEwIDMwIDAgMjBaIiBmaWxsPSJub25lIiBzdHJva2U9InJnYmEoMjAsMTg0LDE2NiwwLjA1KSIvPjwvc3ZnPg==')] opacity-30" />
 

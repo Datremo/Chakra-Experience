@@ -2,25 +2,25 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const SENSES = [
-  { sense: 'Touch', example: 'The warmth of sunlight on skin. A hug held one second longer.', icon: '\u270b' },
-  { sense: 'Taste', example: 'Biting into a ripe mango. The first sip of cold water on a hot day.', icon: '\U0001f34b' },
-  { sense: 'Sound', example: 'Rain on a window. Music that makes you cry without knowing why.', icon: '\U0001f3b6' },
-  { sense: 'Scent', example: 'Petrichor. The smell of someone you love.', icon: '\U0001f33c' },
-  { sense: 'Sight', example: 'A sunset that stops you mid-sentence. Colors that feel like feelings.', icon: '\U0001f31f' },
+  { sense: 'Touch', example: 'The warmth of sunlight on skin. A hug held one second longer.', icon: '✋' },
+  { sense: 'Taste', example: 'Biting into a ripe mango. The first sip of cold water on a hot day.', icon: '🍋' },
+  { sense: 'Sound', example: 'Rain on a window. Music that makes you cry without knowing why.', icon: '🎶' },
+  { sense: 'Scent', example: 'Petrichor. The smell of someone you love.', icon: '🌼' },
+  { sense: 'Sight', example: 'A sunset that stops you mid-sentence. Colors that feel like feelings.', icon: '🌟' },
 ];
 
 export const PleasureSection: React.FC = () => {
   const [active, setActive] = useState<number | null>(null);
 
   return (
-    <section className="h-screen w-full flex flex-col items-center justify-center relative overflow-hidden bg-[#050202]">
+    <section className="min-h-[100svh] w-full flex flex-col items-center justify-center relative  bg-[#050202]">
 
       {/* Background */}
       <div className="absolute inset-0 z-0">
         <img
           src="/assets/svadhisthana/svadhisthana_pleasure_senses.jpg"
           alt="Sensory pleasure"
-          className="w-full h-full object-cover opacity-35"
+          className="w-full h-full object-cover opacity-48"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[#050202]/80 via-transparent to-[#050202]/85" />
       </div>
@@ -49,7 +49,7 @@ export const PleasureSection: React.FC = () => {
           transition={{ delay: 0.2 }}
           className="text-white/60 text-base md:text-lg text-center max-w-2xl leading-relaxed"
         >
-          Svadhisthana governs our relationship with pleasure. Not the compulsive chasing of it \u2014 but the capacity to be present <em>within</em> it. Tap a sense to explore.
+          Svādhiṣṭhāna governs our relationship with pleasure. Not the compulsive chasing of it — but the capacity to be present <em>within</em> it. Tap a sense to explore.
         </motion.p>
 
         <div className="flex flex-wrap justify-center gap-3">

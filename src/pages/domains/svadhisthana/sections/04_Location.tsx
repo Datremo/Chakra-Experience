@@ -7,7 +7,7 @@ const CHAKRAS = [
   { id: 'throat',    label: 'Vishuddha',    subtitle: 'Throat',                        color: '#06b6d4', yPct: 26 },
   { id: 'heart',     label: 'Anahata',      subtitle: 'Heart',                         color: '#22c55e', yPct: 38 },
   { id: 'solar',     label: 'Manipura',     subtitle: 'Solar Plexus',                  color: '#eab308', yPct: 50 },
-  { id: 'sacral',    label: 'Svadhisthana', subtitle: 'Sacral \u2014 YOU ARE HERE',    color: '#f97316', yPct: 61 },
+  { id: 'sacral',    label: 'Svādhiṣṭhāna', subtitle: 'Sacral — YOU ARE HERE',    color: '#f97316', yPct: 61 },
   { id: 'root',      label: 'Muladhara',    subtitle: 'Root',                          color: '#ef4444', yPct: 75 },
 ];
 
@@ -16,7 +16,7 @@ export const LocationSection: React.FC = () => {
   const active = CHAKRAS.find(c => c.id === hovered) ?? CHAKRAS[5];
 
   return (
-    <section className="h-screen w-full flex items-center justify-center relative overflow-hidden bg-[#040608]">
+    <section className="min-h-[100svh] w-full flex items-center justify-center relative  bg-[#040608]">
 
       {/* ambient sacral glow */}
       <div
@@ -52,7 +52,7 @@ export const LocationSection: React.FC = () => {
               <p className="text-white/40 text-xs font-sans tracking-[0.3em] uppercase mb-4">{active.subtitle}</p>
               {active.id === 'sacral' ? (
                 <p className="text-white/70 text-lg leading-relaxed">
-                  Svadhisthana sits roughly <strong className="text-orange-300">2 inches below the navel</strong>, at the center of the pelvic bowl. It governs the hips, sacrum, lower back, kidneys, and reproductive organs.
+                  Svādhiṣṭhāna sits roughly <strong className="text-orange-300">2 inches below the navel</strong>, at the center of the pelvic bowl. It governs the hips, sacrum, lower back, kidneys, and reproductive organs.
                 </p>
               ) : (
                 <p className="text-white/40 text-base leading-relaxed italic">

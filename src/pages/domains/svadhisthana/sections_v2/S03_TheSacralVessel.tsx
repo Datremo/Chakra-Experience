@@ -6,14 +6,14 @@ export const S03_TheSacralVessel: React.FC = () => {
   const svadhisthanaData = useSvadhisthanaData();
 
   return (
-    <section className="relative min-h-[120vh] flex flex-col items-center justify-center py-32 px-6 bg-black overflow-hidden">
+    <section className="relative min-h-[120vh] flex flex-col items-center justify-center py-12 md:py-16 px-6 bg-black ">
       
       {/* Background imagery: the inner place / the glowing reflection */}
       <div className="absolute inset-0 z-0">
         <img 
           src="https://images.unsplash.com/photo-1534062024564-9452b4dc2018?q=80&w=2000&auto=format&fit=crop" 
           alt="Golden reflection on water" 
-          className="w-full h-full object-cover opacity-20 mix-blend-screen scale-110"
+          className="w-full h-full object-cover opacity-48 mix-blend-screen scale-110"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(249,115,22,0.1)_0%,transparent_70%)]" />
@@ -21,7 +21,7 @@ export const S03_TheSacralVessel: React.FC = () => {
 
       <div className="max-w-5xl mx-auto w-full text-center relative z-10">
         
-        <div className="flex flex-col md:flex-row justify-center items-center md:items-end gap-12 md:gap-24 mb-24">
+        <div className="flex flex-col md:flex-row justify-center items-center md:items-end gap-12 md:gap-10 md:gap-16 mb-24">
           {svadhisthanaData.name.components.map((part: any, idx: number) => (
              <motion.div 
                key={idx}
@@ -51,7 +51,7 @@ export const S03_TheSacralVessel: React.FC = () => {
           transition={{ duration: 1.5, delay: 1 }}
           className="mt-16 px-6"
         >
-          <div className="w-px h-24 bg-gradient-to-b from-orange-500/50 to-transparent mx-auto mb-16" />
+          <div className="w-px h-24 bg-gradient-to-b from-orange-500/50 to-transparent mx-auto mb-8 md:mb-10" />
           
           <p className="text-2xl md:text-4xl text-orange-50 leading-relaxed font-serif max-w-4xl mx-auto drop-shadow-md">
             {svadhisthanaData.name.interpretation}

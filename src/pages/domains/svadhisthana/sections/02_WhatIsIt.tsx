@@ -8,19 +8,19 @@ export const WhatIsItSection: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'TRADITION' | 'MODERN' | 'SCIENCE'>('TRADITION');
 
   return (
-    <section id="what-is-it" className="h-screen w-full flex items-center justify-center px-6 relative overflow-hidden">
+    <section id="what-is-it" className="min-h-[100svh] w-full flex items-center justify-center px-6 relative ">
       <div className="max-w-5xl mx-auto w-full relative z-10">
         
         <div className="text-center mb-24">
           <h2 className="font-sans text-orange-400 tracking-[0.3em] uppercase text-sm mb-6">The Current</h2>
-          <h1 className="text-5xl md:text-7xl mb-8 leading-tight font-serif text-orange-50">What is SvÄdhiá¹£á¹­hÄna?</h1>
+          <h1 className="text-5xl md:text-7xl mb-8 leading-tight font-serif text-orange-50">What is Svādhiṣṭhāna?</h1>
           <p className="text-2xl text-orange-100/60 leading-relaxed max-w-3xl mx-auto italic">
             Understand the second chakra from classical tradition, modern psychology, and scientific boundaries.
           </p>
         </div>
 
         {/* Interactive Surface */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 md:mb-10">
           {(['TRADITION', 'MODERN', 'SCIENCE'] as const).map((tab) => (
             <button
               key={tab}
@@ -51,7 +51,7 @@ export const WhatIsItSection: React.FC = () => {
                 <SourceBadge 
                   type="TRADITION" 
                   text="Classical Tantric and Yogic understanding." 
-                  sourceText="á¹¢aá¹­-cakra-nirÅ«paá¹‡a (1526 CE)"
+                  sourceText="Ṣaṭ-Cakra-Nirūpaṇa (16th-century text)"
                 />
                 <h3 className="text-3xl md:text-4xl mt-6 mb-8 text-orange-50 font-serif">The Six-Petaled Lotus</h3>
                 <div className="space-y-6 text-xl leading-loose text-orange-100/70">

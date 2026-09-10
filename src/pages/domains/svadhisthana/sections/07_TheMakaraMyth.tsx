@@ -5,7 +5,7 @@ export const TheMakaraMythSection: React.FC = () => {
   const [showDepth, setShowDepth] = useState(false);
 
   return (
-    <section className="h-screen w-full flex flex-col items-center justify-center relative overflow-hidden bg-black">
+    <section className="min-h-[100svh] w-full flex flex-col items-center justify-center relative  bg-black">
       
       {/* Background Image */}
       <motion.div 
@@ -46,7 +46,7 @@ export const TheMakaraMythSection: React.FC = () => {
           onClick={() => setShowDepth(!showDepth)}
         >
           <p className="text-lg md:text-xl text-white/80 font-light leading-relaxed mb-6">
-            In Tantric tradition, the animal associated with SvÄdhiá¹£á¹­hÄna is the Makaraâ€”a mythical crocodile. It rests at the bottom of the water, motionless, hiding its massive power just below the surface.
+            In Tantric tradition, the animal associated with Svādhiṣṭhāna is the Makara—a mythical crocodile. It rests at the bottom of the water, motionless, hiding its massive power just below the surface.
           </p>
 
           <AnimatePresence>

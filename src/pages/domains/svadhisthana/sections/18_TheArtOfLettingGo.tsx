@@ -15,7 +15,7 @@ export const TheArtOfLettingGoSection: React.FC = () => {
   };
 
   return (
-    <section className="h-screen w-full flex flex-col items-center justify-center relative overflow-hidden bg-[#020508]">
+    <section className="min-h-[100svh] w-full flex flex-col items-center justify-center relative  bg-[#020508]">
       <div className="relative z-10 text-center max-w-3xl px-6 pt-10 w-full">
         
         <motion.p

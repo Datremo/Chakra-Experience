@@ -2,17 +2,17 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const PHASES = [
-  { name: 'New Moon', emoji: '\U0001f311', meaning: 'Plant intentions. Begin new creative projects. A time to seed desires.' },
-  { name: 'Waxing Moon', emoji: '\U0001f312', meaning: 'Build momentum. Let creative energy accumulate. Pursue pleasure actively.' },
-  { name: 'Full Moon', emoji: '\U0001f315', meaning: 'Peak emotional intensity. Svadhisthana is at full charge. Express fully.' },
-  { name: 'Waning Moon', emoji: '\U0001f317', meaning: 'Release and let flow. Shed what no longer serves. Surrender to the river.' },
+  { name: 'New Moon', emoji: '\🌑', meaning: 'Plant intentions. Begin new creative projects. A time to seed desires.' },
+  { name: 'Waxing Moon', emoji: '\🌒', meaning: 'Build momentum. Let creative energy accumulate. Pursue pleasure actively.' },
+  { name: 'Full Moon', emoji: '🌕', meaning: 'Peak emotional intensity. A time many people associate with fullness, culmination, and heightened feeling.' },
+  { name: 'Waning Moon', emoji: '\🌗', meaning: 'Release and let flow. Shed what no longer serves. Surrender to the river.' },
 ];
 
 export const MoonSymbolismSection: React.FC = () => {
   const [active, setActive] = useState(0);
 
   return (
-    <section className="h-screen w-full flex flex-col items-center justify-center relative overflow-hidden bg-[#02050a]">
+    <section className="min-h-[100svh] w-full flex flex-col items-center justify-center relative  bg-[#02050a]">
 
       {/* Background */}
       <div className="absolute inset-0 z-0">

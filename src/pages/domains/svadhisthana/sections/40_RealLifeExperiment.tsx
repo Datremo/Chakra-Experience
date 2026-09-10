@@ -5,13 +5,13 @@ import { Droplet } from 'lucide-react';
 export const RealLifeExperimentSection: React.FC = () => {
   const svadhisthanaData = useSvadhisthanaData();
   return (
-    <section className="h-screen w-full flex items-center justify-center relative overflow-hidden bg-[#040810]">
+    <section className="min-h-[100svh] w-full flex items-center justify-center relative  bg-[#040810]">
       
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(45,212,191,0.05),transparent_60%)]" />
 
       <div className="max-w-4xl mx-auto w-full relative z-10">
         
-        <div className="text-center mb-16">
+        <div className="text-center mb-8 md:mb-10">
           <h2 className="font-sans text-teal-400 tracking-[0.3em] uppercase text-sm mb-6">Integration</h2>
           <h1 className="text-4xl md:text-6xl mb-6 font-serif text-white">The 24-Hour Flow Experiment</h1>
           <p className="text-xl text-teal-100/60 font-light italic">
@@ -23,7 +23,7 @@ export const RealLifeExperimentSection: React.FC = () => {
           
           <Droplet size={300} className="absolute -right-20 -bottom-20 text-teal-900/20" />
 
-          <div className="space-y-6 relative z-10 mb-16">
+          <div className="space-y-6 relative z-10 mb-8 md:mb-10">
             {svadhisthanaData.realLifeExperiment.map((task: any, i: number) => (
               <div key={i} className="flex items-start space-x-4">
                 <div className="mt-1 w-6 h-6 rounded-full border border-teal-500/30 flex items-center justify-center flex-shrink-0">

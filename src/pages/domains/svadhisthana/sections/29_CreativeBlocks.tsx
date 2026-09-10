@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 export const CreativeBlocksSection: React.FC = () => {
   return (
-    <section className="h-screen w-full flex flex-col items-center justify-center relative overflow-hidden bg-black">
+    <section className="min-h-[100svh] w-full flex flex-col items-center justify-center relative  bg-black">
       
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-orange-900/20 via-black to-black z-0" />
 
@@ -20,7 +20,7 @@ export const CreativeBlocksSection: React.FC = () => {
         <motion.h2 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          className="text-4xl md:text-6xl font-serif text-white mb-16 drop-shadow-xl"
+          className="text-4xl md:text-6xl font-serif text-white mb-8 md:mb-10 drop-shadow-xl"
         >
           Creative Blocks
         </motion.h2>

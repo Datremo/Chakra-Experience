@@ -142,7 +142,7 @@ export const EmotionTideSection: React.FC = () => {
 
 
   return (
-    <section className="h-screen w-full flex items-center justify-center px-4 md:px-6 flex flex-col items-center justify-center relative overflow-hidden">
+    <section className="min-h-[100svh] w-full flex items-center justify-center px-4 md:px-6 flex flex-col items-center justify-center relative ">
       
       {/* Cinematic Background Image */}
       <div className="absolute inset-0 z-0">

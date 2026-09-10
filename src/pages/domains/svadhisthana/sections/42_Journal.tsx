@@ -14,7 +14,7 @@ export const JournalSection: React.FC = () => {
   const [text, setText] = useState('');
 
   return (
-    <section className="h-screen w-full flex flex-col items-center justify-center relative overflow-hidden bg-[#030508]">
+    <section className="min-h-[100svh] w-full flex flex-col items-center justify-center relative  bg-[#030508]">
 
       {/* Background */}
       <div className="absolute inset-0 z-0">
@@ -54,7 +54,7 @@ export const JournalSection: React.FC = () => {
             onClick={() => { setPromptIdx((promptIdx + 1) % PROMPTS.length); setText(''); }}
             className="mt-4 text-orange-400/60 text-xs font-sans uppercase tracking-widest hover:text-orange-300 transition-colors"
           >
-            Next prompt \u2192
+            Next prompt →
           </button>
         </motion.div>
 

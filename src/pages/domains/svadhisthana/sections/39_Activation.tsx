@@ -2,10 +2,10 @@ import React from 'react';
 
 export const ActivationSection: React.FC = () => {
   return (
-    <section className="h-screen w-full flex items-center justify-center px-6 relative overflow-hidden bg-[#02040a]">
+    <section className="min-h-[100svh] w-full flex items-center justify-center px-6 relative  bg-[#02040a]">
       <div className="max-w-6xl mx-auto w-full relative z-10">
         
-        <div className="text-center mb-16">
+        <div className="text-center mb-8 md:mb-10">
           <h2 className="font-sans text-orange-400 tracking-[0.3em] uppercase text-sm mb-6">Demystification</h2>
           <h1 className="text-4xl md:text-6xl mb-8 font-serif text-white max-w-4xl mx-auto leading-tight">
             What does "Sacral Activation" actually mean?
@@ -16,7 +16,7 @@ export const ActivationSection: React.FC = () => {
           <div className="bg-orange-900/10 border border-orange-500/20 p-8 rounded-3xl backdrop-blur-md">
             <h3 className="font-sans text-orange-300 tracking-[0.2em] uppercase text-sm mb-4">Tradition</h3>
             <p className="text-orange-100/70 font-light leading-relaxed">
-              In classical systems, "activation" (often through KundalinÄ« awakening) refers to piercing the knot (granthi) at this center, redirecting outward desire inward toward spiritual liberation.
+              In classical systems, "activation" (often through Kuṇḍalinī awakening) refers to piercing the knot (granthi) at this center, redirecting outward desire inward toward spiritual liberation.
             </p>
           </div>
           

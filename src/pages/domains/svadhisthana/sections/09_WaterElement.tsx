@@ -4,28 +4,28 @@ import { motion } from 'framer-motion';
 const WISDOM = [
   {
     title: 'Cohesion',
-    body: 'Water molecules cling to each other through hydrogen bonds \u2014 the same way we cling to relationships, memories, and identities. Svadhisthana teaches us that cohesion is natural, but rigidity is not.',
+    body: 'Water molecules cling to each other through hydrogen bonds — the same way we cling to relationships, memories, and identities. Svādhiṣṭhāna teaches us that cohesion is natural, but rigidity is not.',
   },
   {
     title: 'Movement',
-    body: 'Still water stagnates. Flowing water purifies. The sacral chakra requires movement \u2014 of emotion, of creativity, of the body itself. When we stop moving, we stop processing.',
+    body: 'Still water stagnates. Flowing water purifies. The sacral chakra requires movement — of emotion, of creativity, of the body itself. When we stop moving, we stop processing.',
   },
   {
     title: 'Dissolution',
-    body: 'Water dissolves rigid boundaries. Salt, sugar, grief, old stories \u2014 water breaks them down. Svadhisthana teaches us that softness is the most powerful form of transformation.',
+    body: 'Water dissolves rigid boundaries. Salt, sugar, grief, old stories — water breaks them down. Svādhiṣṭhāna teaches us that softness is the most powerful form of transformation.',
   },
 ];
 
 export const WaterElementSection: React.FC = () => {
   return (
-    <section className="h-screen w-full flex flex-col items-center justify-center relative overflow-hidden bg-[#02080f]">
+    <section className="min-h-[100svh] w-full flex flex-col items-center justify-center relative  bg-[#02080f]">
 
       {/* Background */}
       <div className="absolute inset-0 z-0">
         <img
           src="/assets/svadhisthana/svadhisthana_stormy_ocean_1788966683966.jpg"
           alt="Water element"
-          className="w-full h-full object-cover opacity-30"
+          className="w-full h-full object-cover opacity-48"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[#02080f]/80 via-transparent to-[#02080f]/90" />
       </div>
@@ -64,7 +64,7 @@ export const WaterElementSection: React.FC = () => {
           transition={{ delay: 0.3 }}
           className="text-center text-lg text-teal-100/70 max-w-2xl leading-relaxed"
         >
-          Sv\u0101dhi\u1e63\u1e6dh\u0101na is traditionally associated with the element of water (\u0100pa\u1e25). In classical thought, water represents cohesion, movement, and the dissolution of rigid boundaries.
+          Svādhiṣṭhāna is traditionally associated with the element of water (Āpaḥ). In classical thought, water represents cohesion, movement, and the dissolution of rigid boundaries.
         </motion.p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full mt-2">
@@ -88,7 +88,7 @@ export const WaterElementSection: React.FC = () => {
           transition={{ delay: 0.9 }}
           className="text-base text-orange-300/70 italic"
         >
-          \u201cWhy does this chakra use a six-petaled lotus?\u201d
+          “Why does this chakra use a six-petaled lotus?”
         </motion.p>
 
       </div>

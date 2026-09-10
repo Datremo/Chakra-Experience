@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 export const SacralAestheticsSection: React.FC = () => {
   return (
-    <section className="h-screen w-full flex flex-col items-center justify-center relative overflow-hidden bg-[#ff5500]">
+    <section className="min-h-[100svh] w-full flex flex-col items-center justify-center relative  bg-[#ff5500]">
       
       {/* Background Gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#ff5500] via-[#8c1c00] to-black opacity-80" />
@@ -38,10 +38,10 @@ export const SacralAestheticsSection: React.FC = () => {
           className="bg-black/20 backdrop-blur-md p-10 md:p-16 rounded-[3rem] border border-white/10 max-w-3xl mx-auto shadow-2xl"
         >
           <p className="text-xl md:text-2xl text-white/90 font-light leading-relaxed mb-6">
-            The color of SvÄdhiá¹£á¹­hÄna is a deep, glowing <strong className="font-serif italic text-orange-300">Orange</strong>.
+            The color of Svādhiṣṭhāna is a deep, glowing <strong className="font-serif italic text-orange-300">Orange</strong>.
           </p>
           <p className="text-lg text-white/70 font-light leading-relaxed">
-            It is the color of sunset, twilight, and autumn. It represents the boundary between day (conscious) and night (subconscious). Immersing yourself in warm, low lighting, candlelight, and sunset colors naturally stimulates this energy center.
+            It is the color of sunset, twilight, and autumn. It represents the boundary between day (conscious) and night (subconscious). Immersing yourself in warm, low lighting, candlelight, and sunset colors can support a warm, contemplative atmosphere.
           </p>
         </motion.div>
 

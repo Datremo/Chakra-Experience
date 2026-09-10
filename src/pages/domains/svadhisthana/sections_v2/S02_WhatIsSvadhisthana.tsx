@@ -21,13 +21,13 @@ export const S02_WhatIsSvadhisthana: React.FC = () => {
       </div>
 
       {/* Tradition Block */}
-      <div className="relative min-h-[90vh] md:min-h-screen flex items-center justify-center py-24 px-6 overflow-hidden">
+      <div className="relative min-h-[90vh] md:min-min-h-[100svh] flex items-center justify-center py-24 px-6 overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <img 
             src="https://images.unsplash.com/photo-1604871000636-074fa5117945?q=80&w=2000&auto=format&fit=crop" 
             alt="Abstract mandala art" 
-            className="w-full h-full object-cover opacity-30 mix-blend-luminosity scale-110"
+            className="w-full h-full object-cover opacity-48 mix-blend-luminosity scale-110"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black via-[#1a0a00]/80 to-black" />
         </div>
@@ -52,12 +52,12 @@ export const S02_WhatIsSvadhisthana: React.FC = () => {
       </div>
 
       {/* Modern Block */}
-      <div className="relative min-h-[90vh] md:min-h-screen flex items-center justify-center py-24 px-6 overflow-hidden">
+      <div className="relative min-h-[90vh] md:min-min-h-[100svh] flex items-center justify-center py-24 px-6 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
             src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?q=80&w=2000&auto=format&fit=crop" 
             alt="Abstract fluid flow" 
-            className="w-full h-full object-cover opacity-20 mix-blend-screen scale-110"
+            className="w-full h-full object-cover opacity-48 mix-blend-screen scale-110"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black via-[#001111]/80 to-black" />
         </div>
@@ -82,12 +82,12 @@ export const S02_WhatIsSvadhisthana: React.FC = () => {
       </div>
 
       {/* Science Block */}
-      <div className="relative min-h-[90vh] md:min-h-screen flex items-center justify-center py-24 px-6 overflow-hidden">
+      <div className="relative min-h-[90vh] md:min-min-h-[100svh] flex items-center justify-center py-24 px-6 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
             src="https://images.unsplash.com/photo-1559757175-5700dde675bc?q=80&w=2000&auto=format&fit=crop" 
             alt="Neural networks and biology" 
-            className="w-full h-full object-cover opacity-20 mix-blend-luminosity scale-110"
+            className="w-full h-full object-cover opacity-48 mix-blend-luminosity scale-110"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black via-[#00081a]/80 to-black" />
         </div>
