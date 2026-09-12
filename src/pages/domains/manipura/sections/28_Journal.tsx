@@ -50,7 +50,7 @@ export const JournalSection: React.FC = () => {
           </p>
         </div>
 
-        <div className="w-full bg-black/40 border border-amber-900/30 rounded-3xl p-8 md:p-12 relative overflow-hidden">
+        <div className="w-full bg-amber-900/10 backdrop-blur-md border border-amber-500/20 shadow-[0_0_30px_rgba(245,158,11,0.05)] border border-amber-900/30 rounded-3xl p-8 md:p-12 relative overflow-hidden">
           
           <AnimatePresence mode="wait">
             {!isDone ? (
@@ -67,7 +67,7 @@ export const JournalSection: React.FC = () => {
                   onChange={(e) => setText(e.target.value)}
                   disabled={isBurning}
                   placeholder="Write freely. This will not be saved."
-                  className="w-full h-48 bg-black/50 border border-amber-900/50 rounded-xl p-6 text-amber-100 font-serif text-lg leading-relaxed focus:outline-none focus:border-amber-500/50 resize-none placeholder:text-amber-900/50"
+                  className="w-full h-48 bg-amber-900/10 backdrop-blur-md border border-amber-500/20 shadow-[0_0_30px_rgba(245,158,11,0.05)] border border-amber-900/50 rounded-xl p-6 text-amber-100 font-serif text-lg leading-relaxed focus:outline-none focus:border-amber-500/50 resize-none placeholder:text-amber-900/50"
                 />
 
                 <div className="mt-8 flex justify-center">

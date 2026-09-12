@@ -13,25 +13,7 @@ function App() {
   const [loadingProgress, setLoadingProgress] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);
 
-  // Lock background body scroll while a deep-dive domain is open.
-  // Restore the exact previous scroll position when the domain closes.
-  useEffect(() => {
-    if (!domainOpen) return;
-
-    const scrollY = window.scrollY;
-
-    document.body.style.position = 'fixed';
-    document.body.style.top = `-${scrollY}px`;
-    document.body.style.width = '100%';
-
-    return () => {
-      document.body.style.position = '';
-      document.body.style.top = '';
-      document.body.style.width = '';
-
-      window.scrollTo(0, scrollY);
-    };
-  }, [domainOpen]);
+  // Note: Scroll locking is handled individually by the Domain components (e.g., ManipuraDomain.tsx).
 
   const handleChakraChange = (chakra: ChakraData | null) => {
     // Ignore background chakra changes while a deep-dive domain is open.
@@ -64,6 +46,7 @@ function App() {
         onIntroChange={setIsIntro}
         onLoadingProgress={setLoadingProgress}
         onLoadingComplete={() => setIsLoaded(true)}
+        isFrozen={domainOpen}
       />
 
       {/*

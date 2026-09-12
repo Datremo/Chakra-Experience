@@ -57,7 +57,7 @@ export const ModernSolarPlexusSection: React.FC = () => {
                 className={`relative p-8 rounded-3xl text-left border transition-all duration-500 overflow-hidden group
                   ${isSelected 
                     ? 'bg-amber-900/40 border-amber-500 shadow-[0_0_30px_rgba(245,158,11,0.2)]' 
-                    : 'bg-black/50 border-amber-900/30 hover:bg-amber-950/40 hover:border-amber-700/50'
+                    : 'bg-amber-900/10 backdrop-blur-md border border-amber-500/20 shadow-[0_0_30px_rgba(245,158,11,0.05)] border-amber-900/30 hover:bg-amber-950/40 hover:border-amber-700/50'
                   }
                 `}
               >

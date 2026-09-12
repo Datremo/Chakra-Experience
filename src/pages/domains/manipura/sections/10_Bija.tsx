@@ -98,7 +98,7 @@ export const BijaSection: React.FC = () => {
                     ? 'bg-amber-600 text-white shadow-[0_0_20px_rgba(245,158,11,0.6)] scale-95' 
                     : activeMode === mode
                       ? 'bg-amber-900/40 border border-amber-500/50 text-amber-200'
-                      : 'bg-black/40 border border-white/10 text-white/40 hover:border-amber-900/50'
+                      : 'bg-amber-900/10 backdrop-blur-md border border-amber-500/20 shadow-[0_0_30px_rgba(245,158,11,0.05)] border border-white/10 text-white/40 hover:border-amber-900/50'
                   }
                 `}
               >

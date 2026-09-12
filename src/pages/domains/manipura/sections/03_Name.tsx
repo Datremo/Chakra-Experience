@@ -7,7 +7,7 @@ export const NameSection: React.FC = () => {
   const manipuraData = useManipuraData();
 
   return (
-    <section className="min-h-screen py-32 px-6 flex items-center justify-center relative bg-black">
+    <section className="min-h-screen py-32 px-6 flex items-center justify-center relative bg-amber-900/10 backdrop-blur-md border border-amber-500/20 shadow-[0_0_30px_rgba(245,158,11,0.05)]">
       <div className="max-w-4xl mx-auto w-full relative z-10 text-center">
         
         <h2 className="font-sans text-amber-500/80 tracking-[0.3em] uppercase text-sm mb-20">The Name</h2>

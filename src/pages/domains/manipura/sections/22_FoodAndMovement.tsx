@@ -59,7 +59,7 @@ export const FoodAndMovementSection: React.FC = () => {
                 className={`p-6 rounded-2xl text-left border transition-all duration-300
                   ${activeTab === tab 
                     ? 'bg-amber-900/40 border-amber-500 shadow-[0_0_20px_rgba(245,158,11,0.1)]' 
-                    : 'bg-black/50 border-amber-900/30 hover:border-amber-700/50 hover:bg-black/80'
+                    : 'bg-amber-900/10 backdrop-blur-md border border-amber-500/20 shadow-[0_0_30px_rgba(245,158,11,0.05)] border-amber-900/30 hover:border-amber-700/50 hover:bg-amber-900/10 backdrop-blur-md border border-amber-500/20 shadow-[0_0_30px_rgba(245,158,11,0.05)]'
                   }
                 `}
               >
@@ -82,7 +82,7 @@ export const FoodAndMovementSection: React.FC = () => {
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -20 }}
-                className="bg-black/40 border border-amber-900/50 rounded-3xl p-8 md:p-12 h-full"
+                className="bg-amber-900/10 backdrop-blur-md border border-amber-500/20 shadow-[0_0_30px_rgba(245,158,11,0.05)] border border-amber-900/50 rounded-3xl p-8 md:p-12 h-full"
               >
                 <h2 className="text-3xl font-serif text-amber-200 mb-8">{content[activeTab].title}</h2>
                 

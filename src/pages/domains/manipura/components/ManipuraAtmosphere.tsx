@@ -84,9 +84,9 @@ export const ManipuraAtmosphere: React.FC<Props> = ({ scene = 'forge', intensity
         animate={reduced ? { scale: 1 } : { scale: [1.03, 1.07, 1.03], x: ['-1%', '1%', '-1%'], y: ['0%', '-0.5%', '0%'] }}
         transition={{ duration: 24, repeat: Infinity, ease: 'easeInOut' }}
       />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_var(--mx,50%)_var(--my,42%),rgba(255,194,92,0.16),transparent_22%),radial-gradient(circle_at_50%_85%,rgba(255,93,24,0.18),transparent_38%),linear-gradient(180deg,rgba(8,2,0,0.28),rgba(8,2,0,0.82))]" />
-      <div className="absolute inset-0 [background:radial-gradient(ellipse_at_center,transparent_0%,rgba(5,1,0,0.18)_55%,rgba(2,0,0,0.75)_100%)]" />
-      <canvas ref={canvasRef} className="absolute inset-0 w-full h-full opacity-80" />
+      {/* Light atmospheric glows (no dark gradients) */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_var(--mx,50%)_var(--my,42%),rgba(255,194,92,0.16),transparent_22%),radial-gradient(circle_at_50%_85%,rgba(255,93,24,0.18),transparent_38%)]" />
+      <canvas ref={canvasRef} className="absolute inset-0 w-full h-full opacity-80 mix-blend-screen" />
     </div>
   );
 };

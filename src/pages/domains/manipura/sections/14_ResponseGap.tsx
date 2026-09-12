@@ -90,7 +90,7 @@ export const ResponseGapSection: React.FC = () => {
                 )}
                 {flowState === 'PAUSE' && (
                   <div className="text-center">
-                    <div className="w-16 h-16 border-2 border-white rounded-full flex items-center justify-center mx-auto mb-6 bg-black/50 backdrop-blur-md">
+                    <div className="w-16 h-16 border-2 border-white rounded-full flex items-center justify-center mx-auto mb-6 bg-amber-900/10 backdrop-blur-md border border-amber-500/20 shadow-[0_0_30px_rgba(245,158,11,0.05)] backdrop-blur-md">
                       <div className="flex gap-2">
                         <div className="w-2 h-6 bg-white rounded-sm" />
                         <div className="w-2 h-6 bg-white rounded-sm" />
@@ -119,7 +119,7 @@ export const ResponseGapSection: React.FC = () => {
                 key="result"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                className="absolute z-10 flex flex-col items-center bg-black/80 backdrop-blur-sm p-8 rounded-3xl border border-white/10"
+                className="absolute z-10 flex flex-col items-center bg-amber-900/10 backdrop-blur-md border border-amber-500/20 shadow-[0_0_30px_rgba(245,158,11,0.05)] backdrop-blur-sm p-8 rounded-3xl border border-white/10"
               >
                 <h3 className={`text-3xl font-serif mb-4 uppercase tracking-widest
                   ${selectedChoice === 'REACT' ? 'text-red-400' : selectedChoice === 'SUPPRESS' ? 'text-gray-400' : selectedChoice === 'AVOID' ? 'text-amber-700' : 'text-amber-400'}

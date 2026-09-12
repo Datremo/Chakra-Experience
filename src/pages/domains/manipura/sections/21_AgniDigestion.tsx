@@ -67,7 +67,7 @@ export const AgniDigestionSection: React.FC = () => {
                   className={`px-4 py-2 rounded-full border text-sm font-sans tracking-widest uppercase cursor-grab active:cursor-grabbing transition-all
                     ${isProcessing ? 'opacity-0 scale-50' : 
                       isDone ? 'bg-amber-900/20 border-amber-500/30 text-amber-500/50 line-through' :
-                      'bg-black/80 border-amber-500/50 text-amber-200 hover:bg-amber-900/30'}
+                      'bg-amber-900/10 backdrop-blur-md border border-amber-500/20 shadow-[0_0_30px_rgba(245,158,11,0.05)] border-amber-500/50 text-amber-200 hover:bg-amber-900/30'}
                   `}
                   style={{ touchAction: "none" }}
                 >
@@ -134,7 +134,7 @@ export const AgniDigestionSection: React.FC = () => {
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -20 }}
-                className="bg-black/40 border border-amber-900/50 p-8 rounded-3xl backdrop-blur-sm"
+                className="bg-amber-900/10 backdrop-blur-md border border-amber-500/20 shadow-[0_0_30px_rgba(245,158,11,0.05)] border border-amber-900/50 p-8 rounded-3xl backdrop-blur-sm"
               >
                 {digesting === 'FOOD' && (
                   <>

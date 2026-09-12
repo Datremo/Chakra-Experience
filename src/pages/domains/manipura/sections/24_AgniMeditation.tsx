@@ -106,7 +106,7 @@ export const AgniMeditationSection: React.FC = () => {
               className={`flex-1 py-4 border rounded-full font-sans tracking-widest text-xs uppercase transition-all duration-300
                 ${currentStep === MEDITATION_STEPS.length - 1 
                   ? 'bg-amber-900/20 border-amber-500/30 text-amber-500/50 cursor-not-allowed' 
-                  : 'bg-black/50 border-amber-500 text-amber-400 hover:bg-amber-900/50 hover:shadow-[0_0_20px_rgba(245,158,11,0.3)]'}
+                  : 'bg-amber-900/10 backdrop-blur-md border border-amber-500/20 shadow-[0_0_30px_rgba(245,158,11,0.05)] border-amber-500 text-amber-400 hover:bg-amber-900/50 hover:shadow-[0_0_20px_rgba(245,158,11,0.3)]'}
               `}
             >
               Next

@@ -46,9 +46,9 @@ export const ActivationSection: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1, duration: 0.6 }}
-              className="p-8 rounded-3xl bg-black/40 border border-amber-900/30 hover:border-amber-700/50 hover:bg-black/60 transition-colors group"
+              className="p-8 rounded-3xl bg-amber-900/10 backdrop-blur-md border border-amber-500/20 shadow-[0_0_30px_rgba(245,158,11,0.05)] border border-amber-900/30 hover:border-amber-700/50 hover:bg-amber-900/10 backdrop-blur-md border border-amber-500/20 shadow-[0_0_30px_rgba(245,158,11,0.05)] transition-colors group"
             >
-              <div className="w-16 h-16 rounded-full bg-black border border-amber-900/50 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(245,158,11,0.2)] transition-all">
+              <div className="w-16 h-16 rounded-full bg-amber-900/10 backdrop-blur-md border border-amber-500/20 shadow-[0_0_30px_rgba(245,158,11,0.05)] border border-amber-900/50 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(245,158,11,0.2)] transition-all">
                 {sign.icon}
               </div>
               <h3 className="text-2xl font-serif text-amber-100 mb-4">{sign.title}</h3>

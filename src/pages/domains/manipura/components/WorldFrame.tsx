@@ -17,7 +17,7 @@ export const WorldFrame: React.FC<Props> = ({ eyebrow, title, copy, scene = 'for
   const reduced = useReducedMotion();
   return (
     <section className={`relative min-h-[92vh] overflow-hidden flex items-center px-5 md:px-8 lg:px-12 py-20 ${className}`}>
-      <ManipuraAtmosphere scene={scene} />
+      {/* <ManipuraAtmosphere scene={scene} /> removed because it's now global and stacks black layers */}
       <div className={`relative z-10 w-full max-w-7xl mx-auto ${align === 'left' ? '' : 'text-center'}`}>
         <motion.div
           initial={reduced ? false : { opacity: 0, y: 22 }}

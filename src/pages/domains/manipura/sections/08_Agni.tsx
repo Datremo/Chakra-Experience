@@ -45,7 +45,7 @@ export const AgniSection: React.FC = () => {
 
   return (
     <section 
-      className="min-h-screen py-32 px-6 bg-black relative flex flex-col items-center overflow-hidden"
+      className="min-h-screen py-32 px-6 relative flex flex-col items-center overflow-hidden"
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >
@@ -79,7 +79,7 @@ export const AgniSection: React.FC = () => {
               className={`px-6 py-3 rounded-full font-sans text-xs tracking-widest uppercase transition-all duration-300
                 ${activeTab === tab 
                   ? 'bg-amber-600/30 border border-amber-500 text-amber-100 shadow-[0_0_20px_rgba(245,158,11,0.3)]' 
-                  : 'bg-black/50 border border-amber-900/50 text-amber-500/50 hover:text-amber-300 hover:border-amber-700'
+                  : 'bg-amber-900/10 backdrop-blur-md border border-amber-500/20 shadow-[0_0_30px_rgba(245,158,11,0.05)] border border-amber-900/50 text-amber-500/50 hover:text-amber-300 hover:border-amber-700'
                 }
               `}
             >
@@ -89,7 +89,7 @@ export const AgniSection: React.FC = () => {
         </div>
 
         {/* Content Area */}
-        <div className="w-full bg-black/60 backdrop-blur-xl border border-amber-900/40 rounded-3xl p-8 md:p-12 min-h-[300px]">
+        <div className="w-full bg-gradient-to-b from-black/80 to-black/40 backdrop-blur-xl border border-amber-500/20 shadow-[0_0_30px_rgba(245,158,11,0.05)] rounded-3xl p-8 md:p-12 min-h-[300px]">
           <AnimatePresence mode="wait">
             
             {activeTab === 'TRADITIONAL' && (
@@ -115,7 +115,7 @@ export const AgniSection: React.FC = () => {
                   {(['WOOD', 'EMBER', 'FLAME', 'ASH'] as const).map((s, i) => (
                     <div key={s} className="flex flex-col items-center transition-all duration-500">
                       <div className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-500 mb-4
-                        ${stage === s ? 'bg-orange-900/50 border-orange-500 scale-125 shadow-[0_0_15px_rgba(249,115,22,0.5)]' : 'bg-black/50 border-orange-900/30 scale-100'}
+                        ${stage === s ? 'bg-orange-900/50 border-orange-500 scale-125 shadow-[0_0_15px_rgba(249,115,22,0.5)]' : 'bg-amber-900/10 backdrop-blur-md border border-amber-500/20 shadow-[0_0_30px_rgba(245,158,11,0.05)] border-orange-900/30 scale-100'}
                         border
                       `}>
                         {i === 0 && <span className="text-orange-900">▤</span>}

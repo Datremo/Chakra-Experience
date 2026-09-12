@@ -10,6 +10,7 @@ interface ChakraCanvasProps {
   onIntroChange?: (isIntro: boolean) => void;
   onLoadingProgress?: (progress: number) => void;
   onLoadingComplete?: () => void;
+  isFrozen?: boolean;
 }
 
 const TOTAL_FRAMES = 568;
@@ -18,11 +19,39 @@ export const ChakraCanvas: React.FC<ChakraCanvasProps> = ({
   onChakraChange, 
   onIntroChange,
   onLoadingProgress,
-  onLoadingComplete 
+  onLoadingComplete,
+  isFrozen = false
 }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [images, setImages] = useState<HTMLImageElement[]>([]);
   const [loadedCount, setLoadedCount] = useState(0);
+  const timelineRef = useRef<gsap.core.Timeline | null>(null);
+
+  // Use refs for callbacks so they don't trigger the GSAP effect to rebuild
+  const onChakraChangeRef = useRef(onChakraChange);
+  const onIntroChangeRef = useRef(onIntroChange);
+  const isFrozenRef = useRef(isFrozen);
+
+  useEffect(() => {
+    onChakraChangeRef.current = onChakraChange;
+  }, [onChakraChange]);
+
+  useEffect(() => {
+    onIntroChangeRef.current = onIntroChange;
+  }, [onIntroChange]);
+
+  useEffect(() => {
+    isFrozenRef.current = isFrozen;
+    
+    // Completely disable GSAP's scroll tracking when frozen to prevent scrubbing to 0
+    if (timelineRef.current?.scrollTrigger) {
+      if (isFrozen) {
+        timelineRef.current.scrollTrigger.disable(false); // false = don't reset progress
+      } else {
+        timelineRef.current.scrollTrigger.enable(false);
+      }
+    }
+  }, [isFrozen]);
 
   // Preload images
   useEffect(() => {
@@ -64,40 +93,22 @@ export const ChakraCanvas: React.FC<ChakraCanvasProps> = ({
         const isMobile = window.innerWidth < 768;
 
         if (!isMobile) {
-          // Desktop: preserve existing behavior exactly
           ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
         } else {
-          // Mobile: Fix the framing of the existing hero image with true aspect-ratio preservation
-          // Fill canvas background with black to blend seamlessly with the frame background
           ctx.fillStyle = '#000000';
           ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-          // Native frame aspect ratio (1920 / 1080 = 16:9)
           const imgAspect = 16 / 9;
-
-          // In the 16:9 source frames:
-          // - Meditating figure spans horizontally from ~27% to ~73% (approx 46% of frame width)
-          // - Meditating figure spans vertically from ~14% (topknot) to ~83% (seated legs)
-          // - The heart chakra center is at ~46% of frame height
-          // Scale frame width to ~1.92x viewport width so both mudra hands and knees fit comfortably (~6% margin)
           const maxDwByHeight = (canvas.height * 0.55) / (0.69 * (9 / 16));
           const dw = Math.min(canvas.width * 1.92, maxDwByHeight);
           const dh = dw / imgAspect;
-
-          // Center horizontally
           const dx = (canvas.width - dw) / 2;
-
-          // Position the chakra at ~43% of mobile viewport height
-          // Keeps topknot safely below the top-centered title and seated legs safely above the bottom quote/CTA
           const targetChakraY = canvas.height * 0.43;
           const dy = targetChakraY - (dh * 0.46);
-
           ctx.drawImage(img, dx, dy, dw, dh);
         }
       }
     };
 
-    // Set initial size
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
     drawImage(0);
@@ -105,7 +116,6 @@ export const ChakraCanvas: React.FC<ChakraCanvasProps> = ({
     const handleResize = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
-      // Find current frame based on scroll
       const progress = ScrollTrigger.maxScroll(window) > 0
         ? window.scrollY / ScrollTrigger.maxScroll(window)
         : 0;
@@ -118,41 +128,49 @@ export const ChakraCanvas: React.FC<ChakraCanvasProps> = ({
 
     window.addEventListener('resize', handleResize);
 
-    const timeline = gsap.timeline({
+    timelineRef.current = gsap.timeline({
       scrollTrigger: {
         trigger: '#scroll-container',
         start: 'top top',
         end: 'bottom bottom',
         scrub: 0.5,
         onUpdate: (self) => {
+          if (isFrozenRef.current) return; // Hard fail-safe against 0-scrubs
+
           const frameIndex = Math.min(
             TOTAL_FRAMES - 1,
             Math.max(0, Math.floor(self.progress * TOTAL_FRAMES))
           );
 
           requestAnimationFrame(() => {
+            if (isFrozenRef.current) return;
             drawImage(frameIndex);
 
-            // Check active chakra
             const currentFrame = frameIndex + 1; // 1-indexed
             const activeChakra = chakras.find(
               c => currentFrame >= c.frameStart && currentFrame <= c.frameEnd
             );
-            onChakraChange(activeChakra || null);
-            if (onIntroChange) {
-              onIntroChange(currentFrame < 26);
+            onChakraChangeRef.current(activeChakra || null);
+            if (onIntroChangeRef.current) {
+              onIntroChangeRef.current(currentFrame < 26);
             }
           });
         }
       }
     });
 
+    // Check initial freeze state
+    if (isFrozenRef.current && timelineRef.current?.scrollTrigger) {
+      timelineRef.current.scrollTrigger.disable(false);
+    }
+
     return () => {
       window.removeEventListener('resize', handleResize);
-      timeline.kill();
+      timelineRef.current?.kill();
+      timelineRef.current = null;
       ScrollTrigger.getAll().forEach(t => t.kill());
     };
-  }, [loadedCount, images, onChakraChange]);
+  }, [loadedCount, images]);
 
   return (
     <>

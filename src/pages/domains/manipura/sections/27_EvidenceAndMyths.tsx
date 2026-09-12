@@ -43,7 +43,7 @@ export const EvidenceAndMythsSection: React.FC = () => {
                 className={`w-full p-6 text-left border rounded-2xl transition-all duration-300 flex justify-between items-center
                   ${activeMyth === i 
                     ? 'bg-amber-900/40 border-amber-500 shadow-[0_0_15px_rgba(245,158,11,0.2)] rounded-b-none border-b-0' 
-                    : 'bg-black/50 border-amber-900/30 hover:border-amber-700 hover:bg-black/80'}
+                    : 'bg-amber-900/10 backdrop-blur-md border border-amber-500/20 shadow-[0_0_30px_rgba(245,158,11,0.05)] border-amber-900/30 hover:border-amber-700 hover:bg-amber-900/10 backdrop-blur-md border border-amber-500/20 shadow-[0_0_30px_rgba(245,158,11,0.05)]'}
                 `}
               >
                 <h3 className={`text-xl font-serif ${activeMyth === i ? 'text-amber-300' : 'text-amber-100/80'}`}>

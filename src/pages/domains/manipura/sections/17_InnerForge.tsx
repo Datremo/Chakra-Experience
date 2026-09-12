@@ -72,7 +72,7 @@ export const InnerForgeSection: React.FC = () => {
   const allDone = materials.every(m => m.status === 'FORGED');
 
   return (
-    <section className="min-h-screen py-32 px-6 bg-[#050100] relative flex items-center justify-center overflow-hidden">
+    <section className="min-h-screen py-32 px-6 relative flex items-center justify-center overflow-hidden">
       
       {/* Background Forge Fire */}
       <div className="absolute inset-0 opacity-40 mix-blend-screen pointer-events-none">
@@ -94,7 +94,7 @@ export const InnerForgeSection: React.FC = () => {
         </div>
 
         {/* Forge Arena */}
-        <div className="relative w-full max-w-3xl h-[500px] flex items-center justify-center border border-amber-900/20 bg-black/30 rounded-[3rem] shadow-2xl backdrop-blur-sm">
+        <div className="relative w-full max-w-3xl h-[500px] flex items-center justify-center border border-amber-900/20 bg-amber-900/10 backdrop-blur-md border border-amber-500/20 shadow-[0_0_30px_rgba(245,158,11,0.05)] rounded-[3rem] shadow-2xl backdrop-blur-sm">
           
           {/* Central Crucible */}
           <div 
@@ -102,7 +102,7 @@ export const InnerForgeSection: React.FC = () => {
             className="absolute w-64 h-64 rounded-full flex items-center justify-center"
           >
             <div className={`absolute inset-0 rounded-full transition-all duration-1000 
-              ${activeMaterial ? 'border-4 border-amber-500 shadow-[inset_0_0_50px_rgba(245,158,11,0.5),0_0_50px_rgba(245,158,11,0.8)]' : 'border border-amber-900/40 shadow-[0_0_20px_rgba(245,158,11,0.1)]'}
+              ${activeMaterial ? 'border-4 border-amber-500 bg-amber-900/40 shadow-[inset_0_0_50px_rgba(245,158,11,0.5),0_0_50px_rgba(245,158,11,0.8)]' : 'border-2 border-dashed border-amber-500/50 bg-amber-900/20 shadow-[inset_0_0_30px_rgba(245,158,11,0.2)] animate-pulse'}
             `} />
             <div className="absolute w-32 h-32 bg-amber-500/20 blur-xl rounded-full animate-pulse" />
             
@@ -112,7 +112,7 @@ export const InnerForgeSection: React.FC = () => {
                 <motion.div 
                   initial={{ opacity: 0, scale: 0.5 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  className="absolute z-30 flex flex-col items-center justify-center p-8 bg-black/80 backdrop-blur-md rounded-2xl border border-amber-500/50 min-w-[300px]"
+                  className="absolute z-30 flex flex-col items-center justify-center p-8 bg-black/70 backdrop-blur-xl border border-amber-500/50 shadow-[0_0_30px_rgba(245,158,11,0.1)] rounded-2xl min-w-[300px]"
                 >
                   <p className="text-sm font-sans tracking-widest text-amber-500/60 uppercase mb-2">Raw Material</p>
                   <h3 className="text-3xl font-serif text-amber-100 mb-6">{activeMaterial.label}</h3>
@@ -143,7 +143,7 @@ export const InnerForgeSection: React.FC = () => {
                 onDragEnd={(e, info) => handleDragEnd(e, info, item)}
                 initial={{ x: startX, y: startY }}
                 animate={activeMaterial ? { opacity: 0.2 } : { opacity: 1 }}
-                className="absolute z-20 cursor-grab active:cursor-grabbing px-6 py-3 bg-black/60 border border-amber-900/50 rounded-full shadow-lg backdrop-blur-sm hover:border-amber-500/50 hover:bg-amber-900/30 transition-colors"
+                className="absolute z-20 cursor-grab active:cursor-grabbing px-6 py-3 bg-amber-900/10 backdrop-blur-md border border-amber-500/20 shadow-[0_0_30px_rgba(245,158,11,0.05)] border border-amber-900/50 rounded-full shadow-lg backdrop-blur-sm hover:border-amber-500/50 hover:bg-amber-900/30 transition-colors"
                 style={{ touchAction: "none" }}
               >
                 <span className="font-sans text-sm tracking-widest uppercase text-amber-100">{item.label}</span>

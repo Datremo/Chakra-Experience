@@ -16,7 +16,7 @@ export const ControlFieldSection: React.FC = () => {
     setForce(next);
   };
   return <WorldFrame eyebrow="16 — AGENCY" title="You cannot command what is not yours." copy="Try to move the room. Notice what happens when effort is spent on outcomes you cannot own." scene="human">
-    <div ref={ref} onPointerMove={onPointer} className="relative h-[460px] rounded-[2rem] border border-amber-100/10 bg-black/30 overflow-hidden cursor-crosshair touch-none">
+    <div ref={ref} onPointerMove={onPointer} className="relative h-[460px] rounded-[2rem] border border-amber-100/10 bg-amber-900/10 backdrop-blur-md border border-amber-500/20 shadow-[0_0_30px_rgba(245,158,11,0.05)] overflow-hidden cursor-crosshair touch-none">
       {[0,1,2,3,4].map(i => <motion.div key={i} className="absolute rounded-full border border-amber-100/10" style={{ width: 80 + i*65, height: 80 + i*65, left: '50%', top: '50%', transform: 'translate(-50%,-50%)' }} animate={{ x: (force - .5) * (40 + i*12), rotate: (force - .5) * (i%2 ? 20 : -20) }} transition={{ type: 'spring', stiffness: 50, damping: 16 }} />)}
       <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-center">
         <div className="text-[10px] tracking-[.3em] uppercase text-amber-200/35">your control</div>

@@ -16,7 +16,7 @@ export const FireThresholdSection: React.FC = () => {
       copy="Before we work with anger, discipline, boundaries and action, pause at the threshold. The next rooms are about what you do with heat—not how much of it you can create."
       scene="forge"
     >
-      <div className="relative mx-auto max-w-5xl h-[420px] rounded-[2rem] border border-amber-100/10 bg-black/25 overflow-hidden flex items-center justify-center">
+      <div className="relative mx-auto max-w-5xl h-[420px] rounded-[2rem] border border-amber-100/10 bg-amber-900/10 backdrop-blur-md border border-amber-500/20 shadow-[0_0_30px_rgba(245,158,11,0.05)] overflow-hidden flex items-center justify-center">
         <motion.div
           className="absolute h-64 w-64 rounded-full"
           initial={{ scale: 0.35, opacity: 0.05 }}

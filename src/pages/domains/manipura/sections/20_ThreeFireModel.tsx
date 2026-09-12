@@ -115,7 +115,7 @@ export const ThreeFireModelSection: React.FC = () => {
                   className={`p-4 rounded-2xl border text-left transition-all duration-500 flex justify-between items-center group
                     ${activeState === state 
                       ? 'bg-amber-900/30 border-amber-500/50 shadow-[0_0_20px_rgba(245,158,11,0.1)]' 
-                      : 'bg-black/40 border-white/5 hover:border-white/20'
+                      : 'bg-amber-900/10 backdrop-blur-md border border-amber-500/20 shadow-[0_0_30px_rgba(245,158,11,0.05)] border-white/5 hover:border-white/20'
                     }
                   `}
                 >
@@ -141,7 +141,7 @@ export const ThreeFireModelSection: React.FC = () => {
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -20 }}
-                className="bg-black/60 backdrop-blur-md p-6 rounded-2xl border border-amber-900/30"
+                className="bg-amber-900/10 backdrop-blur-md border border-amber-500/20 shadow-[0_0_30px_rgba(245,158,11,0.05)] backdrop-blur-md p-6 rounded-2xl border border-amber-900/30"
               >
                 <h4 className="font-sans text-xs tracking-widest text-amber-500/60 uppercase mb-3">Manifestation</h4>
                 <p className="text-amber-100/80 font-light leading-relaxed">

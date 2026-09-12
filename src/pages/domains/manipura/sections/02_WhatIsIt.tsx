@@ -28,7 +28,7 @@ export const WhatIsItSection: React.FC = () => {
               className={`p-4 border transition-all duration-500 font-sans tracking-[0.2em] uppercase text-xs rounded-xl
                 ${activeTab === tab 
                   ? 'bg-amber-900/40 border-amber-500 text-amber-100 shadow-[0_0_30px_rgba(245,158,11,0.2)] scale-105' 
-                  : 'bg-black/30 border-amber-900/30 text-amber-200/40 hover:border-amber-500/50 hover:text-amber-200/80 hover:bg-amber-900/20'
+                  : 'bg-amber-900/10 backdrop-blur-md border border-amber-500/20 shadow-[0_0_30px_rgba(245,158,11,0.05)] border-amber-900/30 text-amber-200/40 hover:border-amber-500/50 hover:text-amber-200/80 hover:bg-amber-900/20'
                 }`}
             >
               {tab === 'SCIENCE' ? 'EVIDENCE' : tab}

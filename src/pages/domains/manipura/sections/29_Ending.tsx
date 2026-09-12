@@ -10,7 +10,7 @@ interface EndingSectionProps {
 
 export const EndingSection: React.FC<EndingSectionProps> = ({ onClose, chakra }) => {
   return (
-    <section className="min-h-screen py-32 px-6 bg-black relative flex items-center justify-center overflow-hidden">
+    <section className="min-h-screen py-32 px-6 bg-amber-900/10 backdrop-blur-md border border-amber-500/20 shadow-[0_0_30px_rgba(245,158,11,0.05)] relative flex items-center justify-center overflow-hidden">
       
       {/* Intense core that slowly fades upward */}
       <div className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_bottom,rgba(245,158,11,0.15),transparent_60%)] pointer-events-none" />
@@ -53,7 +53,7 @@ export const EndingSection: React.FC<EndingSectionProps> = ({ onClose, chakra })
 
           <button
             onClick={onClose}
-            className="group relative px-8 py-4 bg-black border border-amber-500/30 rounded-full hover:bg-amber-900/20 hover:border-amber-500 transition-all duration-500 flex items-center gap-4 overflow-hidden"
+            className="group relative px-8 py-4 bg-amber-900/10 backdrop-blur-md border border-amber-500/20 shadow-[0_0_30px_rgba(245,158,11,0.05)] border border-amber-500/30 rounded-full hover:bg-amber-900/20 hover:border-amber-500 transition-all duration-500 flex items-center gap-4 overflow-hidden"
           >
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-amber-500/10 to-transparent -translate-x-full group-hover:animate-[shimmer_2s_infinite]" />
             <span className="relative z-10 font-sans tracking-[0.2em] uppercase text-sm text-amber-100 group-hover:text-amber-500 transition-colors">

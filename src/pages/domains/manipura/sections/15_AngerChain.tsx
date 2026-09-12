@@ -72,8 +72,8 @@ export const AngerChainSection: React.FC = () => {
                   }}
                   className={`relative flex flex-col items-center p-4 rounded-xl border w-32 shrink-0 transition-colors duration-500
                     ${isVisible 
-                      ? (isCurrent ? 'bg-red-900/40 border-red-500 shadow-[0_0_20px_rgba(239,68,68,0.3)]' : 'bg-black/50 border-red-900/50') 
-                      : 'bg-black border-white/5'}
+                      ? (isCurrent ? 'bg-red-900/40 border-red-500 shadow-[0_0_20px_rgba(239,68,68,0.3)]' : 'bg-amber-900/10 backdrop-blur-md border border-amber-500/20 shadow-[0_0_30px_rgba(245,158,11,0.05)] border-red-900/50') 
+                      : 'bg-amber-900/10 backdrop-blur-md border border-amber-500/20 shadow-[0_0_30px_rgba(245,158,11,0.05)] border-white/5'}
                   `}
                 >
                   <span className={`font-sans tracking-widest text-xs uppercase mb-2 ${isVisible ? 'text-red-400' : 'text-white/20'}`}>
@@ -119,7 +119,7 @@ export const AngerChainSection: React.FC = () => {
                       ? 'opacity-50 border border-white/10 text-white/30 cursor-not-allowed'
                       : isPaused 
                         ? 'bg-red-500 text-black border border-red-500 shadow-[0_0_20px_rgba(239,68,68,0.5)]'
-                        : 'bg-black/50 border border-red-500 text-red-300 hover:bg-red-900/30'}
+                        : 'bg-amber-900/10 backdrop-blur-md border border-amber-500/20 shadow-[0_0_30px_rgba(245,158,11,0.05)] border border-red-500 text-red-300 hover:bg-red-900/30'}
                   `}
                 >
                   {isPaused ? <Play size={16} /> : <Pause size={16} />} 

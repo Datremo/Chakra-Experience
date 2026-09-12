@@ -83,7 +83,7 @@ export const SevenDayJourneySection: React.FC = () => {
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -10 }}
-                  className="bg-black/50 border border-amber-900/50 rounded-2xl p-8 backdrop-blur-md max-w-2xl mx-auto text-center"
+                  className="bg-amber-900/10 backdrop-blur-md border border-amber-500/20 shadow-[0_0_30px_rgba(245,158,11,0.05)] border border-amber-900/50 rounded-2xl p-8 backdrop-blur-md max-w-2xl mx-auto text-center"
                 >
                   <h3 className="font-serif text-2xl text-amber-300 mb-4">Day {activeDay}: {DAYS[activeDay - 1].title}</h3>
                   <p className="text-amber-100/80 font-light leading-relaxed">

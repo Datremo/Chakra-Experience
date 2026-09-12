@@ -81,7 +81,7 @@ export const BoundariesSection: React.FC = () => {
               borderWidth: status === 'BALANCED' ? '4px' : '1px'
             }}
             transition={{ type: 'spring', damping: 20 }}
-            className="absolute border-dashed rounded-full flex items-center justify-center bg-black/40 backdrop-blur-[2px]"
+            className="absolute border-dashed rounded-full flex items-center justify-center bg-amber-900/10 backdrop-blur-md border border-amber-500/20 shadow-[0_0_30px_rgba(245,158,11,0.05)] backdrop-blur-[2px]"
           />
 
           {/* Central Flame */}
@@ -127,7 +127,7 @@ export const BoundariesSection: React.FC = () => {
         </div>
 
         {/* Slider Control */}
-        <div className="w-full max-w-md bg-black/50 p-6 rounded-2xl border border-amber-900/30">
+        <div className="w-full max-w-md bg-amber-900/10 backdrop-blur-md border border-amber-500/20 shadow-[0_0_30px_rgba(245,158,11,0.05)] p-6 rounded-2xl border border-amber-900/30">
           <label className="block text-xs font-sans tracking-[0.2em] uppercase text-amber-500/60 mb-4 text-left">
             Adjust Boundary Strength
           </label>

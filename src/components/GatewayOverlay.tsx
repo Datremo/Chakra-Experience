@@ -138,70 +138,35 @@ export const GatewayOverlay: React.FC<GatewayOverlayProps> = ({ activeChakra, on
               "{t(`gateway.${activeChakra.id}.hook`, { defaultValue: activeChakra.gatewayHook })}"
             </h2>
 
-            {/* Radiant Ambient Aura Behind & Around The Button */}
-            <div className="relative flex items-center justify-center mt-1 md:mt-2">
-              
-              {/* Vibrant Upward Radial Light Well */}
-              <div 
-                className="absolute w-[250px] sm:w-[400px] md:w-[500px] h-[120px] sm:h-[180px] rounded-full blur-[50px] sm:blur-[70px] pointer-events-none transition-all duration-700 top-1/2 -translate-y-1/2"
-                style={{ 
-                  backgroundColor: `${activeChakra.hexColor}`,
-                  opacity: 0.45
-                }}
-              />
+            {/* Deep Dive Action Area */}
+            <div className="relative flex items-center justify-center mt-4 md:mt-6">
 
-              {/* Concentric Breathing Energy Rings */}
-              <div 
-                className="absolute w-[220px] sm:w-[300px] md:w-[360px] h-[70px] sm:h-[90px] md:h-[100px] rounded-[100px] border border-dashed pointer-events-none animate-pulse transition-colors duration-700"
-                style={{ 
-                  borderColor: `${activeChakra.hexColor}80`,
-                  boxShadow: `0 0 30px ${activeChakra.hexColor}40, inset 0 0 20px ${activeChakra.hexColor}20`
-                }}
-              />
-              <div 
-                className="absolute w-[260px] sm:w-[360px] md:w-[440px] h-[90px] sm:h-[120px] md:h-[140px] rounded-[120px] border border-dotted pointer-events-none opacity-50 transition-colors duration-700 delay-150"
-                style={{ 
-                  borderColor: `${activeChakra.hexColor}50`
-                }}
-              />
-
-              {/* Enhanced Deep Dive Master Button */}
+              {/* Simple, robust Deep Dive Button */}
               <button
-                onClick={onEnterDomain}
-                className="pointer-events-auto relative px-8 sm:px-12 md:px-16 py-4 sm:py-5 md:py-6 rounded-full uppercase tracking-[0.25em] md:tracking-[0.3em] text-[11px] sm:text-sm text-white font-medium transition-all duration-500 hover:scale-105 hover:-translate-y-1 active:scale-95 group overflow-hidden backdrop-blur-xl border flex items-center space-x-3 sm:space-x-4 shadow-[0_10px_40px_rgba(0,0,0,0.6)]"
-                style={{
-                  boxShadow: `0 0 50px ${activeChakra.hexColor}70, 0 20px 40px rgba(0,0,0,0.9)`,
-                  borderColor: `${activeChakra.hexColor}90`,
-                  backgroundColor: 'rgba(5, 1, 10, 0.85)'
+                onClick={() => onEnterDomain()}
+                className="relative group flex items-center justify-center space-x-3 sm:space-x-4 px-8 sm:px-12 py-4 sm:py-5 rounded-full overflow-hidden transition-all duration-500 z-50 pointer-events-auto shadow-2xl"
+                style={{ 
+                  backgroundColor: 'rgba(5, 1, 10, 0.8)',
+                  border: `1px solid ${activeChakra.hexColor}60`,
+                  boxShadow: `0 0 40px ${activeChakra.hexColor}30, inset 0 0 20px ${activeChakra.hexColor}10`
                 }}
               >
-                {/* Glowing Specular Light Sweep Effect */}
-                <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out bg-gradient-to-r from-transparent via-white/30 to-transparent pointer-events-none" />
-
-                {/* Inner Ambient Color Tint */}
+                {/* Hover Glow */}
                 <div 
-                  className="absolute inset-0 opacity-20 group-hover:opacity-50 transition-opacity duration-500"
-                  style={{ backgroundColor: activeChakra.hexColor }}
+                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                  style={{ background: `linear-gradient(90deg, transparent, ${activeChakra.hexColor}30, transparent)` }}
                 />
 
-                {/* Sparkling Icon Accent */}
-                <div 
-                  className="relative z-10 w-6 h-6 sm:w-8 sm:h-8 rounded-full flex items-center justify-center transition-transform group-hover:rotate-45 group-hover:scale-110 duration-500"
-                  style={{ backgroundColor: `${activeChakra.hexColor}40`, boxShadow: `0 0 15px ${activeChakra.hexColor}80` }}
-                >
-                  <Sparkles size={14} className="text-white drop-shadow-lg" />
-                </div>
-
-                <span className="relative z-10 font-bold tracking-[0.25em] drop-shadow-md whitespace-nowrap">
+                <Sparkles size={16} className="relative z-10 text-white/80 group-hover:text-white transition-colors" />
+                <span className="relative z-10 text-xs sm:text-sm uppercase tracking-[0.3em] font-medium text-white/90 group-hover:text-white transition-colors">
                   {t('gateway.enterButton', { defaultValue: 'Enter Deep Dive' })}
                 </span>
-
-                <ArrowRight size={16} className="relative z-10 transform group-hover:translate-x-2 transition-transform duration-500 text-white" />
+                <ArrowRight size={16} className="relative z-10 text-white/80 group-hover:text-white transition-colors group-hover:translate-x-1 duration-300" />
               </button>
             </div>
 
             {/* Sacred Subtext Badge */}
-            <div className="flex items-center space-x-2 text-[9px] sm:text-[10px] font-sans tracking-[0.3em] uppercase text-white/50 pointer-events-none mt-2">
+            <div className="flex items-center justify-center space-x-2 text-[9px] sm:text-[10px] font-sans tracking-[0.3em] uppercase text-white/50 pointer-events-none mt-4 md:mt-6">
               <span className="w-1.5 h-1.5 rounded-full animate-ping" style={{ backgroundColor: activeChakra.hexColor }} />
               <span>42 Interactive Worlds & Deep Wisdom</span>
             </div>

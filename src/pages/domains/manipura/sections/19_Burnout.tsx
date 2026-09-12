@@ -98,7 +98,7 @@ export const BurnoutSection: React.FC = () => {
                 className="relative w-48 h-48 rounded-full flex items-center justify-center border-4 border-black/20 group"
               >
                 <div 
-                  className="absolute bottom-0 left-0 w-full bg-black/40 rounded-full transition-all duration-100"
+                  className="absolute bottom-0 left-0 w-full bg-amber-900/10 backdrop-blur-md border border-amber-500/20 shadow-[0_0_30px_rgba(245,158,11,0.05)] rounded-full transition-all duration-100"
                   style={{ height: `${extinguishLevel}%` }}
                 />
                 <span className="relative z-10 font-sans tracking-[0.3em] font-bold text-black uppercase group-hover:scale-105 transition-transform mix-blend-overlay">

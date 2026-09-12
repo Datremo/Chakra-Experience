@@ -8,7 +8,7 @@ export const RecoveryEmberSection: React.FC = () => {
   const [rest,setRest]=useState(0);
   useEffect(()=>{ setMetric('recovery', rest); },[rest,setMetric]);
   return <WorldFrame eyebrow="24 — RECOVERY" title="The fire needs darkness too." copy="Recovery is part of capacity, not a reward for productivity." scene="sun">
-    <div className="max-w-4xl mx-auto rounded-[2rem] border border-amber-100/10 bg-black/25 p-8 md:p-12 text-center">
+    <div className="max-w-4xl mx-auto rounded-[2rem] border border-amber-100/10 bg-amber-900/10 backdrop-blur-md border border-amber-500/20 shadow-[0_0_30px_rgba(245,158,11,0.05)] p-8 md:p-12 text-center">
       <div className="relative h-48 flex items-center justify-center">
         <motion.div className="rounded-full" style={{background:'radial-gradient(circle,#fff1bd 0%,#ffab2b 22%,rgba(255,82,0,.25) 56%,transparent 70%)'}} animate={{width:100+rest*140,height:100+rest*140,opacity:.32+rest*.6}} />
         <div className="absolute text-[9px] tracking-[.28em] uppercase text-amber-100/40">ember</div>
